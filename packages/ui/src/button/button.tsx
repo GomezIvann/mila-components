@@ -1,14 +1,7 @@
-"use client";
-
 import { ReactNode } from "react";
+import ButtonProps from "../types";
 
-interface ButtonProps {
-  children: ReactNode;
-  className?: string;
-  appName: string;
-}
-
-export const Button = ({ children, className, appName }: ButtonProps) => {
+const Button = ({ children, className, appName }: ButtonProps) => {
   return (
     <button
       className={className}
@@ -18,3 +11,5 @@ export const Button = ({ children, className, appName }: ButtonProps) => {
     </button>
   );
 };
+
+export default Button;

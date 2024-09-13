@@ -5,9 +5,14 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "publish-mila": "turbo run build lint test && changeset version && changeset publish",
+    "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "prettier": "^3.2.5",
     "turbo": "^2.0.7",
     "typescript": "^5.4.5"
