@@ -9,7 +9,8 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "publish-mila": "turbo run build lint test && changeset version && changeset publish",
-    "clean": "turbo run clean && rm -rf node_modules"
+    "clean": "turbo run clean && rm -rf node_modules",
+    "storybook": "turbo storybook"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
