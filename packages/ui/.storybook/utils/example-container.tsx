@@ -30,8 +30,8 @@ const ExampleContainer = ({
 const Container = styled.div<{ expanded: boolean }>`
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin: 16px;
+  gap: 1rem;
+  margin: 1rem;
   ${(props) => props.expanded && "height: 100vh;"}
 `;
 

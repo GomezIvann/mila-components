@@ -17,5 +17,8 @@ export const Stories = () => (
     <ExampleContainer>
       <Heading level={3}>Third level h3</Heading>
     </ExampleContainer>
+    <ExampleContainer>
+      <Heading level={4}>Fourth level h4</Heading>
+    </ExampleContainer>
   </>
 );
