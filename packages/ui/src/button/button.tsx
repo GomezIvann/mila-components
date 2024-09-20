@@ -72,8 +72,8 @@ const getButtonStyles = (
 };
 
 const StyledButton = styled.button<{
-  variant: string;
-  semantic: Required<ButtonProps>["semantic"];
+  $variant: string;
+  $semantic: Required<ButtonProps>["semantic"];
 }>`
   width: fit-content;
   display: inline-flex;
@@ -88,7 +88,7 @@ const StyledButton = styled.button<{
   border-radius: ${space[64]};
   cursor: pointer;
 
-  ${({ variant, semantic }) => getButtonStyles(variant, semantic)};
+  ${({ $variant, $semantic }) => getButtonStyles($variant, $semantic)};
 
   &:disabled {
     opacity: 0.5;
@@ -113,8 +113,8 @@ const Button = ({
     <StyledButton
       onClick={onClick}
       disabled={disabled}
-      variant={variant}
-      semantic={semantic}
+      $variant={variant}
+      $semantic={semantic}
       type={type}
     >
       {icon && <span>{icon}</span>}

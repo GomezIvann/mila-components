@@ -22,17 +22,17 @@ const ExampleContainer = ({
   pseudoState,
   expanded = false,
 }: Props): JSX.Element => (
-  <Container className={`${pseudoState}-all`} expanded={expanded}>
+  <Container className={`${pseudoState}-all`} $expanded={expanded}>
     {children}
   </Container>
 );
 
-const Container = styled.div<{ expanded: boolean }>`
+const Container = styled.div<{ $expanded: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin: 1rem;
-  ${(props) => props.expanded && "height: 100vh;"}
+  ${(props) => props.$expanded && "height: 100vh;"}
 `;
 
 export default ExampleContainer;

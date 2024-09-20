@@ -2,12 +2,12 @@ import styled from "styled-components";
 import HeadingProps from "./types";
 import { typography } from "../common/core-tokens";
 
-const StyledHeading = styled.h1<{ level: HeadingProps["level"] }>`
+const StyledHeading = styled.h1<{ $level: HeadingProps["level"] }>`
   font-family: ${typography.family.sans};
   margin: 0;
 
-  ${({ level }) => {
-    switch (level) {
+  ${({ $level }) => {
+    switch ($level) {
       case 1:
         return `
           font-size: ${typography.size["4xl"]};
@@ -45,7 +45,7 @@ const StyledHeading = styled.h1<{ level: HeadingProps["level"] }>`
 `;
 
 const Heading = ({ level = 1, children }: HeadingProps) => (
-  <StyledHeading level={level} as={`h${level}`}>
+  <StyledHeading $level={level} as={`h${level}`}>
     {children}
   </StyledHeading>
 );
