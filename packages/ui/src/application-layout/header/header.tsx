@@ -127,7 +127,9 @@ const Header = ({
       <Navigation>
         {title &&
           (title.href == null ? (
-            <Flex alignItems="center">{titleContent}</Flex>
+            <Flex alignItems="center" gap={4}>
+              {titleContent}
+            </Flex>
           ) : (
             <TitleLink onClick={() => title.href && onNavigate?.(title.href)}>
               {titleContent}

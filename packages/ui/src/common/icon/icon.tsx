@@ -3,13 +3,10 @@ import { IconProp } from "../types";
 
 const StyledIcon = styled.div<{ $width?: string; $height?: string }>`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: ${({ $width }) => $width};
-  height: ${({ $height }) => $height};
+  svg,
   img {
-    width: 100%;
-    height: 100%;
+    width: ${({ $width }) => $width};
+    height: ${({ $height }) => $height};
   }
 `;
 

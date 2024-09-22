@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import Flex from "./flex";
 import Heading from "../heading/heading";
+import { color, typography } from "../common/core-tokens";
 
 export default {
   title: "Flex",
   component: Flex,
 };
 
-export const Chromatic = () => (
+export const Stories = () => (
   <>
     <Heading level={4}>Default</Heading>
     <Container>
@@ -28,7 +29,7 @@ export const Chromatic = () => (
         wrap="wrap"
         justifyContent="end"
         alignItems="center"
-        gap="1.5rem"
+        gap={24}
       >
         <Placeholder />
         <Placeholder $minWidth="100px" />
@@ -45,7 +46,7 @@ export const Chromatic = () => (
         wrap="wrap"
         alignContent="space-between"
         as="span"
-        gap={{ rowGap: "0.5rem", columnGap: "1.5rem" }}
+        gap={{ rowGap: 8, columnGap: 24 }}
       >
         <Placeholder />
         <Placeholder />
@@ -89,9 +90,9 @@ export const Chromatic = () => (
     <Heading level={4}>Basis and shrink</Heading>
     <Container>
       <Flex basis="600px">
-        <Flex shrink={4} basis="400px">
+        <Flex shrink={3} basis="400px">
           <Placeholder width="100%" $minWidth="0">
-            shrink 4
+            shrink 3
           </Placeholder>
         </Flex>
         <Flex shrink={2} basis="400px">
@@ -111,7 +112,7 @@ export const Chromatic = () => (
 
 const Container = styled.div<{ height?: string }>`
   display: flex;
-  background: #f2eafa;
+  background: ${color.blue[200]};
   margin: 2.5rem;
   ${({ height }) => (height ? `height: ${height}` : "max-height: 150px")};
 `;
@@ -120,7 +121,10 @@ const Placeholder = styled.div<{ $minWidth?: string; width?: string }>`
   height: 40px;
   min-width: ${({ $minWidth }) => $minWidth ?? "200px"};
   width: ${({ width }) => width};
-  border: 1px solid #a46ede;
+  border: 1px solid ${color.blue[500]};
   border-radius: 0.5rem;
-  background-color: #e5d5f6;
+  background-color: ${color.blue[100]};
+  font-family: ${typography.family.sans};
+  display: grid;
+  place-items: center;
 `;

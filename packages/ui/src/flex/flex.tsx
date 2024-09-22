@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import FlexProps, { TransientFlexProps } from "./types";
+import { space } from "../common/core-tokens";
 
 const Flex = ({
   direction = "row",
   wrap = "nowrap",
-  gap = "0rem",
+  gap = 0,
   order = 0,
   grow = 0,
   shrink = 1,
@@ -58,10 +59,10 @@ const StyledFlex = styled.div<TransientFlexProps>`
     flex-wrap: ${$wrap};
     justify-content: ${$justifyContent};
     order: ${$order};
-    ${typeof $gap === "string" ? `gap: ${$gap};` : ""}
+    ${typeof $gap === "number" ? `gap: ${space[$gap]};` : ""}
     ${
       typeof $gap === "object"
-        ? `column-gap: ${$gap.columnGap ?? "0"}; row-gap: ${$gap.rowGap ?? "0"};`
+        ? `column-gap: ${space[$gap.columnGap ?? 0]}; row-gap: ${space[$gap.rowGap ?? 0]};`
         : ""
     }
   `}
