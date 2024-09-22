@@ -1,6 +1,7 @@
 export const color = {
   black: "#000000",
   white: "#ffffff",
+  transparent: "transparent",
   grey: {
     50: "#fbfbfb",
     100: "#ebebeb",
@@ -11,7 +12,7 @@ export const color = {
     600: "#797979",
     700: "#5b5b5b",
     800: "#494949",
-    900: "#333333",
+    900: "#333333", // main mila color
   },
   purple: {
     50: "#fcf5ff",
@@ -30,7 +31,7 @@ export const color = {
     100: "#dff5fe",
     200: "#c1e8fc",
     300: "#a0d2f9",
-    400: "#61b2f3",
+    400: "#61b2f3", // focus color
     500: "#3095eb",
     600: "#1578d3",
     700: "#135db2",
@@ -132,12 +133,12 @@ export const typography = {
     bold: 700,
   },
   lineHeight: {
-    none: 1,
-    tight: 1.25,
-    snug: 1.375,
-    normal: 1.5,
-    relaxed: 1.625,
-    loose: 2,
+    none: "1em",
+    tight: "1.25em",
+    snug: "1.375em",
+    normal: "1.5em",
+    relaxed: "1.625em",
+    loose: "2em",
   },
   letterSpacing: {
     tighter: "-0.05em",

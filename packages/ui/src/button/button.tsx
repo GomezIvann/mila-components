@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { color, space, typography } from "../common/core-tokens";
 import ButtonProps from "./types";
+import alias from "../common/alias-tokens";
+import Icon from "../common/icon/icon";
 
 type SemanticColors = "red" | "blue" | "green" | "yellow" | "grey";
 
@@ -75,17 +77,20 @@ const StyledButton = styled.button<{
   $variant: string;
   $semantic: Required<ButtonProps>["semantic"];
 }>`
+  box-sizing: border-box;
   width: fit-content;
+  height: 40px;
   display: inline-flex;
   align-items: center;
-  gap: ${space[8]};
+  gap: ${space[4]};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};
   font-weight: ${typography.weight.semibold};
-  line-height: ${typography.lineHeight.normal};
+  line-height: ${typography.lineHeight.snug};
   letter-spacing: ${typography.letterSpacing.normal};
+  white-space: nowrap;
   padding: ${space[8]} ${space[20]};
-  border-radius: ${space[64]};
+  border-radius: ${space[128]};
   cursor: pointer;
 
   ${({ $variant, $semantic }) => getButtonStyles($variant, $semantic)};
@@ -94,9 +99,9 @@ const StyledButton = styled.button<{
     opacity: 0.5;
     cursor: not-allowed;
   }
-  &:focus {
-    outline: 2px solid ${color.blue[400]};
-    outline-offset: 2px;
+  &:not(:disabled):focus {
+    outline: 2px solid ${alias.focus};
+    outline-offset: ${alias.focusOffset};
   }
 `;
 
@@ -117,7 +122,7 @@ const Button = ({
       $semantic={semantic}
       type={type}
     >
-      {icon && <span>{icon}</span>}
+      {icon && <Icon icon={icon} width="24px" height="24px" />}
       {children}
     </StyledButton>
   );

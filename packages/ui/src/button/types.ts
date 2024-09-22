@@ -1,6 +1,8 @@
+import { IconProp } from "../common/types";
+
 type ButtonProps = {
   disabled?: boolean;
-  icon?: React.ReactNode;
+  icon?: IconProp;
   onClick: () => void;
   variant?: "primary" | "outlined" | "text";
   type?: "button" | "reset" | "submit";
