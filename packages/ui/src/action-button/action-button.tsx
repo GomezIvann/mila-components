@@ -60,15 +60,18 @@ const ActionButton = ({
   icon,
   iconPosition = "left",
   onClick,
+  title,
   type,
   ...rest
 }: ActionButtonProps) => (
   <StyledActionButton
+    aria-label={title}
     disabled={disabled}
     $hasIcon={Boolean(icon)}
     $hasLabel={Boolean(children)}
     $iconPosition={iconPosition}
     onClick={onClick}
+    title={title}
     type={type}
     {...rest}
   >
