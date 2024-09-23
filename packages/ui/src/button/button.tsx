@@ -78,19 +78,19 @@ const StyledButton = styled.button<{
   $semantic: Required<ButtonProps>["semantic"];
 }>`
   box-sizing: border-box;
+  border-radius: ${space[128]};
   width: fit-content;
   height: 40px;
+  padding: ${space[8]} ${space[20]};
   display: inline-flex;
   align-items: center;
   gap: ${space[4]};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};
   font-weight: ${typography.weight.semibold};
-  line-height: ${typography.lineHeight.snug};
+  line-height: ${typography.lineHeight.normal};
   letter-spacing: ${typography.letterSpacing.normal};
   white-space: nowrap;
-  padding: ${space[8]} ${space[20]};
-  border-radius: ${space[128]};
   cursor: pointer;
 
   ${({ $variant, $semantic }) => getButtonStyles($variant, $semantic)};
@@ -106,13 +106,13 @@ const StyledButton = styled.button<{
 `;
 
 const Button = ({
+  children,
   disabled = false,
   icon,
   onClick,
-  variant = "primary",
-  type = "button",
   semantic = "default",
-  children,
+  type = "button",
+  variant = "primary",
 }: ButtonProps) => {
   return (
     <StyledButton

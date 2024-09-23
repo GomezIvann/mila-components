@@ -1,13 +1,13 @@
 import { IconProp } from "../common/types";
 
 type ButtonProps = {
+  children: string;
   disabled?: boolean;
   icon?: IconProp;
   onClick: () => void;
-  variant?: "primary" | "outlined" | "text";
-  type?: "button" | "reset" | "submit";
   semantic?: "default" | "danger" | "info" | "success" | "warning";
-  children: string;
+  type?: "button" | "reset" | "submit";
+  variant?: "primary" | "outlined" | "text";
 };
 
 export default ButtonProps;

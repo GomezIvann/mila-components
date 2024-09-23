@@ -24,7 +24,7 @@ export const Stories = () => (
               title={{ label: "Mila Components" }}
               navigationLinks={navigationLinks}
               content={
-                <Flex gap="0.5rem">
+                <Flex gap={8}>
                   <Button onClick={() => {}}>Sign in</Button>
                   <Button onClick={() => {}} variant="text">
                     Sign up

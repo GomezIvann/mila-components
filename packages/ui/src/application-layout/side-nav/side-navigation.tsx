@@ -1,6 +1,6 @@
 import SideNavigationProps from "./types";
 
-const SideNavigation = ({ children }: SideNavigationProps) => {
+const SideNavigation = ({ children, responsiveBreakpoint }: SideNavigationProps) => {
   return <div>{children}</div>;
 };
 

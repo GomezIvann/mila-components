@@ -1,5 +1,6 @@
 import React from "react";
 import { IconProp } from "../../common/types";
+import { breakpoints } from "../../common/breakpoints";
 
 type HeaderProps = {
   content?: React.ReactNode;
@@ -8,6 +9,7 @@ type HeaderProps = {
     href: string;
   }[];
   onNavigate?: (href: string) => void;
+  responsiveBreakpoint?: keyof typeof breakpoints;
   title?: {
     icon?: IconProp;
     label?: string;

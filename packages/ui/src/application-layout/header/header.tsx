@@ -109,6 +109,7 @@ const Header = ({
   content,
   navigationLinks,
   onNavigate,
+  responsiveBreakpoint,
   title,
 }: HeaderProps) => {
   const titleContent = (
