@@ -1,10 +1,12 @@
 import { styled } from "styled-components";
 import HeaderProps from "./types";
 import Heading from "../../heading/heading";
-import Flex from "../../flex/flex";
 import { color, space, typography } from "../../common/core-tokens";
 import alias from "../../common/alias-tokens";
 import Icon from "../../common/icon/icon";
+import { useState, useEffect } from "react";
+import DropdownMenu from "../../dropdown/dropdown";
+import { breakpoints } from "../../common/breakpoints";
 
 const StyledHeader = styled.header`
   position: relative;
@@ -32,6 +34,13 @@ const Navigation = styled.nav`
   display: flex;
   align-items: center;
   gap: ${space[32]};
+`;
+
+const Title = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${space[4]};
+  white-space: nowrap;
 `;
 
 const TitleLink = styled.a`
@@ -106,6 +115,7 @@ const Content = styled.div`
 `;
 
 const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, title }: HeaderProps) => {
+  const [isInResponsiveMode, setIsInResponsiveMode] = useState(false);
   const titleContent = (
     <>
       {title?.icon && (
@@ -117,30 +127,53 @@ const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, ti
     </>
   );
 
+  useEffect(() => {
+    if (responsiveBreakpoint) {
+      const mediaQuery = window.matchMedia(`(max-width: ${breakpoints[responsiveBreakpoint]})`);
+      const handleMediaQueryChange = (event: MediaQueryListEvent) => setIsInResponsiveMode(event.matches);
+      mediaQuery.addEventListener("change", handleMediaQueryChange);
+      setIsInResponsiveMode(mediaQuery.matches);
+      return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    }
+  }, [responsiveBreakpoint]);
+
   return (
     <StyledHeader>
       <Navigation>
         {title &&
           (title.href == null ? (
-            <Flex alignItems="center" gap={4}>
+            <Title>
               {titleContent}
-            </Flex>
+            </Title>
           ) : (
             <TitleLink onClick={() => title.href && onNavigate?.(title.href)}>{titleContent}</TitleLink>
           ))}
-        <NavigationList>
-          {navigationLinks?.map(({ label, href }, index) => (
-            <li key={index}>
-              <NavigationLink
-                $selected={window && window.location.pathname.startsWith(href)}
-                onClick={() => onNavigate?.(href)}
-                tabIndex={0}
-              >
-                {label}
-              </NavigationLink>
-            </li>
+        {navigationLinks &&
+          (isInResponsiveMode ? (
+            <DropdownMenu
+              items={navigationLinks?.map(({ label, href }) => ({
+                label,
+                value: href,
+              }))}
+              label="Menu"
+              triggerType="action"
+              onItemClick={(value) => onNavigate?.(value)}
+            />
+          ) : (
+            <NavigationList>
+              {navigationLinks?.map(({ label, href }, index) => (
+                <li key={index}>
+                  <NavigationLink
+                    $selected={window && window.location.pathname.startsWith(href)}
+                    onClick={() => onNavigate?.(href)}
+                    tabIndex={0}
+                  >
+                    {label}
+                  </NavigationLink>
+                </li>
+              ))}
+            </NavigationList>
           ))}
-        </NavigationList>
       </Navigation>
       {content && <Content>{content}</Content>}
     </StyledHeader>

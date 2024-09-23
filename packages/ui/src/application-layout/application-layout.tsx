@@ -3,6 +3,7 @@ import Header from "./header/header";
 import SideNavigation from "./side-nav/side-navigation";
 import ApplicationLayoutProps from "./types";
 import Footer from "./footer/footer";
+import { mediaQueries } from "../common/breakpoints";
 
 const LayoutContainer = styled.div`
   display: grid;
@@ -24,7 +25,7 @@ const SideNavContainer = styled.div`
   overflow-y: auto;
   height: 100%;
 
-  @media (max-width: 768px) {
+  ${mediaQueries.md} {
     display: none;
   }
 `;
@@ -39,16 +40,14 @@ const FooterContainer = styled.div`
   grid-area: footer;
 `;
 
-const ApplicationLayout = ({ children, footer, header, sideNavigation }: ApplicationLayoutProps) => {
-  return (
-    <LayoutContainer>
-      <HeaderContainer>{header}</HeaderContainer>
-      <SideNavContainer>{sideNavigation}</SideNavContainer>
-      <MainContent>{children}</MainContent>
-      <FooterContainer>{footer}</FooterContainer>
-    </LayoutContainer>
-  );
-};
+const ApplicationLayout = ({ children, footer, header, sideNavigation }: ApplicationLayoutProps) => (
+  <LayoutContainer>
+    <HeaderContainer>{header}</HeaderContainer>
+    <SideNavContainer>{sideNavigation}</SideNavContainer>
+    <MainContent>{children}</MainContent>
+    <FooterContainer>{footer}</FooterContainer>
+  </LayoutContainer>
+);
 
 ApplicationLayout.Header = Header;
 ApplicationLayout.SideNavigation = SideNavigation;
