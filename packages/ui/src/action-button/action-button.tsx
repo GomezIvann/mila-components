@@ -51,6 +51,7 @@ const StyledActionButton = styled.button<{
   }
   &:not(:disabled):focus {
     outline: 2px solid ${alias.focus};
+    outline-offset: ${alias.focusOffset};
   }
 `;
 

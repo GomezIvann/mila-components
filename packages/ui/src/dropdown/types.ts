@@ -6,21 +6,21 @@ type Item = {
   value: string;
 };
 
-type DropdownButtonProps = {
+type CommonProps = {
   hideChevron?: boolean;
   icon?: IconProp;
+  iconPosition?: "left" | "right";
   items: Item[];
-  label: string;
   onItemClick: (value: string) => void;
+};
+
+type DropdownButtonProps = CommonProps & {
+  label: string;
   triggerType?: ButtonProps["variant"];
 };
 
-type DropdownActionButtonProps = {
-  hideChevron?: boolean;
-  icon?: IconProp;
-  items: Item[];
+type DropdownActionButtonProps = CommonProps & {
   label?: string;
-  onItemClick: (value: string) => void;
   triggerType: "action";
 };
 

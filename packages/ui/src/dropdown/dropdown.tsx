@@ -1,17 +1,17 @@
-import { useId, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import DropdownMenuProps from "./types";
 import { styled } from "styled-components";
 import { color, space, typography } from "../common/core-tokens";
 import ActionButton from "../action-button/action-button";
 import Button from "../button/button";
 
-const chevronDown = (
+const chevronUp = (
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
     <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
   </svg>
 );
 
-const chevronUp = (
+const chevronDown = (
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
     <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
   </svg>
@@ -63,6 +63,7 @@ const MenuItem = styled.li`
 const DropdownMenu = ({
   hideChevron = false,
   icon,
+  iconPosition = "right",
   items,
   label,
   onItemClick,
@@ -71,6 +72,19 @@ const DropdownMenu = ({
   const id = useId();
   const [isOpen, setIsOpen] = useState(false);
 
+  const commonTriggerProps = useMemo(
+    () => ({
+      id: `dropdown-trigger-${id}`,
+      "aria-haspopup": true,
+      "aria-expanded": isOpen,
+      "aria-controls": `dropdown-menu-${id}`,
+      icon: icon ?? (hideChevron ? undefined : isOpen ? chevronUp : chevronDown),
+      iconPosition,
+      onClick: () => setIsOpen((isOpen) => !isOpen),
+    }),
+    [hideChevron, icon, iconPosition, id, isOpen]
+  );
+
   const onBlur = () => {
     setIsOpen(false);
   };
@@ -78,36 +92,23 @@ const DropdownMenu = ({
   return (
     <StyledDropdownMenu onBlur={onBlur}>
       {triggerType === "action" ? (
-        <ActionButton
-          aria-haspopup="true"
-          aria-expanded={isOpen}
-          aria-controls={`dropdown-menu-${id}`}
-          icon={icon ?? (hideChevron ? undefined : isOpen ? chevronUp : chevronDown)}
-          iconPosition="right"
-          onClick={() => setIsOpen((isOpen) => !isOpen)}
-        >
+        <ActionButton title={label == null ? "Display items" : undefined} {...commonTriggerProps}>
           {label}
         </ActionButton>
       ) : (
-        <Button
-          aria-haspopup="true"
-          aria-expanded={isOpen}
-          aria-controls={`dropdown-menu-${id}`}
-          icon={icon ?? (hideChevron ? undefined : isOpen ? chevronUp : chevronDown)}
-          iconPosition="right"
-          onClick={() => setIsOpen((isOpen) => !isOpen)}
-          variant={triggerType}
-        >
+        <Button variant={triggerType} {...commonTriggerProps}>
           {label as string}
         </Button>
       )}
       {isOpen && (
         <Menu
+          aria-labelledby={`dropdown-trigger-${id}`}
           id={`dropdown-menu-${id}`}
           onMouseDown={(event) => {
-            // Prevent the onBlur event from closing menu when clicking on the menu
+            // Prevent the menu from stealing the focus from the trigger
             event.preventDefault();
           }}
+          role="menu"
         >
           {items.map((item) => (
             <MenuItem
@@ -116,6 +117,7 @@ const DropdownMenu = ({
                 onItemClick(item.value);
                 setIsOpen(false);
               }}
+              role="menuitem"
             >
               {item.label}
             </MenuItem>
