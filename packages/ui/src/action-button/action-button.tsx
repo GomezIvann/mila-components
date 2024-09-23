@@ -7,16 +7,25 @@ import alias from "../common/alias-tokens";
 const StyledActionButton = styled.button<{
   $hasIcon: boolean;
   $hasLabel: boolean;
-  $iconPosition?: ActionButtonProps["iconPosition"];
+  $iconPosition: ActionButtonProps["iconPosition"];
 }>`
   box-sizing: border-box;
   border-radius: ${space[4]};
   width: fit-content;
-  padding: ${space[8]} ${(props) => (!props.$hasIcon && props.$hasLabel ? space[12] : space[8])};
-  padding-left: ${(props) => props.$hasIcon && props.$hasLabel && props.$iconPosition === "right" && space[12]};
-  padding-right: ${(props) => props.$hasIcon && props.$hasLabel && props.$iconPosition === "left" && space[12]};
+
+  ${({ $hasIcon, $hasLabel, $iconPosition }) => {
+    if (!$hasIcon) return `padding: ${space[8]} ${space[16]};`;
+    else {
+      if (!$hasLabel) return `padding: ${space[8]};`;
+      else {
+        if ($iconPosition === "left") return `padding: ${space[8]} ${space[16]} ${space[8]} ${space[12]};`;
+        else return `padding: ${space[8]} ${space[12]} ${space[8]} ${space[16]};`;
+      }
+    }
+  }}
+
   display: inline-flex;
-  ${(props) => props.$iconPosition === "right" && "flex-direction: row-reverse;"}
+  ${({ $iconPosition }) => $iconPosition === "right" && "flex-direction: row-reverse;"}
   align-items: center;
   gap: ${space[4]};
   background-color: ${color.transparent};
@@ -45,20 +54,27 @@ const StyledActionButton = styled.button<{
   }
 `;
 
-const ActionButton = ({ children, disabled, icon, iconPosition = "left", onClick, type }: ActionButtonProps) => {
-  return (
-    <StyledActionButton
-      disabled={disabled}
-      $hasIcon={Boolean(icon)}
-      $hasLabel={Boolean(children)}
-      $iconPosition={iconPosition}
-      onClick={onClick}
-      type={type}
-    >
-      {icon && <Icon icon={icon} width="24px" height="24px" />}
-      {children}
-    </StyledActionButton>
-  );
-};
+const ActionButton = ({
+  children,
+  disabled,
+  icon,
+  iconPosition = "left",
+  onClick,
+  type,
+  ...rest
+}: ActionButtonProps) => (
+  <StyledActionButton
+    disabled={disabled}
+    $hasIcon={Boolean(icon)}
+    $hasLabel={Boolean(children)}
+    $iconPosition={iconPosition}
+    onClick={onClick}
+    type={type}
+    {...rest}
+  >
+    {icon && <Icon icon={icon} width="24px" height="24px" />}
+    {children && <span>{children}</span>}
+  </StyledActionButton>
+);
 
 export default ActionButton;

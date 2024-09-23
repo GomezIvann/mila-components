@@ -10,7 +10,7 @@ const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"] }>`
   width: fit-content;
   display: inline-flex;
   align-items: center;
-  gap: ${space[8]};
+  gap: ${space[4]};
   color: ${color.blue[500]};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};
@@ -50,7 +50,7 @@ const Link = ({ children, disabled, href, icon, newWindow, onClick, ...otherProp
     {...otherProps}
   >
     {icon && <Icon icon={icon} height="16px" width="16px" />}
-    {children}
+    <span>{children}</span>
   </StyledLink>
 );
 

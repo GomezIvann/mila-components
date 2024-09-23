@@ -77,7 +77,6 @@ const StyledButton = styled.button<{
   border-radius: ${space[128]};
   width: fit-content;
   height: 40px;
-
   padding: ${space[8]} ${space[20]};
   ${({ $hasIcon, $iconPosition }) => {
     if ($hasIcon && $iconPosition === "right") return `padding-right: ${space[16]};`;
@@ -116,21 +115,21 @@ const Button = ({
   semantic = "default",
   type = "button",
   variant = "primary",
-}: ButtonProps) => {
-  return (
-    <StyledButton
-      disabled={disabled}
-      onClick={onClick}
-      type={type}
-      $hasIcon={Boolean(icon)}
-      $iconPosition={iconPosition}
-      $semantic={semantic}
-      $variant={variant}
-    >
-      {icon && <Icon icon={icon} width="24px" height="24px" />}
-      {children}
-    </StyledButton>
-  );
-};
+  ...rest
+}: ButtonProps) => (
+  <StyledButton
+    disabled={disabled}
+    onClick={onClick}
+    type={type}
+    $hasIcon={Boolean(icon)}
+    $iconPosition={iconPosition}
+    $semantic={semantic}
+    $variant={variant}
+    {...rest}
+  >
+    {icon && <Icon icon={icon} width="24px" height="24px" />}
+    <span>{children}</span>
+  </StyledButton>
+);
 
 export default Button;

@@ -6,18 +6,24 @@ type Item = {
   value: string;
 };
 
-type DropdownMenuProps = {
-  triggerType?: ButtonProps["variant"] | "action";
+type DropdownButtonProps = {
+  hideChevron?: boolean;
+  icon?: IconProp;
   items: Item[];
   label: string;
-  onItemSelect: (value: string) => void;
+  onItemClick: (value: string) => void;
+  triggerType?: ButtonProps["variant"];
 };
 
-export type TriggerProps = {
-  label: DropdownMenuProps["label"];
-  triggerType: DropdownMenuProps["triggerType"];
-  icon: IconProp;
-  onClick: () => void;
+type DropdownActionButtonProps = {
+  hideChevron?: boolean;
+  icon?: IconProp;
+  items: Item[];
+  label?: string;
+  onItemClick: (value: string) => void;
+  triggerType: "action";
 };
+
+type DropdownMenuProps = DropdownButtonProps | DropdownActionButtonProps;
 
 export default DropdownMenuProps;
