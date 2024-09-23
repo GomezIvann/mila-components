@@ -6,9 +6,7 @@ import Icon from "../common/icon/icon";
 
 type SemanticColors = "red" | "blue" | "green" | "yellow" | "grey";
 
-const getColor = (
-  semantic: Required<ButtonProps>["semantic"]
-): SemanticColors => {
+const getColor = (semantic: Required<ButtonProps>["semantic"]): SemanticColors => {
   switch (semantic) {
     case "danger":
       return "red";
@@ -24,13 +22,9 @@ const getColor = (
   }
 };
 
-const getButtonStyles = (
-  variant: string,
-  semantic: Required<ButtonProps>["semantic"]
-) => {
+const getButtonStyles = (variant: string, semantic: Required<ButtonProps>["semantic"]) => {
   const semanticColor = getColor(semantic);
-  const semanticColorToken =
-    color[semanticColor][semanticColor === "grey" ? 900 : 500];
+  const semanticColorToken = color[semanticColor][semanticColor === "grey" ? 900 : 500];
 
   switch (variant) {
     case "outlined":
@@ -74,15 +68,23 @@ const getButtonStyles = (
 };
 
 const StyledButton = styled.button<{
-  $variant: string;
+  $hasIcon: boolean;
+  $iconPosition: ButtonProps["iconPosition"];
   $semantic: Required<ButtonProps>["semantic"];
+  $variant: string;
 }>`
   box-sizing: border-box;
   border-radius: ${space[128]};
   width: fit-content;
   height: 40px;
+
   padding: ${space[8]} ${space[20]};
+  ${({ $hasIcon, $iconPosition }) => {
+    if ($hasIcon && $iconPosition === "right") return `padding-right: ${space[16]};`;
+    else if ($hasIcon && $iconPosition === "left") return `padding-left: ${space[16]};`;
+  }}
   display: inline-flex;
+  ${({ $iconPosition }) => $iconPosition === "right" && "flex-direction: row-reverse;"}
   align-items: center;
   gap: ${space[4]};
   font-family: ${typography.family.sans};
@@ -109,6 +111,7 @@ const Button = ({
   children,
   disabled = false,
   icon,
+  iconPosition = "left",
   onClick,
   semantic = "default",
   type = "button",
@@ -116,11 +119,13 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <StyledButton
-      onClick={onClick}
       disabled={disabled}
-      $variant={variant}
-      $semantic={semantic}
+      onClick={onClick}
       type={type}
+      $hasIcon={Boolean(icon)}
+      $iconPosition={iconPosition}
+      $semantic={semantic}
+      $variant={variant}
     >
       {icon && <Icon icon={icon} width="24px" height="24px" />}
       {children}

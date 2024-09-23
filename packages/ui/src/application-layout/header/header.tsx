@@ -105,13 +105,7 @@ const Content = styled.div`
   margin-left: ${space[32]};
 `;
 
-const Header = ({
-  content,
-  navigationLinks,
-  onNavigate,
-  responsiveBreakpoint,
-  title,
-}: HeaderProps) => {
+const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, title }: HeaderProps) => {
   const titleContent = (
     <>
       {title?.icon && (
@@ -132,9 +126,7 @@ const Header = ({
               {titleContent}
             </Flex>
           ) : (
-            <TitleLink onClick={() => title.href && onNavigate?.(title.href)}>
-              {titleContent}
-            </TitleLink>
+            <TitleLink onClick={() => title.href && onNavigate?.(title.href)}>{titleContent}</TitleLink>
           ))}
         <NavigationList>
           {navigationLinks?.map(({ label, href }, index) => (

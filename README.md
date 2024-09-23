@@ -1,80 +1,34 @@
-# Turborepo starter
+<!-- <p align="center">
+  <a href="https://developer.dxc.com/halstack/">
+    <img src="apps/website/screens/common/images/halstack_logo.svg" alt="Halstack Design System logo" />
+  </a>
+</p> -->
 
-This is an official starter Turborepo.
+<h1 align="center">Mila components</h1>
 
-## Using this example
+Mila components is a humble library of reusable components developed as a final master thesis.
 
-Run the following command:
+## How to use
 
-```sh
-npx create-turbo@latest
+You can install the library via pnpm right now:
+
+```bash
+pnpm i @gomezivann/mila-components
 ```
 
-## What's inside?
+### Usage
 
-This Turborepo includes the following packages/apps:
+```jsx
+import { Button, TextInput } from "@gomezivann/mila-components";
 
-### Apps and Packages
-
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@gomezivann/mila-components`: a stub React component library shared by both `web` and `docs` applications
-- `@gomezivann/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@gomezivann/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+const Example = () => (
+  <>
+    <TextInput label="Enter your name" />
+    <Button type="submit">Submit</Button>
+  </>
+);
 ```
 
-### Develop
+## Where to find more
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+Learn everything about Mila design foundations and components in the [official documentation site](https://mila-components.vercel.app/).

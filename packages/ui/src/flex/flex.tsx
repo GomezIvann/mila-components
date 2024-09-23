@@ -60,11 +60,7 @@ const StyledFlex = styled.div<TransientFlexProps>`
     justify-content: ${$justifyContent};
     order: ${$order};
     ${typeof $gap === "number" ? `gap: ${space[$gap]};` : ""}
-    ${
-      typeof $gap === "object"
-        ? `column-gap: ${space[$gap.columnGap ?? 0]}; row-gap: ${space[$gap.rowGap ?? 0]};`
-        : ""
-    }
+    ${typeof $gap === "object" ? `column-gap: ${space[$gap.columnGap ?? 0]}; row-gap: ${space[$gap.rowGap ?? 0]};` : ""}
   `}
 `;
 

@@ -1,10 +1,7 @@
 import { space } from "../common/core-tokens";
 
 export type Spaces = keyof typeof space;
-type Gap =
-  | { rowGap: Spaces; columnGap?: Spaces }
-  | { rowGap?: Spaces; columnGap: Spaces }
-  | Spaces;
+type Gap = { rowGap: Spaces; columnGap?: Spaces } | { rowGap?: Spaces; columnGap: Spaces } | Spaces;
 
 type FlexProps = {
   justifyContent?:
@@ -39,13 +36,7 @@ type FlexProps = {
     | "space-around"
     | "space-evenly"
     | "stretch";
-  alignSelf?:
-    | "auto"
-    | "flex-start"
-    | "flex-end"
-    | "center"
-    | "baseline"
-    | "stretch";
+  alignSelf?: "auto" | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
   direction?: "row" | "row-reverse" | "column" | "column-reverse";
   wrap?: "nowrap" | "wrap" | "wrap-reverse";
   gap?: Gap;
@@ -58,10 +49,7 @@ type FlexProps = {
 };
 
 export type TransientFlexProps = {
-  [K in keyof Omit<FlexProps, "children" | "as"> as `$${K}`]: Omit<
-    FlexProps,
-    "children" | "as"
-  >[K];
+  [K in keyof Omit<FlexProps, "children" | "as"> as `$${K}`]: Omit<FlexProps, "children" | "as">[K];
 };
 
 export default FlexProps;

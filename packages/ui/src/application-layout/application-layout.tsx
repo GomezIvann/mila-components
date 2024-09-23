@@ -39,12 +39,7 @@ const FooterContainer = styled.div`
   grid-area: footer;
 `;
 
-const ApplicationLayout = ({
-  children,
-  footer,
-  header,
-  sideNavigation,
-}: ApplicationLayoutProps) => {
+const ApplicationLayout = ({ children, footer, header, sideNavigation }: ApplicationLayoutProps) => {
   return (
     <LayoutContainer>
       <HeaderContainer>{header}</HeaderContainer>

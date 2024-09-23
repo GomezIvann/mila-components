@@ -39,15 +39,7 @@ const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"] }>`
   `};
 `;
 
-const Link = ({
-  children,
-  disabled,
-  href,
-  icon,
-  newWindow,
-  onClick,
-  ...otherProps
-}: LinkProps) => (
+const Link = ({ children, disabled, href, icon, newWindow, onClick, ...otherProps }: LinkProps) => (
   <StyledLink
     aria-disabled={disabled}
     href={disabled ? undefined : href}

@@ -33,11 +33,7 @@ export const Stories = () => (
               }
             />
           }
-          sideNavigation={
-            <ApplicationLayout.SideNavigation>
-              Side navigation
-            </ApplicationLayout.SideNavigation>
-          }
+          sideNavigation={<ApplicationLayout.SideNavigation>Side navigation</ApplicationLayout.SideNavigation>}
           footer={<ApplicationLayout.Footer>Footer</ApplicationLayout.Footer>}
         >
           Main content

@@ -1,3 +1,1 @@
-export type IconProp =
-  | string
-  | (React.ReactNode & React.SVGProps<SVGSVGElement>);
+export type IconProp = string | (React.ReactNode & React.SVGProps<SVGSVGElement>);
