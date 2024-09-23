@@ -35,7 +35,27 @@ export const Stories = () => (
             />
           }
           sideNavigation={<ApplicationLayout.SideNavigation>Side navigation</ApplicationLayout.SideNavigation>}
-          footer={<ApplicationLayout.Footer>Footer</ApplicationLayout.Footer>}
+          footer={
+            <ApplicationLayout.Footer
+              title={{
+                label: "Mila Components",
+                href: "#",
+              }}
+              copyright="© 2024 Mila Components"
+              links={[
+                { label: "Terms of service", href: "#" },
+                { label: "Privacy policy", href: "#" },
+              ]}
+              socialIcons={[
+                { icon: "https://cdn-icons-png.flaticon.com/256/124/124010.png", href: "#" },
+                {
+                  icon: "https://img.freepik.com/vector-gratis/nuevo-diseno-icono-x-logotipo-twitter-2023_1017-45418.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1727049600&semt=ais_hybrid",
+                  href: "#",
+                },
+                { icon: "https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png", href: "#" },
+              ]}
+            />
+          }
         >
           Main content
         </ApplicationLayout>
@@ -56,7 +76,27 @@ export const Responsive = () => (
           />
         }
         sideNavigation={<ApplicationLayout.SideNavigation>Side navigation</ApplicationLayout.SideNavigation>}
-        footer={<ApplicationLayout.Footer>Footer</ApplicationLayout.Footer>}
+        footer={
+          <ApplicationLayout.Footer
+            title={{
+              label: "Mila Components",
+              href: "#",
+            }}
+            copyright="© 2024 Mila Components"
+            links={[
+              { label: "Terms of service", href: "#" },
+              { label: "Privacy policy", href: "#" },
+            ]}
+            socialIcons={[
+              { icon: "https://cdn-icons-png.flaticon.com/256/124/124010.png", href: "#" },
+              {
+                icon: "https://img.freepik.com/vector-gratis/nuevo-diseno-icono-x-logotipo-twitter-2023_1017-45418.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1727049600&semt=ais_hybrid",
+                href: "#",
+              },
+              { icon: "https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png", href: "#" },
+            ]}
+          />
+        }
       >
         Main content
       </ApplicationLayout>
