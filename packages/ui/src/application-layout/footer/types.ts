@@ -1,7 +1,7 @@
 import { IconProp } from "../../common/types";
 
 type FooterProps = {
-  backgroundColor?: string;
+  content?: React.ReactNode;
   copyright?: string;
   links?: {
     label: string;

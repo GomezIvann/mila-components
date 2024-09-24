@@ -4,9 +4,10 @@ type LinkProps = {
   children: string;
   disabled?: boolean;
   href?: string;
+  icon?: IconProp;
+  inheritStyles?: boolean;
   newWindow?: boolean;
   onClick?: () => void;
-  icon?: IconProp;
 };
 
 export default LinkProps;

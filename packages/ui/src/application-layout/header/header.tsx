@@ -58,14 +58,6 @@ const TitleLink = styled.a`
   }
 `;
 
-const TitleIcon = styled.span`
-  img,
-  svg {
-    width: ${space[40]};
-    height: ${space[40]};
-  }
-`;
-
 const NavigationList = styled.ul`
   margin: 0;
   padding: 0;
@@ -116,16 +108,6 @@ const Content = styled.div`
 
 const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, title }: HeaderProps) => {
   const [isInResponsiveMode, setIsInResponsiveMode] = useState(false);
-  const titleContent = (
-    <>
-      {title?.icon && (
-        <TitleIcon>
-          <Icon icon={title.icon} height="40px" />
-        </TitleIcon>
-      )}
-      {title?.label && <Heading level={3}>{title.label}</Heading>}
-    </>
-  );
 
   useEffect(() => {
     if (responsiveBreakpoint) {
@@ -143,10 +125,14 @@ const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, ti
         {title &&
           (title.href == null ? (
             <Title>
-              {titleContent}
+              {title?.icon && <Icon icon={title.icon} height="40px" />}
+              {title?.label && <Heading level={3}>{title.label}</Heading>}
             </Title>
           ) : (
-            <TitleLink onClick={() => title.href && onNavigate?.(title.href)}>{titleContent}</TitleLink>
+            <TitleLink onClick={() => title.href && onNavigate?.(title.href)}>
+              {title?.icon && <Icon icon={title.icon} height="40px" />}
+              {title?.label && <Heading level={3}>{title.label}</Heading>}
+            </TitleLink>
           ))}
         {navigationLinks &&
           (isInResponsiveMode ? (

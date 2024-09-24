@@ -4,7 +4,7 @@ import LinkProps from "./types";
 import alias from "../common/alias-tokens";
 import Icon from "../common/icon/icon";
 
-const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"] }>`
+const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"]; $inheritStyles: LinkProps["inheritStyles"] }>`
   border-radius: ${space[4]};
   padding: 0;
   width: fit-content;
@@ -12,10 +12,10 @@ const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"] }>`
   align-items: center;
   gap: ${space[4]};
   color: ${color.blue[500]};
-  font-family: ${typography.family.sans};
-  font-size: ${typography.size.md};
-  font-weight: ${typography.weight.medium};
-  line-height: ${typography.lineHeight.snug};
+  font-family: ${({ $inheritStyles }) => ($inheritStyles ? "inherit" : typography.family.sans)};
+  font-size: ${({ $inheritStyles }) => ($inheritStyles ? "inherit" : typography.size.md)};
+  font-weight: ${({ $inheritStyles }) => ($inheritStyles ? "inherit" : typography.weight.medium)};
+  line-height: ${({ $inheritStyles }) => ($inheritStyles ? "inherit" : typography.lineHeight.normal)};
   text-decoration: none;
 
   ${({ $disabled }) =>
@@ -34,15 +34,15 @@ const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"] }>`
         }
         &:focus {
           outline: 2px solid ${alias.focus};
-          outline-offset: ${alias.focusOffset};
         }
   `};
 `;
 
-const Link = ({ children, disabled, href, icon, newWindow, onClick, ...otherProps }: LinkProps) => (
+const Link = ({ children, disabled, href, icon, inheritStyles, newWindow, onClick, ...otherProps }: LinkProps) => (
   <StyledLink
     aria-disabled={disabled}
     href={disabled ? undefined : href}
+    $inheritStyles={inheritStyles}
     onClick={disabled ? undefined : onClick}
     target={newWindow ? "_blank" : "_self"}
     $disabled={disabled}
