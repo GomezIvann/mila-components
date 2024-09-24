@@ -1,23 +1,34 @@
 import styled from "styled-components";
-import DividerProps from "./types";
+import DividerProps, { TransientDividerProps } from "./types";
 import { color } from "../common/core-tokens";
 
-const StyledDivider = styled.hr<DividerProps>`
+const StyledDivider = styled.hr<TransientDividerProps>`
   margin: 0;
-  border-color: ${color.grey[500]};
-  ${({ orientation, weight }) => `
-    ${orientation === "horizontal" ? "width" : "min-height"}: 100%;
-    ${orientation === "horizontal" ? "height" : "width"}: 0px;
+  ${({ $lightness, $orientation, $weight }) => `
+    border-color: ${$lightness === "light" ? color.grey[200] : color.grey[800]};
+    ${$orientation === "horizontal" ? "width" : "min-height"}: 100%;
+    ${$orientation === "horizontal" ? "height" : "width"}: 0px;
     ${
-      orientation === "horizontal"
-        ? "border-width: " + (weight === "regular" ? "1px 0 0 0" : "2px 0 0 0")
-        : "border-width: " + (weight === "regular" ? "0 0 0 1px" : "0 0 0 2px")
+      $orientation === "horizontal"
+        ? "border-width: " + ($weight === "regular" ? "1px 0 0 0" : "2px 0 0 0")
+        : "border-width: " + ($weight === "regular" ? "0 0 0 1px" : "0 0 0 2px")
     };
   `}
 `;
 
-const Divider = ({ orientation = "horizontal", weight = "regular", decorative = true }: DividerProps) => (
-  <StyledDivider orientation={orientation} weight={weight} aria-orientation={orientation} aria-hidden={decorative} />
+const Divider = ({
+  decorative = true,
+  lightness = "light",
+  orientation = "horizontal",
+  weight = "regular",
+}: DividerProps) => (
+  <StyledDivider
+    $lightness={lightness}
+    $orientation={orientation}
+    $weight={weight}
+    aria-orientation={orientation}
+    aria-hidden={decorative}
+  />
 );
 
 export default Divider;
