@@ -17,7 +17,7 @@ type Props = {
   expanded?: boolean;
 };
 
-const ExampleContainer = ({ children, pseudoState, expanded = false }: Props): JSX.Element => (
+const ExampleContainer = ({ children, pseudoState, expanded = false }: Props) => (
   <Container className={`${pseudoState}-all`} $expanded={expanded}>
     {children}
   </Container>

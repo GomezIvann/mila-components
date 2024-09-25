@@ -44,7 +44,7 @@ const Title = styled.div`
 `;
 
 const TitleLink = styled.a`
-  border-radius: ${space[4]};
+  border-radius: ${alias.space.borderRadius};
   display: flex;
   align-items: center;
   gap: ${space[8]};
@@ -74,7 +74,7 @@ const NavigationListItem = styled.li`
 const NavigationLink = styled.a<{ $selected?: boolean }>`
   position: relative;
   box-sizing: border-box;
-  border-radius: ${space[4]};
+  border-radius: ${alias.space.borderRadius};
   padding: ${space[8]} ${space[16]};
   color: ${alias.color.text};
   font-family: ${typography.family.sans};

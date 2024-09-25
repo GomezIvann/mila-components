@@ -2,37 +2,6 @@ import styled from "styled-components";
 import FlexProps, { TransientFlexProps } from "./types";
 import { space } from "../common/core-tokens";
 
-const Flex = ({
-  direction = "row",
-  wrap = "nowrap",
-  gap = 0,
-  order = 0,
-  grow = 0,
-  shrink = 1,
-  basis = "auto",
-  justifyContent = "flex-start",
-  alignItems = "stretch",
-  alignContent = "normal",
-  alignSelf = "auto",
-  children,
-}: FlexProps) => (
-  <StyledFlex
-    $direction={direction}
-    $wrap={wrap}
-    $gap={gap}
-    $order={order}
-    $grow={grow}
-    $shrink={shrink}
-    $basis={basis}
-    $justifyContent={justifyContent}
-    $alignItems={alignItems}
-    $alignContent={alignContent}
-    $alignSelf={alignSelf}
-  >
-    {children}
-  </StyledFlex>
-);
-
 const StyledFlex = styled.div<TransientFlexProps>`
   display: flex;
 
@@ -63,5 +32,36 @@ const StyledFlex = styled.div<TransientFlexProps>`
     ${typeof $gap === "object" ? `column-gap: ${space[$gap.columnGap ?? 0]}; row-gap: ${space[$gap.rowGap ?? 0]};` : ""}
   `}
 `;
+
+const Flex = ({
+  direction = "row",
+  wrap = "nowrap",
+  gap = 0,
+  order = 0,
+  grow = 0,
+  shrink = 1,
+  basis = "auto",
+  justifyContent = "flex-start",
+  alignItems = "stretch",
+  alignContent = "normal",
+  alignSelf = "auto",
+  children,
+}: FlexProps) => (
+  <StyledFlex
+    $direction={direction}
+    $wrap={wrap}
+    $gap={gap}
+    $order={order}
+    $grow={grow}
+    $shrink={shrink}
+    $basis={basis}
+    $justifyContent={justifyContent}
+    $alignItems={alignItems}
+    $alignContent={alignContent}
+    $alignSelf={alignSelf}
+  >
+    {children}
+  </StyledFlex>
+);
 
 export default Flex;

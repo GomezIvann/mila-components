@@ -5,7 +5,7 @@ import alias from "../common/alias-tokens";
 import Icon from "../common/icon/icon";
 
 const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"]; $inheritStyles: LinkProps["inheritStyles"] }>`
-  border-radius: ${space[4]};
+  border-radius: ${alias.space.borderRadius};
   padding: 0;
   width: fit-content;
   display: inline-flex;

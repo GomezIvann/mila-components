@@ -1,4 +1,3 @@
-import ExampleContainer from "../../.storybook/utils/example-container";
 import ActionButton from "../action-button/action-button";
 import Button from "../button/button";
 import { breakpoints } from "../common/breakpoints";
@@ -8,10 +7,9 @@ import Paragraph from "../paragraph/paragraph";
 import ApplicationLayout from "./application-layout";
 
 export default {
-  title: "Application Layout",
+  title: "Application layout",
   component: ApplicationLayout,
 };
-
 
 const appsIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">

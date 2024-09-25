@@ -13,6 +13,7 @@ const alias = {
   },
   space: {
     focusOffset: space[2],
+    borderRadius: space[4],
   },
 };
 

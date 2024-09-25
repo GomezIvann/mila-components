@@ -11,7 +11,7 @@ const StyledActionButton = styled.button<{
 }>`
   box-sizing: border-box;
   border: none;
-  border-radius: ${space[4]};
+  border-radius: ${alias.space.borderRadius};
   width: fit-content;
 
   ${({ $hasIcon, $hasLabel, $iconPosition }) => {
