@@ -12,6 +12,7 @@ const ItemAction = styled.button<{
   box-shadow: inset 0 0 0 2px transparent;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: ${space[8]};
   overflow: hidden;
   ${({ $selected }) =>
@@ -24,6 +25,7 @@ const ItemAction = styled.button<{
   line-height: ${typography.lineHeight.snug};
   cursor: pointer;
   overflow: hidden;
+  text-decoration: none;
 
   &:hover {
     ${({ $selected }) =>

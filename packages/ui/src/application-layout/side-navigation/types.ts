@@ -1,21 +1,22 @@
 import { breakpoints } from "../../common/breakpoints";
 import { IconProp } from "../../common/types";
 
-type ItemType = {
+type SingleItemType = {
   icon?: IconProp;
   label: string;
   href: string;
+  external?: boolean;
 };
 type GroupItemType = {
   icon?: IconProp;
   label: string;
-  items: ItemType[];
+  items: SingleItemType[];
   collapsable?: boolean;
 };
-type SectionType = { items: (ItemType | GroupItemType)[]; title?: string };
+type SectionType = { items: (SingleItemType | GroupItemType)[]; title?: string };
 
 type SideNavigationProps = {
-  items: (ItemType | GroupItemType | SectionType)[] ;
+  items: (SingleItemType | GroupItemType)[] | SectionType[];
   onNavigate: (href: string) => void;
   responsiveBreakpoint?: keyof typeof breakpoints;
   title?: {
@@ -26,4 +27,4 @@ type SideNavigationProps = {
 
 export default SideNavigationProps;
 
-export type { ItemType, GroupItemType, SectionType };
+export type { SingleItemType, GroupItemType, SectionType };

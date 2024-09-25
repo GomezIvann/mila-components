@@ -157,7 +157,11 @@ const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, ti
             <NavigationList>
               {navigationLinks?.map(({ label, href }, index) => (
                 <NavigationListItem key={index}>
-                  <NavigationLink $selected={true} onClick={() => onNavigate?.(href)} tabIndex={0}>
+                  <NavigationLink
+                    $selected={window && window.location.pathname.startsWith(href)}
+                    onClick={() => onNavigate?.(href)}
+                    tabIndex={0}
+                  >
                     {label}
                   </NavigationLink>
                 </NavigationListItem>

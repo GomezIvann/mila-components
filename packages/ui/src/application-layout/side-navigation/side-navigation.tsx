@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import styled from "styled-components";
 import Divider from "../../divider/divider";
-import SideNavigationProps, { GroupItemType, ItemType } from "./types";
+import SideNavigationProps, { GroupItemType, SingleItemType } from "./types";
 import { color, space } from "../../common/core-tokens";
 import Heading from "../../heading/heading";
 import Icon from "../../common/icon/icon";
@@ -56,7 +56,7 @@ const Section = styled.section`
   }
 `;
 
-const SectionList = styled.ul`
+const List = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
@@ -70,7 +70,7 @@ export const SideNavigationContext = createContext<{
   onNavigate: () => {},
 });
 
-const SideNavigationItem = ({ item }: { item: ItemType | GroupItemType }) =>
+const SideNavigationItem = ({ item }: { item: SingleItemType | GroupItemType }) =>
   "items" in item ? <GroupItem item={item} /> : <SingleItem item={item} />;
 
 const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: SideNavigationProps) => {
@@ -85,17 +85,19 @@ const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: Side
       <SideNavigationContext.Provider value={{ onNavigate }}>
         {items.map((item, index) =>
           "items" in item && !("label" in item) ? (
-            <Section role="group" aria-labelledby={item.title} key={`${item.title}-${index}`}>
+            <Section>
               {item.title && <Heading level={4}>{item.title}</Heading>}
-              <SectionList>
+              <List>
                 {item.items.map((item, index) => (
                   <SideNavigationItem item={item} key={`${item.label}-${index}`} />
                 ))}
-              </SectionList>
+              </List>
               {index !== items.length - 1 && <Divider />}
             </Section>
           ) : (
-            <SideNavigationItem item={item} key={`${item.label}-${index}`} />
+            <List>
+              <SideNavigationItem item={item} key={`${item.label}-${index}`} />
+            </List>
           )
         )}
       </SideNavigationContext.Provider>
