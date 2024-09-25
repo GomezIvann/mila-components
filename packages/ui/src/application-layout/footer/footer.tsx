@@ -14,7 +14,7 @@ const StyledFooter = styled.footer`
   gap: ${space[4]};
   padding: ${space[16]} ${space[24]};
   background-color: ${color.grey[100]};
-  border-top: 1px solid ${color.grey[200]};
+  border-top: 1px solid ${alias.color.primaryBorder};
 `;
 
 const MainContent = styled.div`
@@ -29,12 +29,12 @@ const TitleContainer = styled.a`
   align-items: center;
   gap: ${space[4]};
   text-decoration: none;
-  color: ${color.grey[900]};
+  color: ${alias.color.text};
   border-radius: ${space[4]};
 
   &:focus {
-    outline: 2px solid ${alias.focus};
-    outline-offset: ${alias.focusOffset};
+    outline: 2px solid ${alias.color.focus};
+    outline-offset: ${alias.space.focusOffset};
   }
 `;
 
@@ -52,17 +52,17 @@ const SocialIconLink = styled.a`
   align-items: center;
   justify-content: center;
   border-radius: ${space[4]};
-  color: ${color.grey[900]};
+  color: ${alias.color.text};
 
   &:focus {
-    outline: 2px solid ${alias.focus};
+    outline: 2px solid ${alias.color.focus};
   }
 `;
 
 const Copyright = styled.small`
   font-family: ${typography.family.sans};
   font-size: ${typography.size.sm};
-  color: ${color.grey[900]};
+  color: ${alias.color.text};
 `;
 
 const Footer = ({ content, copyright = "© 2024 Mila Components", links, socialIcons, title }: FooterProps) => (
@@ -70,7 +70,7 @@ const Footer = ({ content, copyright = "© 2024 Mila Components", links, socialI
     <MainContent>
       {title && (
         <TitleContainer href={title.href}>
-          {title.icon && <Icon icon={title.icon} width="24px" height="24px" />}
+          {title.icon && <Icon icon={title.icon} height="40px" />}
           {title.label && <Heading level={3}>{title.label}</Heading>}
         </TitleContainer>
       )}

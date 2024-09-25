@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import { color, typography } from "../common/core-tokens";
+import { typography } from "../common/core-tokens";
 import { ReactNode } from "react";
+import alias from "../common/alias-tokens";
 
 const Paragraph = ({ children }: { children: ReactNode }) => <StyledParagraph>{children}</StyledParagraph>;
 
 const StyledParagraph = styled.p`
   margin: 0;
-  color: ${color.grey[900]};
+  color: ${alias.color.text};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};
   font-weight: ${typography.weight.normal};

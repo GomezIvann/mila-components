@@ -7,11 +7,12 @@ import Heading from "../../heading/heading";
 import Icon from "../../common/icon/icon";
 import SingleItem from "./single-item";
 import GroupItem from "./group-item";
+import alias from "../../common/alias-tokens";
 
 const StyledSideNavigation = styled.nav`
   box-sizing: border-box;
   margin: 0;
-  border-right: 1px solid ${color.grey[200]};
+  border-right: 1px solid ${alias.color.primaryBorder};
   padding: ${space[16]} ${space[8]};
   display: flex;
   flex-direction: column;

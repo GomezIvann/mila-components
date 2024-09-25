@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import HeadingProps from "./types";
-import { color, typography } from "../common/core-tokens";
+import { typography } from "../common/core-tokens";
+import alias from "../common/alias-tokens";
 
 const StyledHeading = styled.h1<{ $level: HeadingProps["level"] }>`
   margin: 0;
-  color: ${color.grey[900]};
+  color: ${alias.color.text};
   font-family: ${typography.family.sans};
 
   ${({ $level }) => {

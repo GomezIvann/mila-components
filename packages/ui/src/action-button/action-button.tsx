@@ -10,6 +10,7 @@ const StyledActionButton = styled.button<{
   $iconPosition: ActionButtonProps["iconPosition"];
 }>`
   box-sizing: border-box;
+  border: none;
   border-radius: ${space[4]};
   width: fit-content;
 
@@ -29,7 +30,7 @@ const StyledActionButton = styled.button<{
   align-items: center;
   gap: ${space[4]};
   background-color: ${color.transparent};
-  color: ${color.grey[900]};
+  color: ${alias.color.text};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};
   font-weight: ${typography.weight.semibold};
@@ -37,21 +38,20 @@ const StyledActionButton = styled.button<{
   letter-spacing: ${typography.letterSpacing.normal};
   white-space: nowrap;
   cursor: pointer;
-  border: none;
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
   &:not(:disabled):hover {
-    background-color: ${color.grey[200]};
+    background-color: ${alias.color.interactiveHover};
   }
   &:not(:disabled):active {
-    background-color: ${color.grey[300]};
+    background-color: ${alias.color.interactiveActive};
   }
   &:not(:disabled):focus {
-    outline: 2px solid ${alias.focus};
-    outline-offset: ${alias.focusOffset};
+    outline: 2px solid ${alias.color.focus};
+    outline-offset: ${alias.space.focusOffset};
   }
 `;
 

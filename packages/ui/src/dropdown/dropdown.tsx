@@ -5,6 +5,7 @@ import { color, space, typography } from "../common/core-tokens";
 import ActionButton from "../action-button/action-button";
 import Button from "../button/button";
 import icons from "../common/icons";
+import alias from "../common/alias-tokens";
 
 const StyledDropdownMenu = styled.div`
   position: relative;
@@ -19,7 +20,7 @@ const Menu = styled.ul`
   min-width: 160px;
   width: fit-content;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
-  border: 1px solid ${color.grey[200]};
+  border: 1px solid ${alias.color.primaryBorder};
   border-radius: ${space[8]};
   padding: ${space[4]};
   background-color: ${color.white};
@@ -34,18 +35,18 @@ const MenuItem = styled.li`
   padding: ${space[8]} ${space[12]};
   display: flex;
   align-items: center;
+  color: ${alias.color.text};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};
   font-weight: ${typography.weight.normal};
   line-height: ${typography.lineHeight.tight};
-  color: ${color.grey[900]};
   cursor: pointer;
 
   &:hover {
-    background-color: ${color.grey[100]};
+    background-color: ${alias.color.interactiveHover};
   }
   &:active {
-    background-color: ${color.grey[200]};
+    background-color: ${alias.color.interactiveActive};
   }
 `;
 

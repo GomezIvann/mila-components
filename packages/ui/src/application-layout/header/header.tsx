@@ -26,7 +26,7 @@ const StyledHeader = styled.header`
     left: 0;
     right: 0;
     height: 1px;
-    background-color: ${color.grey[200]};
+    background-color: ${alias.color.primaryBorder};
   }
 `;
 
@@ -44,17 +44,17 @@ const Title = styled.div`
 `;
 
 const TitleLink = styled.a`
+  border-radius: ${space[4]};
   display: flex;
   align-items: center;
   gap: ${space[8]};
-  color: ${color.grey[900]};
+  color: ${alias.color.text};
   text-decoration: none;
-  user-select: none;
   cursor: pointer;
 
   &:focus {
-    outline: 2px solid ${alias.focus};
-    outline-offset: ${alias.focusOffset};
+    outline: 2px solid ${alias.color.focus};
+    outline-offset: ${alias.space.focusOffset};
   }
 `;
 
@@ -66,39 +66,47 @@ const NavigationList = styled.ul`
   list-style: none;
 `;
 
+const NavigationListItem = styled.li`
+  display: flex;
+  align-items: center;
+`;
+
 const NavigationLink = styled.a<{ $selected?: boolean }>`
   position: relative;
+  box-sizing: border-box;
   border-radius: ${space[4]};
-  padding: ${space[8]} ${space[12]};
-  color: ${color.grey[900]};
+  padding: ${space[8]} ${space[16]};
+  color: ${alias.color.text};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};
   font-weight: ${typography.weight.medium};
   line-height: ${typography.lineHeight.normal};
+  letter-spacing: ${typography.letterSpacing.normal};
   text-decoration: none;
   user-select: none;
   cursor: pointer;
 
   &:hover {
-    background-color: ${color.grey[100]};
+    background-color: ${alias.color.interactiveHover};
+    color: ${alias.color.text};
   }
   &:focus {
-    outline: 2px solid ${alias.focus};
-    outline-offset: ${alias.focusOffset};
+    outline: 2px solid ${alias.color.focus};
+    outline-offset: ${alias.space.focusOffset};
   }
   ${({ $selected }) =>
     $selected &&
     `
-      color: ${color.blue[500]};
+      color: ${alias.color.selectedText};
       &::after {
         content: '';
         position: absolute;
-        bottom: -${space[16]};
+        bottom: -${space[12]};
         left: 0;
         right: 0;
         height: 4px;
         border-radius: ${space[2]};
-        background-color: ${color.blue[500]};
+        background-color: ${color.blue[300]};
     }`}
 `;
 
@@ -129,7 +137,7 @@ const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, ti
               {title?.label && <Heading level={3}>{title.label}</Heading>}
             </Title>
           ) : (
-            <TitleLink onClick={() => title.href && onNavigate?.(title.href)}>
+            <TitleLink onClick={() => title.href && onNavigate?.(title.href)} tabIndex={0}>
               {title?.icon && <Icon icon={title.icon} height="40px" />}
               {title?.label && <Heading level={3}>{title.label}</Heading>}
             </TitleLink>
@@ -148,15 +156,11 @@ const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, ti
           ) : (
             <NavigationList>
               {navigationLinks?.map(({ label, href }, index) => (
-                <li key={index}>
-                  <NavigationLink
-                    $selected={window && window.location.pathname.startsWith(href)}
-                    onClick={() => onNavigate?.(href)}
-                    tabIndex={0}
-                  >
+                <NavigationListItem key={index}>
+                  <NavigationLink $selected={true} onClick={() => onNavigate?.(href)} tabIndex={0}>
                     {label}
                   </NavigationLink>
-                </li>
+                </NavigationListItem>
               ))}
             </NavigationList>
           ))}

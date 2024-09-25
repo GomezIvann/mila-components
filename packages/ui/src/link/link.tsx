@@ -33,7 +33,7 @@ const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"]; $inheritStyles:
           text-decoration: underline;
         }
         &:focus {
-          outline: 2px solid ${alias.focus};
+          outline: 2px solid ${alias.color.focus};
         }
   `};
 `;

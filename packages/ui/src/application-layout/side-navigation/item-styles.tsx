@@ -15,8 +15,8 @@ const ItemAction = styled.button<{
   gap: ${space[8]};
   overflow: hidden;
   ${({ $selected }) =>
-    $selected ? `background-color: ${color.blue[100]};` : `background-color: ${color.transparent};`};
-  color: ${color.grey[900]};
+    $selected ? `background-color: ${alias.color.selected};` : `background-color: ${color.transparent};`};
+  color: ${({ $selected }) => ($selected ? alias.color.selectedText : alias.color.text)};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.sm};
   font-style: ${typography.style.normal};
@@ -27,26 +27,19 @@ const ItemAction = styled.button<{
 
   &:hover {
     ${({ $selected }) =>
-      $selected ? `background-color: ${color.blue[200]};` : `background-color: ${color.grey[100]};`};
+      $selected
+        ? `background-color: ${alias.color.hoverSelected};`
+        : `background-color: ${alias.color.interactiveHover};`};
   }
   &:active {
     ${({ $selected }) =>
-      $selected ? `background-color: ${color.blue[200]};` : `background-color: ${color.grey[100]};`};
+      $selected
+        ? `background-color: ${alias.color.hoverSelected};`
+        : `background-color: ${alias.color.interactiveHover};`};
   }
   &:focus {
-    outline: 2px solid ${alias.focus};
+    outline: 2px solid ${alias.color.focus};
   }
 `;
 
-const Text = styled.span<{ $selected: boolean }>`
-  color: ${color.grey[900]};
-  font-family: ${typography.family.sans};
-  font-size: ${typography.size.sm};
-  font-style: ${typography.style.normal};
-  font-weight: ${({ $selected }) => ($selected ? typography.weight.semibold : typography.weight.normal)};
-  line-height: ${typography.lineHeight.normal};
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
-export { ItemAction, Text };
+export { ItemAction };

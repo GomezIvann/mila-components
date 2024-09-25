@@ -101,8 +101,8 @@ const StyledButton = styled.button<{
     cursor: not-allowed;
   }
   &:not(:disabled):focus {
-    outline: 2px solid ${alias.focus};
-    outline-offset: ${alias.focusOffset};
+    outline: 2px solid ${alias.color.focus};
+    outline-offset: ${alias.space.focusOffset};
   }
 `;
 

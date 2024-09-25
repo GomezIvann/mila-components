@@ -3,6 +3,8 @@ import ActionButton from "../action-button/action-button";
 import Button from "../button/button";
 import { breakpoints } from "../common/breakpoints";
 import Flex from "../flex/flex";
+import Heading from "../heading/heading";
+import Paragraph from "../paragraph/paragraph";
 import ApplicationLayout from "./application-layout";
 
 export default {
@@ -79,6 +81,40 @@ const title = {
   icon: "https://i.pinimg.com/originals/4c/b2/bd/4cb2bd1dfcd2ff8a0952504f5907eeda.png",
 };
 
+const MainContent = () => (
+  <div style={{ margin: "80px auto", maxWidth: "1124px", padding: "0px 5%" }}>
+    <Flex direction="column" gap={40}>
+      <Heading level={1}>Main content</Heading>
+      <Flex direction="column" gap={24}>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc ultricies aliquam. Nullam
+          tincidunt, risus et varius tincidunt, nunc purus fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla
+          facilisi. Curabitur auctor, nunc non aliquam aliquet, ligula nunc ultricies purus, nec ultricies purus nunc
+          nec nunc. Nullam nec purus nec nunc ultricies aliquam. Nullam tincidunt, risus et varius tincidunt, nunc purus
+          fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla facilisi. Curabitur auctor, nunc non aliquam
+          aliquet, ligula nunc ultricies purus, nec ultricies purus nunc nec nunc.
+        </Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc ultricies aliquam. Nullam
+          tincidunt, risus et varius tincidunt, nunc purus fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla
+          facilisi. Curabitur auctor, nunc non aliquam aliquet, ligula nunc ultricies purus, nec ultricies purus nunc
+          nec nunc. Nullam nec purus nec nunc ultricies aliquam. Nullam tincidunt, risus et varius tincidunt, nunc purus
+          fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla facilisi. Curabitur auctor, nunc non aliquam
+          aliquet, ligula nunc ultricies purus, nec ultricies purus nunc nec nunc.
+        </Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc ultricies aliquam. Nullam
+          tincidunt, risus et varius tincidunt, nunc purus fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla
+          facilisi. Curabitur auctor, nunc non aliquam aliquet, ligula nunc ultricies purus, nec ultricies purus nunc
+          nec nunc. Nullam nec purus nec nunc ultricies aliquam. Nullam tincidunt, risus et varius tincidunt, nunc purus
+          fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla facilisi. Curabitur auctor, nunc non aliquam
+          aliquet, ligula nunc ultricies purus, nec ultricies purus nunc nec nunc.
+        </Paragraph>
+      </Flex>
+    </Flex>
+  </div>
+);
+
 export const Stories = () => (
   <ApplicationLayout
     header={
@@ -121,7 +157,7 @@ export const Stories = () => (
       />
     }
   >
-    Main content
+    <MainContent />
   </ApplicationLayout>
 );
 
