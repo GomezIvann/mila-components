@@ -1,7 +1,7 @@
-import { Fragment } from "react";
+import { createContext } from "react";
 import styled from "styled-components";
 import Divider from "../../divider/divider";
-import ContextualMenuPropsType, { GroupItemType, ItemType } from "./types";
+import SideNavigationProps, { GroupItemType, ItemType } from "./types";
 import { color, space } from "../../common/core-tokens";
 import Heading from "../../heading/heading";
 import Icon from "../../common/icon/icon";
@@ -11,16 +11,16 @@ import GroupItem from "./group-item";
 const StyledSideNavigation = styled.nav`
   box-sizing: border-box;
   margin: 0;
-  border: 1px solid ${color.grey[200]};
-  border-radius: 0.25rem;
+  border-right: 1px solid ${color.grey[200]};
   padding: ${space[16]} ${space[8]};
-  display: grid;
-  gap: ${space[4]};
-  min-width: 248px;
-  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: ${space[8]};
+  height: 100%;
   background-color: ${color.white};
 
   overflow-y: auto;
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -37,9 +37,22 @@ const StyledSideNavigation = styled.nav`
 
 const Title = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   gap: ${space[4]};
+  padding: ${space[16]} 0;
   white-space: nowrap;
+`;
+
+const Section = styled.section`
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: ${space[8]};
+
+  > hr {
+    margin: ${space[8]} 0;
+  }
 `;
 
 const SectionList = styled.ul`
@@ -50,51 +63,41 @@ const SectionList = styled.ul`
   gap: ${space[4]};
 `;
 
-const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: ContextualMenuPropsType) => {
+export const SideNavigationContext = createContext<{
+  onNavigate: SideNavigationProps["onNavigate"];
+}>({
+  onNavigate: () => {},
+});
+
+const SideNavigationItem = ({ item }: { item: ItemType | GroupItemType }) =>
+  "items" in item ? <GroupItem item={item} /> : <SingleItem item={item} />;
+
+const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: SideNavigationProps) => {
   return (
     <StyledSideNavigation>
       {title && (
         <Title>
           {title?.icon && <Icon icon={title.icon} height="40px" />}
-          {title?.label && <Heading level={3}>{title.label}</Heading>}
+          {title?.label && <Heading level={2}>{title.label}</Heading>}
         </Title>
       )}
-      <SectionList>
-        {items.map((item, index) => {
-          if ("items" in item && !("label" in item))
-            return (
-              <li role="group" key={index}>
-                {item.title && <Heading level={4}>{item.title}</Heading>}
-                <ul>
-                  {item.items.map((item) =>
-                    "items" in item ? (
-                      <li key={item.label}>
-                        <GroupItem item={item} onNavigate={onNavigate} />
-                      </li>
-                    ) : (
-                      <li key={item.label}>
-                        <SingleItem item={item} onNavigate={onNavigate} />
-                      </li>
-                    )
-                  )}
-                </ul>
-                <Divider />
-              </li>
-            );
-          else if ("items" in item && "label" in item)
-            return (
-              <li key={item.label}>
-                <GroupItem item={item} onNavigate={onNavigate} />
-              </li>
-            );
-          else
-            return (
-              <li key={item.label}>
-                <SingleItem item={item} onNavigate={onNavigate} />
-              </li>
-            );
-        })}
-      </SectionList>
+      <SideNavigationContext.Provider value={{ onNavigate }}>
+        {items.map((item, index) =>
+          "items" in item && !("label" in item) ? (
+            <Section role="group" aria-labelledby={item.title} key={`${item.title}-${index}`}>
+              {item.title && <Heading level={4}>{item.title}</Heading>}
+              <SectionList>
+                {item.items.map((item, index) => (
+                  <SideNavigationItem item={item} key={`${item.label}-${index}`} />
+                ))}
+              </SectionList>
+              {index !== items.length - 1 && <Divider />}
+            </Section>
+          ) : (
+            <SideNavigationItem item={item} key={`${item.label}-${index}`} />
+          )
+        )}
+      </SideNavigationContext.Provider>
     </StyledSideNavigation>
   );
 };

@@ -12,19 +12,18 @@ type GroupItemType = {
   items: ItemType[];
   collapsable?: boolean;
 };
-type Section = { items: (ItemType | GroupItemType)[]; title?: string };
+type SectionType = { items: (ItemType | GroupItemType)[]; title?: string };
 
 type SideNavigationProps = {
-  items: (ItemType | GroupItemType)[] | Section[];
+  items: (ItemType | GroupItemType | SectionType)[] ;
   onNavigate: (href: string) => void;
   responsiveBreakpoint?: keyof typeof breakpoints;
   title?: {
     icon?: IconProp;
     label?: string;
-    href?: string;
   };
 };
 
 export default SideNavigationProps;
 
-export type { ItemType, GroupItemType, Section };
+export type { ItemType, GroupItemType, SectionType };

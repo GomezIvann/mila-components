@@ -8,7 +8,7 @@ import { mediaQueries } from "../common/breakpoints";
 const LayoutContainer = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 280px 1fr;
   grid-template-areas:
     "header header"
     "side-nav main"

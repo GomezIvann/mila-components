@@ -16,7 +16,7 @@ const navigationLinks = [
   { label: "Contact", href: "#" },
 ];
 
-const sidenavSections = [
+const sideNavSections = [
   {
     items: [
       { label: "Home", href: "#" },
@@ -29,6 +29,13 @@ const sidenavSections = [
     items: [
       { label: "Blog", href: "#" },
       { label: "Documentation", href: "#" },
+      {
+        label: "Extra",
+        items: [
+          { label: "Extra 1", href: "#" },
+          { label: "Extra 2", href: "#" },
+        ],
+      },
     ],
   },
 ];
@@ -66,98 +73,56 @@ const xIcon = (
   </svg>
 );
 
-export const Stories = () => (
-  <>
-    <ExampleContainer>
-      <div style={{ border: "1px solid black" }}>
-        <ApplicationLayout
-          header={
-            <ApplicationLayout.Header
-              title={{ label: "Mila Components" }}
-              navigationLinks={navigationLinks}
-              content={
-                <Flex gap={8}>
-                  <Button onClick={() => {}}>Sign in</Button>
-                  <Button onClick={() => {}} variant="text">
-                    Sign up
-                  </Button>
-                </Flex>
-              }
-            />
-          }
-          sideNavigation={<ApplicationLayout.SideNavigation items={sidenavSections} onNavigate={() => {}} />}
-          footer={
-            <ApplicationLayout.Footer
-              title={{
-                label: "Mila Components",
-                href: "#",
-              }}
-              content={
-                <Flex gap={8}>
-                  <ActionButton onClick={() => {}}>Pricing</ActionButton>
-                  <ActionButton onClick={() => {}}>Contact</ActionButton>
-                  <ActionButton onClick={() => {}}>Resources</ActionButton>
-                </Flex>
-              }
-              links={[
-                { label: "Terms of service", href: "#" },
-                { label: "Privacy policy", href: "#" },
-              ]}
-              socialIcons={[
-                {
-                  icon: facebookIcon,
-                  href: "#",
-                },
-                { icon: xIcon, href: "#" },
-              ]}
-            />
-          }
-        >
-          Main content
-        </ApplicationLayout>
-      </div>
-    </ExampleContainer>
-  </>
-);
+const title = {
+  label: "Mila Components",
+  href: "#",
+  icon: "https://i.pinimg.com/originals/4c/b2/bd/4cb2bd1dfcd2ff8a0952504f5907eeda.png",
+};
 
-export const Responsive = () => (
-  <ExampleContainer>
-    <div style={{ border: "1px solid black" }}>
-      <ApplicationLayout
-        header={
-          <ApplicationLayout.Header
-            navigationLinks={navigationLinks}
-            responsiveBreakpoint="md"
-            title={{ label: "Mila components" }}
-          />
+export const Stories = () => (
+  <ApplicationLayout
+    header={
+      <ApplicationLayout.Header
+        content={
+          <Flex gap={8}>
+            <Button onClick={() => {}}>Sign in</Button>
+            <Button onClick={() => {}} variant="text">
+              Sign up
+            </Button>
+          </Flex>
         }
-        sideNavigation={<ApplicationLayout.SideNavigation items={sidenavSections} onNavigate={() => {}} />}
-        footer={
-          <ApplicationLayout.Footer
-            title={{
-              label: "Mila Components",
-              href: "#",
-            }}
-            copyright="© 2024 Mila Components"
-            links={[
-              { label: "Terms of service", href: "#" },
-              { label: "Privacy policy", href: "#" },
-            ]}
-            socialIcons={[
-              { icon: "https://cdn-icons-png.flaticon.com/256/124/124010.png", href: "#" },
-              {
-                icon: "https://img.freepik.com/vector-gratis/nuevo-diseno-icono-x-logotipo-twitter-2023_1017-45418.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1727049600&semt=ais_hybrid",
-                href: "#",
-              },
-              { icon: "https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png", href: "#" },
-            ]}
-          />
+        navigationLinks={navigationLinks}
+        responsiveBreakpoint="md"
+        title={title}
+      />
+    }
+    sideNavigation={<ApplicationLayout.SideNavigation items={sideNavSections} onNavigate={() => {}} title={title} />}
+    footer={
+      <ApplicationLayout.Footer
+        content={
+          <Flex gap={8}>
+            <ActionButton onClick={() => {}}>Pricing</ActionButton>
+            <ActionButton onClick={() => {}}>Contact</ActionButton>
+            <ActionButton onClick={() => {}}>Resources</ActionButton>
+          </Flex>
         }
-      >
-        Main content
-      </ApplicationLayout>
-    </div>
-  </ExampleContainer>
+        links={[
+          { label: "Terms of service", href: "#" },
+          { label: "Privacy policy", href: "#" },
+        ]}
+        socialIcons={[
+          {
+            icon: facebookIcon,
+            href: "#",
+          },
+          { icon: xIcon, href: "#" },
+        ]}
+        title={title}
+      />
+    }
+  >
+    Main content
+  </ApplicationLayout>
 );
 
 const customViewports = {
@@ -170,6 +135,7 @@ const customViewports = {
   },
 };
 
+export const Responsive: any = Stories.bind({});
 Responsive.parameters = {
   viewport: { viewports: customViewports },
 };
