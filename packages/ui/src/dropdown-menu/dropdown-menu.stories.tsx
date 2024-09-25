@@ -1,6 +1,6 @@
 import ExampleContainer from "../../.storybook/utils/example-container";
 import Heading from "../heading/heading";
-import Dropdown from "./dropdown";
+import Dropdown from "./dropdown-menu";
 
 export default {
   title: "Dropdown",

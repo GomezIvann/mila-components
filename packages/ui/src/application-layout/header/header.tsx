@@ -5,7 +5,7 @@ import { color, space, typography } from "../../common/core-tokens";
 import alias from "../../common/alias-tokens";
 import Icon from "../../common/icon/icon";
 import { useState, useEffect } from "react";
-import DropdownMenu from "../../dropdown/dropdown";
+import DropdownMenu from "../../dropdown-menu/dropdown-menu";
 import { breakpoints } from "../../common/breakpoints";
 
 const StyledHeader = styled.header`
