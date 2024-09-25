@@ -4,18 +4,7 @@ import { styled } from "styled-components";
 import { color, space, typography } from "../common/core-tokens";
 import ActionButton from "../action-button/action-button";
 import Button from "../button/button";
-
-const chevronUp = (
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
-    <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
-  </svg>
-);
-
-const chevronDown = (
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
-    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
-  </svg>
-);
+import icons from "../common/icons";
 
 const StyledDropdownMenu = styled.div`
   position: relative;
@@ -78,7 +67,7 @@ const DropdownMenu = ({
       "aria-haspopup": true,
       "aria-expanded": isOpen,
       "aria-controls": `dropdown-menu-${id}`,
-      icon: icon ?? (hideChevron ? undefined : isOpen ? chevronUp : chevronDown),
+      icon: icon ?? (hideChevron ? undefined : isOpen ? icons.chevronUp : icons.chevronDown),
       iconPosition,
       onClick: () => setIsOpen((isOpen) => !isOpen),
     }),

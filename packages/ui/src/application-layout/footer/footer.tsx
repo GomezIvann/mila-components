@@ -77,8 +77,8 @@ const Footer = ({ content, copyright = "© 2024 Mila Components", links, socialI
       <CustomContent>{content}</CustomContent>
       {socialIcons && (
         <SocialIconsContainer>
-          {socialIcons.map((social) => (
-            <SocialIconLink key={social.href} href={social.href}>
+          {socialIcons.map((social, index) => (
+            <SocialIconLink key={index} href={social.href}>
               <Icon icon={social.icon} width="24px" height="24px" />
             </SocialIconLink>
           ))}
@@ -90,8 +90,8 @@ const Footer = ({ content, copyright = "© 2024 Mila Components", links, socialI
       {copyright && <Copyright>{copyright}</Copyright>}
       {links && (
         <Flex gap={8}>
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}>
+          {links.map((link, index) => (
+            <Link key={index} href={link.href}>
               {link.label}
             </Link>
           ))}

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Header from "./header/header";
-import SideNavigation from "./side-nav/side-navigation";
+import SideNavigation from "./side-navigation/side-navigation";
 import ApplicationLayoutProps from "./types";
 import Footer from "./footer/footer";
 import { mediaQueries } from "../common/breakpoints";

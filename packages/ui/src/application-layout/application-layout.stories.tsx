@@ -16,6 +16,23 @@ const navigationLinks = [
   { label: "Contact", href: "#" },
 ];
 
+const sidenavSections = [
+  {
+    items: [
+      { label: "Home", href: "#" },
+      { label: "About", href: "#" },
+      { label: "Contact", href: "#" },
+    ],
+  },
+  {
+    title: "Resources",
+    items: [
+      { label: "Blog", href: "#" },
+      { label: "Documentation", href: "#" },
+    ],
+  },
+];
+
 const facebookIcon = (
   <svg
     version="1.1"
@@ -68,7 +85,7 @@ export const Stories = () => (
               }
             />
           }
-          sideNavigation={<ApplicationLayout.SideNavigation>Side navigation</ApplicationLayout.SideNavigation>}
+          sideNavigation={<ApplicationLayout.SideNavigation items={sidenavSections} onNavigate={() => {}} />}
           footer={
             <ApplicationLayout.Footer
               title={{
@@ -114,7 +131,7 @@ export const Responsive = () => (
             title={{ label: "Mila components" }}
           />
         }
-        sideNavigation={<ApplicationLayout.SideNavigation>Side navigation</ApplicationLayout.SideNavigation>}
+        sideNavigation={<ApplicationLayout.SideNavigation items={sidenavSections} onNavigate={() => {}} />}
         footer={
           <ApplicationLayout.Footer
             title={{

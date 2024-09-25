@@ -126,6 +126,11 @@ export const typography = {
     "5xl": "3rem",
     "6xl": "4rem",
   },
+  style: {
+    normal: "normal",
+    italic: "italic",
+    oblique: "oblique",
+  },
   weight: {
     normal: 400,
     medium: 500,

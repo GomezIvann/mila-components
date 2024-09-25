@@ -16,9 +16,9 @@ type IconProps = {
   height?: string;
 };
 
-const Icon = ({ icon: value, width = "auto", height = "auto" }: IconProps) => (
+const Icon = ({ icon, width = "auto", height = "auto" }: IconProps) => (
   <StyledIcon $width={width} $height={height}>
-    {typeof value === "string" ? <img src={value} /> : value}
+    {typeof icon === "string" ? <img src={icon} /> : icon}
   </StyledIcon>
 );
 

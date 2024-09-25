@@ -110,7 +110,7 @@ const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, ti
   const [isInResponsiveMode, setIsInResponsiveMode] = useState(false);
 
   useEffect(() => {
-    if (responsiveBreakpoint) {
+    if (responsiveBreakpoint && window) {
       const mediaQuery = window.matchMedia(`(max-width: ${breakpoints[responsiveBreakpoint]})`);
       const handleMediaQueryChange = (event: MediaQueryListEvent) => setIsInResponsiveMode(event.matches);
       mediaQuery.addEventListener("change", handleMediaQueryChange);
