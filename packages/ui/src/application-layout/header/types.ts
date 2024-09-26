@@ -4,16 +4,18 @@ import { breakpoints } from "../../common/breakpoints";
 
 type HeaderProps = {
   content?: React.ReactNode;
-  navigationLinks?: {
-    label: string;
+  links?: {
+    external?: boolean;
     href: string;
+    label: string;
+    selected?: boolean;
   }[];
   onNavigate?: (href: string) => void;
   responsiveBreakpoint?: keyof typeof breakpoints;
   title?: {
+    href?: string;
     icon?: IconProp;
     label?: string;
-    href?: string;
   };
 };
 

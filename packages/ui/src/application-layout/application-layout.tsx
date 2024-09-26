@@ -12,7 +12,7 @@ const LayoutContainer = styled.div`
   grid-template-areas:
     "header header"
     "side-nav main"
-    "side-nav footer";
+    "side-nav main";
   height: 100vh;
 `;
 
@@ -30,10 +30,19 @@ const SideNavContainer = styled.div`
   }
 `;
 
-const MainContent = styled.main`
+const MainContainer = styled.main`
   grid-area: main;
   overflow-y: auto;
   height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "main"
+    "footer";
+`;
+
+const Main = styled.div`
+  grid-area: main;
 `;
 
 const FooterContainer = styled.div`
@@ -44,8 +53,10 @@ const ApplicationLayout = ({ children, footer, header, sideNavigation }: Applica
   <LayoutContainer>
     <HeaderContainer>{header}</HeaderContainer>
     <SideNavContainer>{sideNavigation}</SideNavContainer>
-    <MainContent>{children}</MainContent>
-    <FooterContainer>{footer}</FooterContainer>
+    <MainContainer>
+      <Main>{children}</Main>
+      <FooterContainer>{footer}</FooterContainer>
+    </MainContainer>
   </LayoutContainer>
 );
 

@@ -1,42 +1,36 @@
-import { useMemo, useState, memo, useId } from "react";
+import { useState, memo, useId } from "react";
 import styled from "styled-components";
 import Icon from "../../common/icon/icon";
 import { ItemAction } from "./item-styles";
-import { GroupItemType, SingleItemType } from "./types";
+import { GroupItemType } from "./types";
 import { space } from "../../common/core-tokens";
 import icons from "../../common/icons";
 import SingleItem from "./single-item";
 import Flex from "../../flex/flex";
 
-const StyledGroupItem = styled.li`
-  display: grid;
-  gap: ${space[4]};
-`;
-
 const ItemsList = styled.ul`
+  margin-bottom: ${space[4]};
   padding: 0;
   display: grid;
   gap: ${space[4]};
   list-style: none;
 `;
 
-const isGroupSelected = (items: SingleItemType[]) => items.some((item) => window.location.pathname.includes(item.href));
-
 const GroupItem = ({ item }: { item: GroupItemType }) => {
   const groupMenuId = `group-menu-${useId()}`;
-  const groupSelected = useMemo(() => isGroupSelected(item.items), [item]);
-  const [isOpen, setIsOpen] = useState(groupSelected);
+  const selected = item.items.some((item) => item.selected);
+  const [isOpen, setIsOpen] = useState(selected);
 
   return (
-    <StyledGroupItem>
+    <>
       <ItemAction
         aria-controls={groupMenuId}
-        aria-expanded={isOpen ? true : undefined}
-        aria-selected={groupSelected && !isOpen}
+        aria-expanded={isOpen ? true : false}
+        aria-selected={selected && !isOpen}
         onClick={() => {
           setIsOpen((isOpen) => !isOpen);
         }}
-        $selected={groupSelected && !isOpen}
+        $selected={selected && !isOpen}
       >
         <Flex alignItems="center" gap={8}>
           <Icon icon={isOpen ? icons.chevronUp : icons.chevronDown} height="16px" width="16px" />
@@ -51,7 +45,7 @@ const GroupItem = ({ item }: { item: GroupItemType }) => {
           ))}
         </ItemsList>
       )}
-    </StyledGroupItem>
+    </>
   );
 };
 

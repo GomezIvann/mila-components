@@ -3,7 +3,7 @@ import { color, space, typography } from "../../common/core-tokens";
 import alias from "../../common/alias-tokens";
 
 const ItemAction = styled.button<{
-  $selected: boolean;
+  $selected?: boolean;
   $grouped?: boolean;
 }>`
   border: none;

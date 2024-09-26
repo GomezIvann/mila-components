@@ -4,7 +4,7 @@ import Icon from "../common/icon/icon";
 import { color, space, typography } from "../common/core-tokens";
 import alias from "../common/alias-tokens";
 
-const StyledActionButton = styled.button<{
+export const StyledActionButton = styled.button<{
   $hasIcon: boolean;
   $hasLabel: boolean;
   $iconPosition: ActionButtonProps["iconPosition"];
@@ -19,8 +19,8 @@ const StyledActionButton = styled.button<{
     else {
       if (!$hasLabel) return `padding: ${space[8]};`;
       else {
-        if ($iconPosition === "left") return `padding: ${space[8]} ${space[16]} ${space[8]} ${space[12]};`;
-        else return `padding: ${space[8]} ${space[12]} ${space[8]} ${space[16]};`;
+        if ($iconPosition === "right") return `padding: ${space[8]} ${space[12]} ${space[8]} ${space[16]};`;
+        else return `padding: ${space[8]} ${space[16]} ${space[8]} ${space[12]};`;
       }
     }
   }}
@@ -28,7 +28,7 @@ const StyledActionButton = styled.button<{
   display: inline-flex;
   ${({ $iconPosition }) => $iconPosition === "right" && "flex-direction: row-reverse;"}
   align-items: center;
-  gap: ${space[4]};
+  gap: ${space[8]};
   background-color: ${color.transparent};
   color: ${alias.color.text};
   font-family: ${typography.family.sans};
@@ -36,6 +36,7 @@ const StyledActionButton = styled.button<{
   font-weight: ${typography.weight.semibold};
   line-height: ${typography.lineHeight.normal};
   letter-spacing: ${typography.letterSpacing.normal};
+  text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
 
@@ -68,15 +69,15 @@ const ActionButton = ({
   <StyledActionButton
     aria-label={title}
     disabled={disabled}
-    $hasIcon={Boolean(icon)}
-    $hasLabel={Boolean(children)}
-    $iconPosition={iconPosition}
     onClick={onClick}
     title={title}
     type={type}
+    $hasIcon={Boolean(icon)}
+    $hasLabel={Boolean(children)}
+    $iconPosition={iconPosition}
     {...rest}
   >
-    {icon && <Icon icon={icon} width="24px" height="24px" />}
+    {icon && <Icon icon={icon} height="24px" width="24px" />}
     {children && <span>{children}</span>}
   </StyledActionButton>
 );

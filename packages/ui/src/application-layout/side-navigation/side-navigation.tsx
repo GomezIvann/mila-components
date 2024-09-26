@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import styled from "styled-components";
 import Divider from "../../divider/divider";
-import SideNavigationProps, { GroupItemType, SingleItemType } from "./types";
+import SideNavigationProps, { GroupItemType, SectionType, SingleItemType } from "./types";
 import { color, space } from "../../common/core-tokens";
 import Heading from "../../heading/heading";
 import Icon from "../../common/icon/icon";
@@ -36,7 +36,7 @@ const StyledSideNavigation = styled.nav`
   }
 `;
 
-const Title = styled.div`
+const Title = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,12 +70,16 @@ export const SideNavigationContext = createContext<{
   onNavigate: () => {},
 });
 
-const SideNavigationItem = ({ item }: { item: SingleItemType | GroupItemType }) =>
-  "items" in item ? <GroupItem item={item} /> : <SingleItem item={item} />;
+const isSectionType = (item?: SectionType | SingleItemType | GroupItemType): item is SectionType =>
+  item != null && "items" in item && !("label" in item);
+
+const SideNavigationItem = ({ item }: { item: SingleItemType | GroupItemType }) => (
+  <li>{"items" in item ? <GroupItem item={item} /> : <SingleItem item={item} />}</li>
+);
 
 const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: SideNavigationProps) => {
   return (
-    <StyledSideNavigation>
+    <StyledSideNavigation aria-label={`side-navigation${title?.label ? `-${title.label}` : ""}`}>
       {title && (
         <Title>
           {title?.icon && <Icon icon={title.icon} height="40px" />}
@@ -83,9 +87,9 @@ const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: Side
         </Title>
       )}
       <SideNavigationContext.Provider value={{ onNavigate }}>
-        {items.map((item, index) =>
-          "items" in item && !("label" in item) ? (
-            <Section>
+        {isSectionType(items[0]) ? (
+          (items as SectionType[]).map((item, index) => (
+            <Section aria-label={item?.title}>
               {item.title && <Heading level={4}>{item.title}</Heading>}
               <List>
                 {item.items.map((item, index) => (
@@ -94,11 +98,13 @@ const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: Side
               </List>
               {index !== items.length - 1 && <Divider />}
             </Section>
-          ) : (
-            <List>
+          ))
+        ) : (
+          <List>
+            {(items as (GroupItemType | SingleItemType)[]).map((item, index) => (
               <SideNavigationItem item={item} key={`${item.label}-${index}`} />
-            </List>
-          )
+            ))}
+          </List>
         )}
       </SideNavigationContext.Provider>
     </StyledSideNavigation>
