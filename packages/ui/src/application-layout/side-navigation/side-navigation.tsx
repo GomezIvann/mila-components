@@ -13,7 +13,7 @@ const StyledSideNavigation = styled.nav`
   box-sizing: border-box;
   margin: 0;
   border-right: 1px solid ${alias.color.primaryBorder};
-  padding: ${space[16]} ${space[8]};
+  padding: ${space[32]} ${space[16]};
   display: flex;
   flex-direction: column;
   gap: ${space[8]};

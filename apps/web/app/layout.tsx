@@ -1,31 +1,32 @@
-"use client"
+"use client";
 
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 import { ApplicationLayout } from "@gomezivann/mila-components";
+import { usePathname } from "next/navigation";
 
 // export const metadata: Metadata = {
 //   title: "Mila components",
 //   description: "Mila components is a humble library of reusable components developed as a final master thesis.",
 // };
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <ApplicationLayout
           header={
             <ApplicationLayout.Header
-              navigationLinks={[
-                { label: "Home", href: "/" },
-              ]}
+              links={[{ label: "Home", href: "/", selected: pathname === "/" }]}
               onNavigate={() => {
                 console.log("Navigate");
               }}
@@ -42,6 +43,7 @@ export default function RootLayout({
                 {
                   label: "Home",
                   href: "/",
+                  selected: pathname === "/",
                 },
               ]}
               onNavigate={() => {
@@ -70,7 +72,3 @@ export default function RootLayout({
     </html>
   );
 }
-function localFont(arg0: { src: string; variable: string; }) {
-  throw new Error("Function not implemented.");
-}
-
