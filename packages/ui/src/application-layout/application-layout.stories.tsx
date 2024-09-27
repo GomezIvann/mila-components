@@ -56,16 +56,17 @@ const xIcon = (
   </svg>
 );
 
-const navigationLinks = [
-  { label: "Home", href: "#", icon: homeIcon },
+const headerLinks = [
+  { label: "Home", href: "#", icon: homeIcon, selected: true },
   { label: "About", href: "#" },
   { label: "Contact", href: "#" },
+  { label: "GitHub", href: "#", external: true },
 ];
 
-const sideNavSections = [
+const sideNavigationItems = [
   {
     items: [
-      { label: "Home", href: "#", icon: homeIcon },
+      { label: "Home", href: "#", icon: homeIcon, selected: true },
       { label: "About", href: "#" },
       { label: "Contact", href: "#" },
     ],
@@ -125,6 +126,38 @@ const MainContent = () => (
           fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla facilisi. Curabitur auctor, nunc non aliquam
           aliquet, ligula nunc ultricies purus, nec ultricies purus nunc nec nunc.
         </Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc ultricies aliquam. Nullam
+          tincidunt, risus et varius tincidunt, nunc purus fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla
+          facilisi. Curabitur auctor, nunc non aliquam aliquet, ligula nunc ultricies purus, nec ultricies purus nunc
+          nec nunc. Nullam nec purus nec nunc ultricies aliquam. Nullam tincidunt, risus et varius tincidunt, nunc purus
+          fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla facilisi. Curabitur auctor, nunc non aliquam
+          aliquet, ligula nunc ultricies purus, nec ultricies purus nunc nec nunc.
+        </Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc ultricies aliquam. Nullam
+          tincidunt, risus et varius tincidunt, nunc purus fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla
+          facilisi. Curabitur auctor, nunc non aliquam aliquet, ligula nunc ultricies purus, nec ultricies purus nunc
+          nec nunc. Nullam nec purus nec nunc ultricies aliquam. Nullam tincidunt, risus et varius tincidunt, nunc purus
+          fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla facilisi. Curabitur auctor, nunc non aliquam
+          aliquet, ligula nunc ultricies purus, nec ultricies purus nunc nec nunc.
+        </Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc ultricies aliquam. Nullam
+          tincidunt, risus et varius tincidunt, nunc purus fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla
+          facilisi. Curabitur auctor, nunc non aliquam aliquet, ligula nunc ultricies purus, nec ultricies purus nunc
+          nec nunc. Nullam nec purus nec nunc ultricies aliquam. Nullam tincidunt, risus et varius tincidunt, nunc purus
+          fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla facilisi. Curabitur auctor, nunc non aliquam
+          aliquet, ligula nunc ultricies purus, nec ultricies purus nunc nec nunc.
+        </Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc ultricies aliquam. Nullam
+          tincidunt, risus et varius tincidunt, nunc purus fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla
+          facilisi. Curabitur auctor, nunc non aliquam aliquet, ligula nunc ultricies purus, nec ultricies purus nunc
+          nec nunc. Nullam nec purus nec nunc ultricies aliquam. Nullam tincidunt, risus et varius tincidunt, nunc purus
+          fermentum dolor, id tincidunt nunc nunc sit amet nunc. Nulla facilisi. Curabitur auctor, nunc non aliquam
+          aliquet, ligula nunc ultricies purus, nec ultricies purus nunc nec nunc.
+        </Paragraph>
       </Flex>
     </Flex>
   </div>
@@ -142,12 +175,14 @@ export const Stories = () => (
             </Button>
           </Flex>
         }
-        navigationLinks={navigationLinks}
+        links={headerLinks}
         responsiveBreakpoint="md"
         title={title}
       />
     }
-    sideNavigation={<ApplicationLayout.SideNavigation items={sideNavSections} onNavigate={() => {}} title={title} />}
+    sideNavigation={
+      <ApplicationLayout.SideNavigation items={sideNavigationItems} onNavigate={() => {}} title={title} />
+    }
     footer={
       <ApplicationLayout.Footer
         content={

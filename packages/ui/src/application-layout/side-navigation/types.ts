@@ -2,16 +2,17 @@ import { breakpoints } from "../../common/breakpoints";
 import { IconProp } from "../../common/types";
 
 type SingleItemType = {
-  icon?: IconProp;
-  label: string;
-  href: string;
   external?: boolean;
+  icon?: IconProp;
+  href: string;
+  label: string;
+  selected?: boolean;
 };
 type GroupItemType = {
-  icon?: IconProp;
-  label: string;
-  items: SingleItemType[];
   collapsable?: boolean;
+  icon?: IconProp;
+  items: SingleItemType[];
+  label: string;
 };
 type SectionType = { items: (SingleItemType | GroupItemType)[]; title?: string };
 

@@ -1,12 +1,14 @@
 import { styled } from "styled-components";
 import HeaderProps from "./types";
 import Heading from "../../heading/heading";
-import { color, space, typography } from "../../common/core-tokens";
+import { color, space } from "../../common/core-tokens";
 import alias from "../../common/alias-tokens";
 import Icon from "../../common/icon/icon";
 import { useState, useEffect } from "react";
 import DropdownMenu from "../../dropdown-menu/dropdown-menu";
 import { breakpoints } from "../../common/breakpoints";
+import icons from "../../common/icons";
+import { StyledActionButton } from "../../action-button/action-button";
 
 const StyledHeader = styled.header`
   position: relative;
@@ -16,6 +18,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: ${space[32]};
   background-color: ${color.transparent};
   overflow: hidden;
 
@@ -66,47 +69,20 @@ const NavigationList = styled.ul`
   list-style: none;
 `;
 
-const NavigationListItem = styled.li`
-  display: flex;
-  align-items: center;
-`;
-
-const NavigationLink = styled.a<{ $selected?: boolean }>`
+const NavigationListItem = styled.li<{ $selected?: boolean }>`
   position: relative;
-  box-sizing: border-box;
-  border-radius: ${alias.space.borderRadius};
-  padding: ${space[8]} ${space[16]};
-  color: ${alias.color.text};
-  font-family: ${typography.family.sans};
-  font-size: ${typography.size.md};
-  font-weight: ${typography.weight.medium};
-  line-height: ${typography.lineHeight.normal};
-  letter-spacing: ${typography.letterSpacing.normal};
-  text-decoration: none;
-  user-select: none;
-  cursor: pointer;
 
-  &:hover {
-    background-color: ${alias.color.interactiveHover};
-    color: ${alias.color.text};
-  }
-  &:focus {
-    outline: 2px solid ${alias.color.focus};
-    outline-offset: ${alias.space.focusOffset};
-  }
   ${({ $selected }) =>
     $selected &&
-    `
-      color: ${alias.color.selectedText};
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -${space[12]};
-        left: 0;
-        right: 0;
-        height: 4px;
-        border-radius: ${space[2]};
-        background-color: ${color.blue[300]};
+    `&::after {
+      content: '';
+      position: absolute;
+      bottom: -${space[12]};
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: ${space[2]};
+      background-color: ${color.blue[300]};
     }`}
 `;
 
@@ -114,7 +90,7 @@ const Content = styled.div`
   margin-left: ${space[32]};
 `;
 
-const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, title }: HeaderProps) => {
+const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: HeaderProps) => {
   const [isInResponsiveMode, setIsInResponsiveMode] = useState(false);
 
   useEffect(() => {
@@ -129,7 +105,7 @@ const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, ti
 
   return (
     <StyledHeader>
-      <Navigation>
+      <Navigation aria-label={`header-navigation${title?.label ? `-${title.label}` : ""}`}>
         {title &&
           (title.href == null ? (
             <Title>
@@ -142,28 +118,38 @@ const Header = ({ content, navigationLinks, onNavigate, responsiveBreakpoint, ti
               {title?.label && <Heading level={3}>{title.label}</Heading>}
             </TitleLink>
           ))}
-        {navigationLinks &&
+        {links &&
           (isInResponsiveMode ? (
             <DropdownMenu
-              items={navigationLinks?.map(({ label, href }) => ({
+              items={links?.map(({ href, label }) => ({
                 label,
                 value: href,
               }))}
               label="Menu"
               triggerType="action"
-              onItemClick={(value) => onNavigate?.(value)}
+              onItemClick={(value) => {
+                const external = links?.find(({ href }) => href === value)?.external;
+                external ? window.open(value, "_blank") : onNavigate?.(value);
+              }}
             />
           ) : (
             <NavigationList>
-              {navigationLinks?.map(({ label, href }, index) => (
-                <NavigationListItem key={index}>
-                  <NavigationLink
-                    $selected={window && window.location.pathname.startsWith(href)}
-                    onClick={() => onNavigate?.(href)}
+              {links?.map(({ external, href, label, selected }, index) => (
+                <NavigationListItem key={index} $selected={selected}>
+                  <StyledActionButton
+                    as="a"
+                    aria-selected={selected}
+                    href={external ? href : undefined}
+                    onClick={external ? undefined : () => onNavigate?.(href)}
                     tabIndex={0}
+                    target={external ? "_blank" : undefined}
+                    $hasIcon={external ?? false}
+                    $hasLabel={Boolean(label)}
+                    $iconPosition="right"
                   >
+                    {external && <Icon icon={icons.externalLink} height="24px" width="24px" />}
                     {label}
-                  </NavigationLink>
+                  </StyledActionButton>
                 </NavigationListItem>
               ))}
             </NavigationList>

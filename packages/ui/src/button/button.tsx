@@ -85,7 +85,7 @@ const StyledButton = styled.button<{
   display: inline-flex;
   ${({ $iconPosition }) => $iconPosition === "right" && "flex-direction: row-reverse;"}
   align-items: center;
-  gap: ${space[4]};
+  gap: ${space[8]};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};
   font-weight: ${typography.weight.semibold};
@@ -127,7 +127,7 @@ const Button = ({
     $variant={variant}
     {...rest}
   >
-    {icon && <Icon icon={icon} width="24px" height="24px" />}
+    {icon && <Icon icon={icon} height="24px" width="24px" />}
     <span>{children}</span>
   </StyledButton>
 );
