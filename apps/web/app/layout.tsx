@@ -3,7 +3,7 @@
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
-import { ApplicationLayout } from "@gomezivann/mila-components";
+import { ApplicationLayout, Footer, Header, SideNavigation } from "@gomezivann/mila-components";
 import { usePathname } from "next/navigation";
 
 // export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <ApplicationLayout
           header={
-            <ApplicationLayout.Header
+            <Header
               links={[{ label: "Home", href: "/", selected: pathname === "/" }]}
               onNavigate={() => {
                 console.log("Navigate");
@@ -38,7 +38,7 @@ export default function RootLayout({
             />
           }
           sideNavigation={
-            <ApplicationLayout.SideNavigation
+            <SideNavigation
               items={[
                 {
                   label: "Home",
@@ -49,13 +49,14 @@ export default function RootLayout({
               onNavigate={() => {
                 console.log("Navigate");
               }}
+              responsiveBreakpoint="md"
               title={{
                 label: "Mila components",
               }}
             />
           }
           footer={
-            <ApplicationLayout.Footer
+            <Footer
               links={[
                 { label: "Terms of service", href: "#" },
                 { label: "Privacy policy", href: "#" },

@@ -14,25 +14,28 @@ const LayoutContainer = styled.div`
 
 const HeaderContainer = styled.div`
   grid-area: header;
+  z-index: 1;
 `;
 
 const SideNavContainer = styled.div`
   grid-area: side-nav;
+  position: relative;
+  z-index: 1;
 `;
 
 const MainContainer = styled.main`
   grid-area: main;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden auto;
   height: 100%;
+  min-height: 0;
   display: grid;
   grid-template-rows: 1fr auto;
 `;
 
 const ApplicationLayout = ({ children, footer, header, sideNavigation }: ApplicationLayoutProps) => (
   <LayoutContainer>
-    <HeaderContainer>{header}</HeaderContainer>
-    <SideNavContainer>{sideNavigation}</SideNavContainer>
+    {header && <HeaderContainer>{header}</HeaderContainer>}
+    {sideNavigation && <SideNavContainer>{sideNavigation}</SideNavContainer>}
     <MainContainer>
       {children}
       {footer}

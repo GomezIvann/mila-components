@@ -9,7 +9,7 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "publish-mila": "turbo run build lint test && changeset version && changeset publish",
-    "clean": "turbo run clean && rm -rf node_modules",
+    "clean": "turbo run clean && rm -rf node_modules && rm -rf .turbo",
     "storybook": "turbo storybook"
   },
   "devDependencies": {

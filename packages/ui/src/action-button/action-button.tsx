@@ -31,7 +31,7 @@ export const StyledActionButton = styled.button<{
   ${({ $iconPosition }) => $iconPosition === "right" && "flex-direction: row-reverse;"}
   align-items: center;
   gap: ${space[8]};
-  background-color: ${color.transparent};
+  background-color: ${({ $variant }) => ($variant === "bordered" ? color.white : color.transparent)};
   color: ${alias.color.text};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};

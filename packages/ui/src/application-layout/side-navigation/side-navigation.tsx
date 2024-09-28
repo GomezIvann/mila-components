@@ -12,7 +12,8 @@ import ActionButton from "../../action-button/action-button";
 import { breakpoints } from "../../common/breakpoints";
 import icons from "../../common/icons";
 
-const StyledSideNavigation = styled.nav`
+const StyledSideNavigation = styled.nav<{ $isInResponsiveMode: boolean }>`
+  ${({ $isInResponsiveMode }) => $isInResponsiveMode && "position: absolute;"}
   box-sizing: border-box;
   margin: 0;
   border-right: 1px solid ${alias.color.primaryBorder};
@@ -22,7 +23,7 @@ const StyledSideNavigation = styled.nav`
   display: flex;
   flex-direction: column;
   gap: ${space[8]};
-  background-color: ${color.transparent};
+  background-color: ${color.white};
   overflow-y: auto;
 `;
 
@@ -55,7 +56,7 @@ const List = styled.ul`
 `;
 
 const ResponsiveTriggerContainer = styled.div`
-  position: fixed;
+  position: absolute;
   margin: ${space[8]} 0 0 ${space[8]};
   z-index: 2147483647;
 `;
@@ -73,29 +74,24 @@ const SideNavigationItem = ({ item }: { item: SingleItemType | GroupItemType }) 
   <li>{"items" in item ? <GroupItem item={item} /> : <SingleItem item={item} />}</li>
 );
 
-const SideNavigationWrapper = ({
-  condition,
-  children,
-  isResponsiveOpen,
-  setIsResponsiveOpen,
-}: SideNavigationWrapperProps) =>
+const SideNavigationWrapper = ({ condition, children, isOpen, setIsOpen }: SideNavigationWrapperProps) =>
   condition ? (
     <>
       <ResponsiveTriggerContainer>
         <ActionButton
           variant="bordered"
-          icon={isResponsiveOpen ? icons.menuOpen : icons.menu}
-          onClick={() => setIsResponsiveOpen((isResponsiveOpen) => !isResponsiveOpen)}
+          icon={isOpen ? icons.menuOpen : icons.menu}
+          onClick={() => setIsOpen((isOpen) => !isOpen)}
         />
       </ResponsiveTriggerContainer>
-      {isResponsiveOpen && children}
+      {isOpen && children}
     </>
   ) : (
     children
   );
 
 const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: SideNavigationProps) => {
-  const [isResponsiveOpen, setIsResponsiveOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // For responsive mode
   const [isInResponsiveMode, setIsInResponsiveMode] = useState(false);
 
   useEffect(() => {
@@ -112,12 +108,11 @@ const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: Side
   }, [responsiveBreakpoint]);
 
   return (
-    <SideNavigationWrapper
-      condition={isInResponsiveMode}
-      isResponsiveOpen={isResponsiveOpen}
-      setIsResponsiveOpen={setIsResponsiveOpen}
-    >
-      <StyledSideNavigation aria-label={`side-navigation${title?.label ? `-${title.label}` : ""}`}>
+    <SideNavigationWrapper condition={isInResponsiveMode} isOpen={isOpen} setIsOpen={setIsOpen}>
+      <StyledSideNavigation
+        aria-label={`side-navigation${title?.label ? `-${title.label}` : ""}`}
+        $isInResponsiveMode={isInResponsiveMode}
+      >
         {title && (
           <Title>
             {title?.icon && <Icon icon={title.icon} height="40px" />}

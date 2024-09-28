@@ -29,8 +29,8 @@ type SideNavigationProps = {
 type SideNavigationWrapperProps = {
   condition: boolean;
   children: React.ReactNode;
-  isResponsiveOpen: boolean;
-  setIsResponsiveOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default SideNavigationProps;
