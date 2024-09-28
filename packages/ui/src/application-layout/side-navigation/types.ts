@@ -26,6 +26,13 @@ type SideNavigationProps = {
   };
 };
 
+type SideNavigationWrapperProps = {
+  condition: boolean;
+  children: React.ReactNode;
+  isResponsiveOpen: boolean;
+  setIsResponsiveOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
 export default SideNavigationProps;
 
-export type { SingleItemType, GroupItemType, SectionType };
+export type { GroupItemType, SectionType, SideNavigationWrapperProps, SingleItemType };

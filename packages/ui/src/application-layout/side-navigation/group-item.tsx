@@ -9,7 +9,7 @@ import SingleItem from "./single-item";
 import Flex from "../../flex/flex";
 
 const ItemsList = styled.ul`
-  margin-bottom: ${space[4]};
+  margin: ${space[4]} 0;
   padding: 0;
   display: grid;
   gap: ${space[4]};

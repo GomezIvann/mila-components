@@ -94,12 +94,12 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
   const [isInResponsiveMode, setIsInResponsiveMode] = useState(false);
 
   useEffect(() => {
-    if (responsiveBreakpoint && window) {
-      const mediaQuery = window.matchMedia(`(max-width: ${breakpoints[responsiveBreakpoint]})`);
-      const handleMediaQueryChange = (event: MediaQueryListEvent) => setIsInResponsiveMode(event.matches);
-      mediaQuery.addEventListener("change", handleMediaQueryChange);
-      setIsInResponsiveMode(mediaQuery.matches);
-      return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    if (responsiveBreakpoint) {
+      const handleResize = () =>
+        setIsInResponsiveMode(window.matchMedia(`(max-width: ${breakpoints[responsiveBreakpoint]})`).matches);
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
     }
   }, [responsiveBreakpoint]);
 

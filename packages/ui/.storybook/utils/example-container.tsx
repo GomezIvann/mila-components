@@ -1,34 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 
-type PseudoStates =
-  | "pseudo-active"
-  | "pseudo-focus"
-  | "pseudo-focus-visible"
-  | "pseudo-focus-within"
-  | "pseudo-hover"
-  | "pseudo-link"
-  | "pseudo-target"
-  | "pseudo-visited";
-
 type Props = {
   children?: React.ReactNode;
-  pseudoState?: PseudoStates;
+  pseudoState?:
+    | "pseudo-active"
+    | "pseudo-focus"
+    | "pseudo-focus-visible"
+    | "pseudo-focus-within"
+    | "pseudo-hover"
+    | "pseudo-link"
+    | "pseudo-target"
+    | "pseudo-visited";
   expanded?: boolean;
 };
 
 const ExampleContainer = ({ children, pseudoState, expanded = false }: Props) => (
-  <Container className={`${pseudoState}-all`} $expanded={expanded}>
+  <StyledExampleContainer className={`${pseudoState}-all`} $expanded={expanded}>
     {children}
-  </Container>
+  </StyledExampleContainer>
 );
 
-const Container = styled.div<{ $expanded: boolean }>`
+const StyledExampleContainer = styled.div<{ $expanded: boolean }>`
+  margin: 2rem;
+  ${(props) => props.$expanded && "height: 100vh;"}
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 1rem;
-  ${(props) => props.$expanded && "height: 100vh;"}
 `;
 
 export default ExampleContainer;

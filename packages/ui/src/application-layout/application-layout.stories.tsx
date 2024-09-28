@@ -5,6 +5,9 @@ import Flex from "../flex/flex";
 import Heading from "../heading/heading";
 import Paragraph from "../paragraph/paragraph";
 import ApplicationLayout from "./application-layout";
+import Footer from "./footer/footer";
+import Header from "./header/header";
+import SideNavigation from "./side-navigation/side-navigation";
 
 export default {
   title: "Application layout",
@@ -80,10 +83,18 @@ const sideNavigationItems = [
         label: "Apps",
         icon: appsIcon,
         items: [
-          { label: "Facebook", href: "#", icon: facebookIcon, external: true },
-          { label: "X", href: "#", icon: xIcon, external: true },
+          { label: "App 1", href: "#" },
+          { label: "App 2", href: "#" },
+          { label: "App 3", href: "#" },
         ],
       },
+    ],
+  },
+  {
+    title: "Social",
+    items: [
+      { label: "Facebook", href: "#", icon: facebookIcon, external: true },
+      { label: "X", href: "#", icon: xIcon, external: true },
     ],
   },
   {
@@ -166,7 +177,7 @@ const MainContent = () => (
 export const Stories = () => (
   <ApplicationLayout
     header={
-      <ApplicationLayout.Header
+      <Header
         content={
           <Flex gap={8}>
             <Button onClick={() => {}}>Sign in</Button>
@@ -181,10 +192,10 @@ export const Stories = () => (
       />
     }
     sideNavigation={
-      <ApplicationLayout.SideNavigation items={sideNavigationItems} onNavigate={() => {}} title={title} />
+      <SideNavigation items={sideNavigationItems} onNavigate={() => {}} title={title} responsiveBreakpoint="md" />
     }
     footer={
-      <ApplicationLayout.Footer
+      <Footer
         content={
           <Flex gap={8}>
             <ActionButton onClick={() => {}}>Pricing</ActionButton>
