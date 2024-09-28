@@ -20,6 +20,12 @@ export const Stories = () => (
       <ActionButton onClick={() => {}}>Edit</ActionButton>
     </ExampleContainer>
     <ExampleContainer>
+      <Heading level={3}>Bordered</Heading>
+      <ActionButton onClick={() => {}} variant="bordered">
+        Edit
+      </ActionButton>
+    </ExampleContainer>
+    <ExampleContainer>
       <Heading level={3}>Icon only</Heading>
       <ActionButton icon={pencilIcon} onClick={() => {}} title="Edit" />
     </ExampleContainer>

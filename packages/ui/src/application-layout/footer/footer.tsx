@@ -30,7 +30,7 @@ const TitleContainer = styled.a`
   gap: ${space[4]};
   text-decoration: none;
   color: ${alias.color.text};
-  border-radius: ${alias.space.borderRadius};
+  border-radius: ${alias.space.primaryBorderRadius};
 
   &:focus {
     outline: 2px solid ${alias.color.focus};
@@ -51,7 +51,7 @@ const SocialIconLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: ${alias.space.borderRadius};
+  border-radius: ${alias.space.primaryBorderRadius};
   color: ${alias.color.text};
 
   &:focus {

@@ -8,11 +8,13 @@ export const StyledActionButton = styled.button<{
   $hasIcon: boolean;
   $hasLabel: boolean;
   $iconPosition: ActionButtonProps["iconPosition"];
+  $variant: ActionButtonProps["variant"];
 }>`
   box-sizing: border-box;
-  border: none;
-  border-radius: ${alias.space.borderRadius};
+  border: ${({ $variant }) => ($variant === "bordered" ? `1px solid ${alias.color.primaryBorder}` : "none")};
+  border-radius: ${alias.space.primaryBorderRadius};
   width: fit-content;
+  height: 40px;
 
   ${({ $hasIcon, $hasLabel, $iconPosition }) => {
     if (!$hasIcon) return `padding: ${space[8]} ${space[16]};`;
@@ -58,12 +60,13 @@ export const StyledActionButton = styled.button<{
 
 const ActionButton = ({
   children,
-  disabled,
+  disabled = false,
   icon,
   iconPosition = "left",
   onClick,
   title,
-  type,
+  type = "button",
+  variant = "default",
   ...rest
 }: ActionButtonProps) => (
   <StyledActionButton
@@ -75,6 +78,7 @@ const ActionButton = ({
     $hasIcon={Boolean(icon)}
     $hasLabel={Boolean(children)}
     $iconPosition={iconPosition}
+    $variant={variant}
     {...rest}
   >
     {icon && <Icon icon={icon} height="24px" width="24px" />}

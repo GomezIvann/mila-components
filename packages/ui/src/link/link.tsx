@@ -5,7 +5,7 @@ import alias from "../common/alias-tokens";
 import Icon from "../common/icon/icon";
 
 const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"]; $inheritStyles: LinkProps["inheritStyles"] }>`
-  border-radius: ${alias.space.borderRadius};
+  border-radius: ${alias.space.primaryBorderRadius};
   padding: 0;
   width: fit-content;
   display: inline-flex;
@@ -38,7 +38,16 @@ const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"]; $inheritStyles:
   `};
 `;
 
-const Link = ({ children, disabled, href, icon, inheritStyles, newWindow, onClick, ...otherProps }: LinkProps) => (
+const Link = ({
+  children,
+  disabled = false,
+  href,
+  icon,
+  inheritStyles,
+  newWindow = false,
+  onClick,
+  ...otherProps
+}: LinkProps) => (
   <StyledLink
     aria-disabled={disabled}
     href={disabled ? undefined : href}

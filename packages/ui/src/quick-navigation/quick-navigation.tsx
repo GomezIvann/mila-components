@@ -45,7 +45,7 @@ const Link = styled.a`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  border-radius: ${alias.space.borderRadius};
+  border-radius: ${alias.space.primaryBorderRadius};
 
   &:hover {
     color: ${color.blue[300]};

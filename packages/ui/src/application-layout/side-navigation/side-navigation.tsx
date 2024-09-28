@@ -83,6 +83,7 @@ const SideNavigationWrapper = ({
     <>
       <ResponsiveTriggerContainer>
         <ActionButton
+          variant="bordered"
           icon={isResponsiveOpen ? icons.menuOpen : icons.menu}
           onClick={() => setIsResponsiveOpen((isResponsiveOpen) => !isResponsiveOpen)}
         />

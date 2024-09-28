@@ -47,7 +47,7 @@ const Title = styled.div`
 `;
 
 const TitleLink = styled.a`
-  border-radius: ${alias.space.borderRadius};
+  border-radius: ${alias.space.primaryBorderRadius};
   display: flex;
   align-items: center;
   gap: ${space[8]};

@@ -3,7 +3,7 @@ import FlexProps, { TransientFlexProps } from "./types";
 import { space } from "../common/core-tokens";
 
 const StyledFlex = styled.div<TransientFlexProps>`
-  display: flex;
+  display: ${({ $inline }) => ($inline ? "inline-flex" : "flex")};
 
   ${({
     $alignContent,
@@ -34,31 +34,34 @@ const StyledFlex = styled.div<TransientFlexProps>`
 `;
 
 const Flex = ({
-  direction = "row",
-  wrap = "nowrap",
-  gap = 0,
-  order = 0,
-  grow = 0,
-  shrink = 1,
-  basis = "auto",
-  justifyContent = "flex-start",
-  alignItems = "stretch",
   alignContent = "normal",
+  alignItems = "stretch",
   alignSelf = "auto",
+  basis = "auto",
+  direction = "row",
+  gap = 0,
+  grow = 0,
+  inline = false,
+  justifyContent = "flex-start",
+  order = 0,
+  shrink = 1,
+  wrap = "nowrap",
   children,
 }: FlexProps) => (
   <StyledFlex
-    $direction={direction}
-    $wrap={wrap}
-    $gap={gap}
-    $order={order}
-    $grow={grow}
-    $shrink={shrink}
-    $basis={basis}
-    $justifyContent={justifyContent}
-    $alignItems={alignItems}
+    as={inline ? "span" : "div"}
     $alignContent={alignContent}
+    $alignItems={alignItems}
     $alignSelf={alignSelf}
+    $basis={basis}
+    $direction={direction}
+    $gap={gap}
+    $grow={grow}
+    $inline={inline}
+    $justifyContent={justifyContent}
+    $order={order}
+    $shrink={shrink}
+    $wrap={wrap}
   >
     {children}
   </StyledFlex>
