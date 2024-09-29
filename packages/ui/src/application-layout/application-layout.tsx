@@ -17,7 +17,7 @@ const HeaderContainer = styled.div`
   z-index: 1;
 `;
 
-const SideNavContainer = styled.div`
+const SideNavContainer = styled.aside`
   grid-area: side-nav;
   position: relative;
   z-index: 1;

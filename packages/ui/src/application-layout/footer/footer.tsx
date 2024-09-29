@@ -21,21 +21,14 @@ const MainContent = styled.div`
   display: flex;
   align-items: center;
   gap: ${space[16]};
-  margin-bottom: ${space[24]};
+  margin-bottom: ${space[16]};
 `;
 
-const TitleContainer = styled.a`
+const Title = styled.div`
   display: flex;
   align-items: center;
   gap: ${space[4]};
-  text-decoration: none;
   color: ${alias.color.text};
-  border-radius: ${alias.space.primaryBorderRadius};
-
-  &:focus {
-    outline: 2px solid ${alias.color.focus};
-    outline-offset: ${alias.space.focusOffset};
-  }
 `;
 
 const CustomContent = styled.div`
@@ -57,6 +50,9 @@ const SocialIconLink = styled.a`
   &:focus {
     outline: 2px solid ${alias.color.focus};
   }
+  &:hover {
+    color: ${color.grey[600]};
+  }
 `;
 
 const Copyright = styled.small`
@@ -65,21 +61,30 @@ const Copyright = styled.small`
   color: ${alias.color.text};
 `;
 
-const Footer = ({ content, copyright = "© 2024 Mila Components", links, socialIcons, title }: FooterProps) => (
+const LinksList = styled.div`
+  display: flex;
+  gap: ${space[12]};
+  font-family: ${typography.family.sans};
+  font-size: ${typography.size.sm};
+  font-weight: ${typography.weight.medium};
+  line-height: ${typography.lineHeight.normal};
+`;
+
+const Footer = ({ content, copyright = "© 2024 GomezIvann", links, socialIcons, title }: FooterProps) => (
   <StyledFooter>
     <MainContent>
       {title && (
-        <TitleContainer href={title.href}>
+        <Title>
           {title.icon && <Icon icon={title.icon} height="40px" />}
           {title.label && <Heading level={3}>{title.label}</Heading>}
-        </TitleContainer>
+        </Title>
       )}
       <CustomContent>{content}</CustomContent>
       {socialIcons && (
         <SocialIconsContainer>
           {socialIcons.map((social, index) => (
-            <SocialIconLink key={index} href={social.href}>
-              <Icon icon={social.icon} width="24px" height="24px" />
+            <SocialIconLink key={index} href={social.href} target="_blank">
+              <Icon icon={social.icon} width="24px" height="24px" title={social.title} />
             </SocialIconLink>
           ))}
         </SocialIconsContainer>
@@ -89,13 +94,13 @@ const Footer = ({ content, copyright = "© 2024 Mila Components", links, socialI
     <Flex alignItems="center" justifyContent="space-between">
       {copyright && <Copyright>{copyright}</Copyright>}
       {links && (
-        <Flex gap={8}>
+        <LinksList>
           {links.map((link, index) => (
-            <Link key={index} href={link.href}>
+            <Link key={index} href={link.href} inheritStyles>
               {link.label}
             </Link>
           ))}
-        </Flex>
+        </LinksList>
       )}
     </Flex>
   </StyledFooter>

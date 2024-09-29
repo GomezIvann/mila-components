@@ -14,10 +14,11 @@ type IconProps = {
   icon: IconProp;
   width?: string;
   height?: string;
+  title?: string;
 };
 
-const Icon = ({ icon, width = "auto", height = "auto" }: IconProps) => (
-  <StyledIcon $width={width} $height={height}>
+const Icon = ({ icon, width = "auto", height = "auto", title }: IconProps) => (
+  <StyledIcon $width={width} $height={height} title={title} aria-label={title}>
     {typeof icon === "string" ? <img src={icon} /> : icon}
   </StyledIcon>
 );

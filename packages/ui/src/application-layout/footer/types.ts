@@ -10,11 +10,11 @@ type FooterProps = {
   socialIcons?: {
     icon: IconProp;
     href: string;
+    title: string;
   }[];
   title?: {
     icon?: IconProp;
     label?: string;
-    href?: string;
   };
 };
 

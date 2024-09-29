@@ -211,8 +211,9 @@ export const Stories = () => (
           {
             icon: facebookIcon,
             href: "#",
+            title: "Facebook",
           },
-          { icon: xIcon, href: "#" },
+          { icon: xIcon, href: "#", title: "X" },
         ]}
         title={title}
       />
