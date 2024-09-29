@@ -1,5 +1,5 @@
 <!-- <p align="center">
-  <a href="https://developer.dxc.com/halstack/">
+  <a href="https://mila-components.vercel.app/">
     <img src="apps/website/screens/common/images/halstack_logo.svg" alt="Halstack Design System logo" />
   </a>
 </p> -->

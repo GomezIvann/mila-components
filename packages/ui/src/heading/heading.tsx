@@ -48,7 +48,7 @@ const StyledHeading = styled.h1<{ $level: HeadingProps["level"] }>`
           font-style: normal;
           font-weight: ${typography.weight.semibold};
           letter-spacing: ${typography.letterSpacing.wide};
-          line-height: ${typography.lineHeight.normal};
+          line-height: ${typography.lineHeight.tight};
         `;
     }
   }}
