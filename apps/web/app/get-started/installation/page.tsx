@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "Learn how to install Mila components in your project.",
 };
 
-export default function Introduction() {
+export default function Installation() {
   return (
     <div>
       <h1>Installation</h1>

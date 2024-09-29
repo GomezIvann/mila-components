@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   position: relative;
   box-sizing: border-box;
   height: 64px;
-  padding: ${space[12]} ${space[32]};
+  padding: ${space[12]} ${space[24]};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,36 +36,21 @@ const StyledHeader = styled.header`
 const Navigation = styled.nav`
   display: flex;
   align-items: center;
-  gap: ${space[32]};
+  gap: ${space[40]};
 `;
 
-const Title = styled.div`
+const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   gap: ${space[4]};
   white-space: nowrap;
 `;
 
-const TitleLink = styled.a`
-  border-radius: ${alias.space.primaryBorderRadius};
-  display: flex;
-  align-items: center;
-  gap: ${space[8]};
-  color: ${alias.color.text};
-  text-decoration: none;
-  cursor: pointer;
-
-  &:focus {
-    outline: 2px solid ${alias.color.focus};
-    outline-offset: ${alias.space.focusOffset};
-  }
-`;
-
 const NavigationList = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
-  gap: ${space[16]};
+  gap: ${space[12]};
   list-style: none;
 `;
 
@@ -108,15 +93,23 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
       <Navigation aria-label={`header-navigation${title?.label ? `-${title.label}` : ""}`}>
         {title &&
           (title.href == null ? (
-            <Title>
-              {title?.icon && <Icon icon={title.icon} height="40px" />}
+            <TitleContainer>
+              {title?.icon && <Icon icon={title.icon} height="24px" width="24px" />}
               {title?.label && <Heading level={3}>{title.label}</Heading>}
-            </Title>
+            </TitleContainer>
           ) : (
-            <TitleLink onClick={() => title.href && onNavigate?.(title.href)} tabIndex={0}>
-              {title?.icon && <Icon icon={title.icon} height="40px" />}
+            <StyledActionButton
+              as="a"
+              onClick={() => title.href && onNavigate?.(title.href)}
+              tabIndex={0}
+              $hasIcon={Boolean(title?.icon)}
+              $hasLabel={Boolean(title?.label)}
+              $iconPosition="left"
+              $variant="default"
+            >
+              {title?.icon && <Icon icon={title.icon} height="24px" width="24px" />}
               {title?.label && <Heading level={3}>{title.label}</Heading>}
-            </TitleLink>
+            </StyledActionButton>
           ))}
         {links &&
           (isInResponsiveMode ? (

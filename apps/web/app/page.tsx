@@ -1,22 +1,11 @@
-import Link from "next/link";
-import styles from "./page.module.css";
+import type { Metadata } from "next";
+import HomePage from "@/screens/home/home";
 
-export default function HomePage() {
-  return (
-    <div className={styles.container}>
-      <h1>Bienvenido a mi librería de componentes</h1>
-      <p>Elige una sección para comenzar:</p>
-      <ul className={styles.linkList}>
-        <li>
-          <Link href="/get-started">Get Started</Link>
-        </li>
-        <li>
-          <Link href="/foundations">Foundations</Link>
-        </li>
-        <li>
-          <Link href="/components">Components</Link>
-        </li>
-      </ul>
-    </div>
-  );
+export const metadata: Metadata = {
+  title: "Mila components",
+  description: "Mila components is a humble library of reusable components developed as a final master thesis.",
+};
+
+export default function Home() {
+  return <HomePage />;
 }

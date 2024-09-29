@@ -1,0 +1,47 @@
+/* Estilos para HeadingLinkContainer */
+.headingContainer {
+  margin-left: -2rem;
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 64px;
+}
+
+.headingContainer:hover svg {
+  opacity: 0.5;
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  .headingContainer {
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 45rem) {
+  .headingContainer {
+    scroll-margin-top: 116px;
+  }
+}
+
+/* Estilos para HeadingAnchor */
+.headingAnchor {
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.headingAnchor svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+}
+
+.headingAnchor:focus {
+  outline-color: #0095ff;
+  outline-offset: -0.25rem;
+}
+
+.headingAnchor:focus svg {
+  opacity: 0.5;
+}

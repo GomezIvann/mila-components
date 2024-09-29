@@ -8,7 +8,8 @@
       }
     ],
     "paths": {
-      "@/common/*": ["app/common/*"]
+      "@/common/*": ["common/*"],
+      "@/screens/*": ["screens/*"]
     }
   },
   "include": ["next-env.d.ts", "next.config.mjs", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

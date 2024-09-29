@@ -36,6 +36,7 @@ export default function SiteSideNavigation() {
         },
       ]}
       onNavigate={handleOnNavigate}
+      responsiveBreakpoint="md"
     />
   );
 }

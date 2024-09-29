@@ -27,6 +27,7 @@ const ItemAction = styled.button<{
   cursor: pointer;
   overflow: hidden;
   text-decoration: none;
+  user-select: none;
 
   &:hover {
     ${({ $selected }) =>

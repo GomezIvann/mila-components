@@ -17,7 +17,8 @@ const StyledSideNavigation = styled.nav<{ $isInResponsiveMode: boolean }>`
   box-sizing: border-box;
   margin: 0;
   border-right: 1px solid ${alias.color.primaryBorder};
-  padding: ${space[32]} ${space[16]};
+  padding: ${({ $isInResponsiveMode }) =>
+    $isInResponsiveMode ? `${space[72]} ${space[16]}` : `${space[48]} ${space[16]}`};
   height: 100%;
   width: 280px;
   display: flex;
@@ -32,7 +33,7 @@ const Title = styled.header`
   flex-direction: column;
   justify-content: center;
   gap: ${space[4]};
-  padding: ${space[20]} 0;
+  padding-bottom: ${space[20]};
   white-space: nowrap;
 `;
 
