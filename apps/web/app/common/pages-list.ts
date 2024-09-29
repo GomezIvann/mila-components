@@ -2,12 +2,11 @@ type LinkDetails = {
   label: string;
   href: string;
 };
-
-const headerLinks = [
-  { label: "Get started", href: "/get-started" },
-  { label: "Foundations", href: "/foundations" },
-  { label: "Components", href: "/components" },
-];
+type MainBlock = {
+  href: string;
+  title: string;
+  links: LinkDetails[];
+};
 
 const getStartedLinks: LinkDetails[] = [
   { label: "Introduction", href: "/get-started/introduction" },
@@ -34,5 +33,23 @@ const componentsLinks: LinkDetails[] = [
   { label: "Quick nav", href: "/components/quick-nav" },
 ];
 
-export { headerLinks, getStartedLinks, foundationsLinks, componentsLinks };
-export type { LinkDetails };
+const mainBlocks: MainBlock[] = [
+  {
+    href: "/get-started",
+    links: getStartedLinks,
+    title: "Get Started",
+  },
+  {
+    href: "/foundations",
+    links: foundationsLinks,
+    title: "Foundations",
+  },
+  {
+    href: "/components",
+    links: componentsLinks,
+    title: "Components",
+  },
+];
+
+export { mainBlocks, getStartedLinks, foundationsLinks, componentsLinks };
+export type { LinkDetails, MainBlock };

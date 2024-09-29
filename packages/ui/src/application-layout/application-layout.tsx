@@ -17,16 +17,15 @@ const HeaderContainer = styled.div`
   z-index: 1;
 `;
 
-const SideNavContainer = styled.aside`
+const SideNavContainer = styled.div`
   grid-area: side-nav;
   position: relative;
   z-index: 1;
 `;
 
-const MainContainer = styled.main`
+const MainContainer = styled.div`
   grid-area: main;
   overflow: hidden auto;
-  height: 100%;
   min-height: 0;
   display: grid;
   grid-template-rows: 1fr auto;
@@ -37,7 +36,7 @@ const ApplicationLayout = ({ children, footer, header, sideNavigation }: Applica
     {header && <HeaderContainer>{header}</HeaderContainer>}
     {sideNavigation && <SideNavContainer>{sideNavigation}</SideNavContainer>}
     <MainContainer>
-      {children}
+      <main>{children}</main>
       {footer}
     </MainContainer>
   </LayoutContainer>

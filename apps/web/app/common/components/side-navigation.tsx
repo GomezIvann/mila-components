@@ -1,22 +1,21 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { componentsLinks, foundationsLinks, getStartedLinks } from "../pages-list";
+import { MainBlock, mainBlocks } from "../pages-list";
 import { SideNavigation } from "@gomezivann/mila-components";
 import { useMemo } from "react";
 
-const useSideNavigation = () => {
+const useSideNavigation = (): MainBlock => {
   const pathname = usePathname();
 
-  return useMemo(() => {
-    if (pathname.startsWith("/components")) return { title: "Components", links: componentsLinks };
-    else if (pathname.startsWith("/foundations")) return { title: "Foundations", links: foundationsLinks };
-    else if (pathname.startsWith("/get-started")) return { title: "Get started", links: getStartedLinks };
-    else return { title: "", links: [] };
-  }, [pathname]);
+  return useMemo(
+    () => mainBlocks.find((block) => pathname.startsWith(block.href)) || { href: "", links: [], title: "" },
+    [pathname]
+  );
 };
 
 export default function SiteSideNavigation() {
+  const pathname = usePathname();
   const router = useRouter();
   const { title, links } = useSideNavigation();
 
@@ -32,7 +31,7 @@ export default function SiteSideNavigation() {
           items: links.map((link) => ({
             label: link.label,
             href: link.href,
-            active: usePathname() === link.href,
+            selected: pathname === link.href,
           })),
         },
       ]}
