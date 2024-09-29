@@ -1,4 +1,3 @@
-/* Definición de breakpoints como variables CSS */
 :root {
   --breakpoint-xs: 320px; /* Mobile small */
   --breakpoint-sm: 480px; /* Mobile large */

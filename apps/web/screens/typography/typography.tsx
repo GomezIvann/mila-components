@@ -47,7 +47,7 @@ const sections = [
     ),
   },
   {
-    title: "Typographic Hierarchy",
+    title: "Typographic hierarchy",
     content: (
       <>
         <Paragraph>
@@ -109,7 +109,7 @@ const sections = [
     ),
   },
   {
-    title: "Modular Scale",
+    title: "Modular scale",
     content: (
       <>
         <Paragraph>
@@ -166,7 +166,7 @@ const sections = [
     ),
   },
   {
-    title: "Font Weights",
+    title: "Font weights",
     content: (
       <>
         <Paragraph>
