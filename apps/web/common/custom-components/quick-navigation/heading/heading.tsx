@@ -8,7 +8,7 @@ type SiteHeadingProps = {
   navSubtitle?: string;
 };
 
-const SiteHeading = ({ children, level, navSubtitle }: SiteHeadingProps) => {
+export default function SiteHeading({ children, level, navSubtitle }: SiteHeadingProps) {
   const elementId = slugify(navSubtitle ?? children, { lower: true });
 
   return (
@@ -29,6 +29,4 @@ const SiteHeading = ({ children, level, navSubtitle }: SiteHeadingProps) => {
       <Heading level={level}>{children}</Heading>
     </div>
   );
-};
-
-export default SiteHeading;
+}

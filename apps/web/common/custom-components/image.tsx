@@ -7,8 +7,6 @@ type ImageProps = {
   height?: string;
 };
 
-const Image = ({ src, alt, width = "100%", height = "auto" }: ImageProps) => (
-  <NextImage src={src} alt={alt} style={{ width, height }} />
-);
-
-export default Image;
+export default function Image({ src, alt, width = "100%", height = "auto" }: ImageProps) {
+  return <NextImage src={src} alt={alt} style={{ width, height }} />;
+}

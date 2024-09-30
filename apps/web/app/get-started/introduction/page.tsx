@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import IntroductionPage from "@/screens/get-started/introduction/introduction";
 
 export const metadata: Metadata = {
   title: "Introduction - Mila components",
@@ -7,9 +8,6 @@ export const metadata: Metadata = {
 
 export default function Introduction() {
   return (
-    <div>
-      <h1>Introduction</h1>
-      <p>Welcome to the component library of my TFM...</p>
-    </div>
+    <IntroductionPage />
   );
 }

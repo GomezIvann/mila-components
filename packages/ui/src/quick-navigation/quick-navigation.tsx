@@ -52,7 +52,6 @@ const Link = styled.a`
   }
   &:focus {
     outline: 2px solid ${alias.color.focus};
-    outline-offset: ${alias.space.focusOffset};
   }
 `;
 

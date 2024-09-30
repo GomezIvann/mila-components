@@ -1,5 +1,5 @@
 import { QuickNavigation } from "@gomezivann/mila-components";
-import Section, { SectionType } from "../section";
+import Section, { SectionType } from "./section";
 import styles from "./quick-navigation.module.css";
 
 type SiteQuickNavigationProps = {
@@ -28,23 +28,23 @@ const getSubSectionsLinks = (sections: SectionType[]) => {
   return linksList;
 };
 
-const SiteQuickNavigation = ({ sections, startHeadingLevel = 1, title }: SiteQuickNavigationProps): JSX.Element => (
-  <div className={styles.mainContainer}>
-    <div className={styles.sectionsContainer}>
-      {sections.map((section) => (
-        <Section
-          key={`section-${section.title}`}
-          title={section.title}
-          level={startHeadingLevel}
-          subSections={section.subSections}
-          content={section.content}
-        />
-      ))}
+export default function SiteQuickNavigation({ sections, startHeadingLevel = 1, title }: SiteQuickNavigationProps) {
+  return (
+    <div className={styles.mainContainer}>
+      <div className={styles.sectionsContainer}>
+        {sections.map((section) => (
+          <Section
+            key={`section-${section.title}`}
+            title={section.title}
+            level={startHeadingLevel}
+            subSections={section.subSections}
+            content={section.content}
+          />
+        ))}
+      </div>
+      <div className={styles.quickNavigationContainer}>
+        <QuickNavigation title={title} links={getSubSectionsLinks(sections)} />
+      </div>
     </div>
-    <div className={styles.quickNavigationContainer}>
-      <QuickNavigation title={title} links={getSubSectionsLinks(sections)} />
-    </div>
-  </div>
-);
-
-export default SiteQuickNavigation;
+  );
+}
