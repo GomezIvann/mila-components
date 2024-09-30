@@ -15,7 +15,6 @@
         "screens/*"
       ]
     },
-    "jsx": "preserve"
   },
   "include": [
     "next-env.d.ts",

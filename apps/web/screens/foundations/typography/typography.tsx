@@ -4,6 +4,22 @@ import { CodeBlock, Code } from "@/common/custom-components/code/code";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { BulletedList, Flex, Heading, Paragraph, Table } from "@gomezivann/mila-components";
 
+const codeExample = `
+  import { typography } from "@gomezivann/mila-components";
+
+  const styles = {
+    fontFamily: typography.family.sans,
+    fontSize: typography.size["4xl"],
+    fontWeight: typography.weight.bold,
+    letter-spacing: typography.letterSpacing.tight,
+    lineHeight: typography.lineHeight.tight,
+  };
+
+  const App = () => (
+    <h1 style={styles}>Hello, world!</h1>
+  );
+`;
+
 const sections = [
   {
     title: "Introduction",
@@ -176,7 +192,10 @@ const sections = [
         </Paragraph>
         <BulletedList>
           <li>
-            <strong>400 (Regular):</strong> Used for body text, paragraphs, and supporting information.
+            <strong>400 (Normal):</strong> Used for body text, paragraphs, and supporting information.
+          </li>
+          <li>
+            <strong>500 (Medium):</strong> Ideal for captions, labels, or secondary text elements.
           </li>
           <li>
             <strong>600 (Semi-bold):</strong> Applied to sub-headings or emphasized content.
@@ -208,6 +227,48 @@ const sections = [
         </BulletedList>
       </>
     ),
+  },
+  {
+    title: "Usage",
+    subSections: [
+      {
+        title: "Mila components",
+        content: (
+          <>
+            <Paragraph>
+              Mila offers a range of typography components that follow these guidelines, making it easy to create
+              consistent and visually appealing designs.
+            </Paragraph>
+            <BulletedList>
+              <li>
+                <strong>Heading:</strong> Use the <Code>Heading</Code> component for all headings and titles. It
+                automatically applies the correct font size, weight, and spacing based on the level prop.
+              </li>
+              <li>
+                <strong>Paragraph:</strong> For body text and descriptions, use the <Code>Paragraph</Code> component. It
+                ensures consistent font size, line height, and spacing for readable content.
+              </li>
+              <li>
+                <strong>Bulleted list:</strong> Use the <Code>BulletedList</Code> component to create lists with bullet
+                points. It maintains consistent spacing and alignment for list items.
+              </li>
+            </BulletedList>
+          </>
+        ),
+      },
+      {
+        title: "Core tokens",
+        content: (
+          <>
+            <Paragraph>
+              If non of the provided components meet your needs, you can still use the core tokens to style your text
+              elements.
+            </Paragraph>
+            <CodeBlock language="tsx">{codeExample}</CodeBlock>
+          </>
+        ),
+      },
+    ],
   },
   {
     title: "Accessibility and readability",

@@ -1,4 +1,4 @@
-import ColorPage from "@/screens/color/color";
+import ColorPage from "@/screens/foundations/color/color";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

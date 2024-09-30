@@ -4,6 +4,21 @@ import { BulletedList, Flex, Heading, Paragraph } from "@gomezivann/mila-compone
 import colorPalette from "./images/color-palette.png";
 import Image from "@/common/custom-components/image";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
+import { Code, CodeBlock } from "@/common/custom-components/code/code";
+
+const codeExample = `
+  import { color } from "@gomezivann/mila-components";
+
+  const styles = {
+    backgroundColor: color.grey[200];
+  };
+
+  const App = () => (
+    <div style={styles}>
+      <h1 style={{ color: color.grey[800] }}>Hello, world!</h1>
+    </div>
+  );
+`;
 
 const sections = [
   {
@@ -64,20 +79,23 @@ const sections = [
     ),
   },
   {
-    title: "Color tokens",
+    title: "Usage",
     content: (
       <>
         <Paragraph>
           Each color in the palette is associated with a core token, a hexadecimal value, and a visual preview. Tokens
-          such as color-purple-500 or color-grey-300 represent reusable variables that simplify maintaining consistency
+          such as <Code>color-purple-500</Code> or <Code>color-grey-300</Code> represent reusable variables that simplify maintaining consistency
           across the interface. By using these tokens, developers can quickly adjust the colors across components,
           ensuring visual uniformity and easy updates when necessary.
         </Paragraph>
+        <CodeBlock language="tsx">
+          {codeExample}
+        </CodeBlock>
       </>
     ),
     subSections: [
       {
-        title: "Examples of use",
+        title: "Examples",
         content: (
           <BulletedList>
             <li>

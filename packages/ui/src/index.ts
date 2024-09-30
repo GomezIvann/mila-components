@@ -13,6 +13,7 @@ import Link from "./link/link";
 import Paragraph from "./paragraph/paragraph";
 import QuickNavigation from "./quick-navigation/quick-navigation";
 import Table from "./table/table";
+import { color, typography, space } from "./common/core-tokens";
 
 export {
   ActionButton,
@@ -30,4 +31,7 @@ export {
   QuickNavigation,
   SideNavigation,
   Table,
+  color,
+  typography,
+  space,
 };

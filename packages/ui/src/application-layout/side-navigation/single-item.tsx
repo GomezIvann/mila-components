@@ -16,7 +16,7 @@ const SingleItem = ({ item, grouped }: { item: SingleItemType; grouped?: boolean
       href={item.external ? item.href : undefined}
       onClick={item.external ? undefined : () => onNavigate(item.href)}
       tabIndex={0}
-      target={item.external ? "_blank" : undefined}
+      target={item.external ? "_blank" : "_self"}
       $grouped={grouped}
       $selected={item.selected}
     >

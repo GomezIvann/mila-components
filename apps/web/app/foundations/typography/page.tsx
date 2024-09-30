@@ -1,4 +1,4 @@
-import TypographyPage from "@/screens/typography/typography";
+import TypographyPage from "@/screens/foundations/typography/typography";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
