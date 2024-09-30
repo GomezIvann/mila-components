@@ -41,7 +41,7 @@ const SiteQuickNavigation = ({ sections, startHeadingLevel = 1, title }: SiteQui
         />
       ))}
     </div>
-    <div className={styles.quickNavContainer}>
+    <div className={styles.quickNavigationContainer}>
       <QuickNavigation title={title} links={getSubSectionsLinks(sections)} />
     </div>
   </div>

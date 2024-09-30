@@ -25,10 +25,10 @@ const SideNavContainer = styled.div`
 
 const MainContainer = styled.div`
   grid-area: main;
-  overflow: hidden auto;
   min-height: 0;
   display: grid;
   grid-template-rows: 1fr auto;
+  overflow: hidden auto;
 `;
 
 const ApplicationLayout = ({ children, footer, header, sideNavigation }: ApplicationLayoutProps) => (

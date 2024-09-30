@@ -1,12 +1,3 @@
-:root {
-  --breakpoint-xs: 320px; /* Mobile small */
-  --breakpoint-sm: 480px; /* Mobile large */
-  --breakpoint-md: 768px; /* Tablet */
-  --breakpoint-lg: 1024px; /* Laptop */
-  --breakpoint-xl: 1280px; /* Desktop */
-  --breakpoint-xxl: 1440px; /* Large desktop */
-}
-
 body {
   margin: 0;
 }
