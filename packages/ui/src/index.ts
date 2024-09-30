@@ -14,6 +14,7 @@ import Paragraph from "./paragraph/paragraph";
 import QuickNavigation from "./quick-navigation/quick-navigation";
 import Table from "./table/table";
 import { color, typography, space } from "./common/core-tokens";
+import { breakpoints } from "./common/breakpoints";
 
 export {
   ActionButton,
@@ -34,4 +35,5 @@ export {
   color,
   typography,
   space,
+  breakpoints,
 };

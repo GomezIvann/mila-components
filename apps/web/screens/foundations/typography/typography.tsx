@@ -4,21 +4,19 @@ import { CodeBlock, Code } from "@/common/custom-components/code/code";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { BulletedList, Flex, Heading, Paragraph, Table } from "@gomezivann/mila-components";
 
-const codeExample = `
-  import { typography } from "@gomezivann/mila-components";
+const codeExample = `import { typography } from "@gomezivann/mila-components";
 
-  const styles = {
-    fontFamily: typography.family.sans,
-    fontSize: typography.size["4xl"],
-    fontWeight: typography.weight.bold,
-    letter-spacing: typography.letterSpacing.tight,
-    lineHeight: typography.lineHeight.tight,
-  };
+const styles = {
+  fontFamily: typography.family.sans,
+  fontSize: typography.size["4xl"],
+  fontWeight: typography.weight.bold,
+  letter-spacing: typography.letterSpacing.tight,
+  lineHeight: typography.lineHeight.tight,
+};
 
-  const App = () => (
-    <h1 style={styles}>Hello, world!</h1>
-  );
-`;
+const App = () => (
+  <h1 style={styles}>Hello, world!</h1>
+);`;
 
 const sections = [
   {

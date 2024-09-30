@@ -6,19 +6,17 @@ import Image from "@/common/custom-components/image";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { Code, CodeBlock } from "@/common/custom-components/code/code";
 
-const codeExample = `
-  import { color } from "@gomezivann/mila-components";
+const codeExample = `import { color } from "@gomezivann/mila-components";
 
-  const styles = {
-    backgroundColor: color.grey[200];
-  };
+const styles = {
+  backgroundColor: color.grey[200];
+};
 
-  const App = () => (
-    <div style={styles}>
-      <h1 style={{ color: color.grey[800] }}>Hello, world!</h1>
-    </div>
-  );
-`;
+const App = () => (
+  <div style={styles}>
+    <h1 style={{ color: color.grey[800] }}>Hello, world!</h1>
+  </div>
+);`;
 
 const sections = [
   {

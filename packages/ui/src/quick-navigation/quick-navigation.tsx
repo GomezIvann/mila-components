@@ -48,7 +48,7 @@ const Link = styled.a`
   border-radius: ${alias.space.primaryBorderRadius};
 
   &:hover {
-    color: ${color.blue[300]};
+    color: ${color.blue[500]};
   }
   &:focus {
     outline: 2px solid ${alias.color.focus};

@@ -4,20 +4,17 @@ import { Code, CodeBlock } from "@/common/custom-components/code/code";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { BulletedList, Flex, Heading, Paragraph } from "@gomezivann/mila-components";
 
-const codeExample = `
-  import { space } from "@gomezivann/mila-components";
+const codeExample = `import { space } from "@gomezivann/mila-components";
+const styles = {
+  margin: space[16],
+  padding: space[24],
+};
 
-  const styles = {
-    margin: space[16],
-    padding: space[24],
-  };
-
-  const App = () => (
-    <div style={styles}>
-      <h1>Hello, world!</h1>
-    </div>
-  );
-`;
+const App = () => (
+  <div style={styles}>
+    <h1>Hello, world!</h1>
+  </div>
+);`;
 
 const sections = [
   {

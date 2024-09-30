@@ -15,9 +15,9 @@ const getStartedLinks: LinkDetails[] = [
 
 const foundationsLinks: LinkDetails[] = [
   { label: "Color", href: "/foundations/color" },
-  { label: "Typography", href: "/foundations/typography" },
+  { label: "Layout", href: "/foundations/layout" },
   { label: "Spacing", href: "/foundations/spacing" },
-  { label: "Breakpoints", href: "/foundations/breakpoints" },
+  { label: "Typography", href: "/foundations/typography" },
 ];
 
 const componentsLinks: LinkDetails[] = [
