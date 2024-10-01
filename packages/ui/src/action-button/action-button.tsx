@@ -41,6 +41,7 @@ export const StyledActionButton = styled.button<{
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
+  user-select: none;
 
   &:disabled {
     opacity: 0.5;
