@@ -12,7 +12,7 @@ export default function HomePage() {
       <Flex direction="column" gap={40} alignItems="center">
         <Heading>Welcome to Mila components</Heading>
         <Heading level={2} weight="light">
-          Mila components is a humble library of reusable components, based on react framework, developed as a final
+          Mila components is a humble library of reusable components, based on React framework, developed as a final
           master thesis project.
         </Heading>
         <Flex gap={20}>
@@ -25,7 +25,7 @@ export default function HomePage() {
           </Button>
           <Button
             onClick={() => {
-              router.push("/get-started/introduction");
+              router.push("/foundations/color");
             }}
             variant="outlined"
           >

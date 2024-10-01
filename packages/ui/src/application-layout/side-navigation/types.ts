@@ -3,8 +3,8 @@ import { IconProp } from "../../common/types";
 
 type SingleItemType = {
   external?: boolean;
-  icon?: IconProp;
   href: string;
+  icon?: IconProp;
   label: string;
   selected?: boolean;
 };
@@ -27,8 +27,8 @@ type SideNavigationProps = {
 };
 
 type SideNavigationWrapperProps = {
-  condition: boolean;
   children: React.ReactNode;
+  condition: boolean;
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };

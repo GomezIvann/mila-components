@@ -15,7 +15,7 @@ export default function SiteHeader() {
     <Header
       links={mainBlocks.map((block) => ({
         label: block.title,
-        href: block.href,
+        href: block.links[0]?.href ?? "/",
         selected: pathname.startsWith(block.href),
       }))}
       responsiveBreakpoint="md"

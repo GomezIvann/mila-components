@@ -1,6 +1,6 @@
 "use client";
 
-import { CodeBlock } from "@/common/custom-components/code/code";
+import { Code, CodeBlock } from "@/common/custom-components/code/code";
 import LiveCodeBlock from "@/common/custom-components/code/live-code-block";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { Flex, Heading, Link, Paragraph } from "@gomezivann/mila-components";
@@ -13,7 +13,8 @@ const sections = [
     content: (
       <>
         <Paragraph>
-          Mila components are published as an npm package. You can install them using your favorite package manager.
+          Mila components are published as an <Code>npm</Code> package. You can install them using your favorite package
+          manager.
         </Paragraph>
       </>
     ),
@@ -62,7 +63,7 @@ const sections = [
         </Paragraph>
         <Paragraph>
           If you want to learn about Mila's design principles, check the{" "}
-          <NextLink href="/foundations">
+          <NextLink href="/foundations/color">
             <Link>foundations</Link>
           </NextLink>{" "}
           section.

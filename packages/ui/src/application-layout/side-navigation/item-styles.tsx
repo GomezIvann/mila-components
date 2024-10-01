@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { color, space, typography } from "../../common/core-tokens";
 import alias from "../../common/alias-tokens";
 
-const ItemAction = styled.a<{
+export const ItemAction = styled.a<{
   $selected?: boolean;
   $grouped?: boolean;
 }>`
@@ -45,5 +45,3 @@ const ItemAction = styled.a<{
     outline: 2px solid ${alias.color.focus};
   }
 `;
-
-export { ItemAction };

@@ -12,8 +12,15 @@ const SingleItem = ({ item, grouped }: { item: SingleItemType; grouped?: boolean
   return (
     <ItemAction
       aria-selected={item.selected}
-      href={item.external ? item.href : undefined}
-      onClick={item.external ? undefined : () => onNavigate(item.href)}
+      href={item.href}
+      onClick={
+        item.external
+          ? undefined
+          : (e) => {
+              e.preventDefault();
+              onNavigate(item.href);
+            }
+      }
       tabIndex={0}
       target={item.external ? "_blank" : undefined}
       $grouped={grouped}

@@ -18,7 +18,8 @@ const sections = [
         </Paragraph>
         <Paragraph>
           The main goal of this project is to provide a set of components that can be easily reused in any project, with
-          a focus on accessibility and usability.
+          a focus on accessibility and usability, while also providing a consistent design, so our users can focus on
+          building their projects.
         </Paragraph>
       </>
     ),
@@ -66,7 +67,7 @@ const sections = [
           <>
             <Paragraph>
               Mila components is built on top of a set of{" "}
-              <NextLink href="/foundations">
+              <NextLink href="/foundations/color">
                 <Link>design foundations</Link>
               </NextLink>{" "}
               that guide the development of the components.
