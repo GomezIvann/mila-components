@@ -135,11 +135,11 @@ const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: Side
         )}
         <SideNavigationContext.Provider value={handleNavigate}>
           {isSectionType(items[0]) ? (
-            (items as SectionType[]).map((item, index) => (
-              <Section aria-label={item?.title}>
-                {item.title && <Heading level={4}>{item.title}</Heading>}
+            (items as SectionType[]).map((section, index) => (
+              <Section aria-label={section?.title} key={`${section.title}-${index}`}>
+                {section.title && <Heading level={4}>{section.title}</Heading>}
                 <List>
-                  {item.items.map((item, index) => (
+                  {section.items.map((item, index) => (
                     <SideNavigationItem item={item} key={`${item.label}-${index}`} />
                   ))}
                 </List>

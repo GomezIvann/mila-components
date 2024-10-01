@@ -1,6 +1,7 @@
 import styles from "./code.module.css";
+import { CodeBlockProps, CodeProps } from "./types";
 
-export const CodeBlock = ({ children, language }: { children: React.ReactNode; language?: string }) => (
+export const CodeBlock = ({ children, language }: CodeBlockProps) => (
   <div className={styles.codeBlock}>
     {language && <span>{language}</span>}
     <pre>
@@ -9,4 +10,4 @@ export const CodeBlock = ({ children, language }: { children: React.ReactNode; l
   </div>
 );
 
-export const Code = ({ children }: { children: React.ReactNode }) => <code className={styles.code}>{children}</code>;
+export const Code = ({ children }: CodeProps) => <code className={styles.code}>{children}</code>;
