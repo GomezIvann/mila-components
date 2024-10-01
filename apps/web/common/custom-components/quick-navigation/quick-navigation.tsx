@@ -1,17 +1,7 @@
 import { QuickNavigation } from "@gomezivann/mila-components";
-import Section, { SectionType } from "./section";
+import Section from "./section";
 import styles from "./quick-navigation.module.css";
-
-type SiteQuickNavigationProps = {
-  sections: SectionType[];
-  startHeadingLevel?: 1 | 2 | 3 | 4 | 5;
-  title?: string;
-};
-
-type LinkType = {
-  label: string;
-  links?: LinkType[];
-};
+import { LinkType, SectionType, SiteQuickNavigationProps } from "./types";
 
 const getSubSectionsLinks = (sections: SectionType[]) => {
   const linksList: LinkType[] = [];

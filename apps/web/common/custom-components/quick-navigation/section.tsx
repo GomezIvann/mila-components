@@ -1,17 +1,8 @@
 import SiteHeading from "./heading/heading";
 import { Flex } from "@gomezivann/mila-components";
+import { LevelEnum, SectionType } from "./types";
 
-type LevelEnum = 1 | 2 | 3 | 4 | 5;
-
-export type SectionType = {
-  title: string;
-  level?: LevelEnum;
-  subSections?: SectionType[];
-  content?: React.ReactNode;
-  navSubtitle?: string;
-};
-
-export default function Section({ title, level = 1, subSections, content, navSubtitle }: SectionType) {
+export default function Section({ content, level = 1, navSubtitle, subSections, title }: SectionType) {
   return (
     <Flex direction="column" gap={level === 1 ? 48 : level === 2 ? 32 : 24}>
       <SiteHeading level={level} navSubtitle={navSubtitle}>
