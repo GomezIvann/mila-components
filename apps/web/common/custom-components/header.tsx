@@ -1,7 +1,7 @@
 "use client";
 
 import { Header } from "@gomezivann/mila-components";
-import { mainBlocks } from "../pages-list";
+import { getMainBlockFirstLink, mainBlocks } from "../pages-list";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function SiteHeader() {
@@ -15,7 +15,7 @@ export default function SiteHeader() {
     <Header
       links={mainBlocks.map((block) => ({
         label: block.title,
-        href: block.links[0]?.href ?? "/",
+        href: getMainBlockFirstLink(block) ?? "/",
         selected: pathname.startsWith(block.href),
       }))}
       responsiveBreakpoint="md"

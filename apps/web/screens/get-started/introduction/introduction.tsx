@@ -53,7 +53,7 @@ const sections = [
             </Paragraph>
             <Paragraph>
               You can find a list of all available components in the{" "}
-              <NextLink href="/components">
+              <NextLink href="/components/action-button">
                 <Link>Components</Link>
               </NextLink>{" "}
               section.

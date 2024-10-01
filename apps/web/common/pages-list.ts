@@ -2,10 +2,14 @@ type LinkDetails = {
   label: string;
   href: string;
 };
+type LinkGroupDetails = {
+  label: string;
+  items: LinkDetails[];
+};
 type MainBlock = {
   href: string;
   title: string;
-  links: LinkDetails[];
+  links: (LinkDetails | LinkGroupDetails)[];
 };
 
 const getStartedLinks: LinkDetails[] = [
@@ -20,17 +24,45 @@ const foundationsLinks: LinkDetails[] = [
   { label: "Typography", href: "/foundations/typography" },
 ];
 
-const componentsLinks: LinkDetails[] = [
-  { label: "Action button", href: "/components/action-button" },
-  { label: "Application layout", href: "/components/application-layout" },
-  { label: "Button", href: "/components/button" },
-  { label: "Divider", href: "/components/divider" },
-  { label: "Dropdown menu", href: "/components/dropdown-menu" },
-  { label: "Header", href: "/components/header" },
-  { label: "Link", href: "/components/link" },
-  { label: "Footer", href: "/components/header" },
-  { label: "Paragraph", href: "/components/paragraph" },
-  { label: "Quick nav", href: "/components/quick-nav" },
+const componentsLinks: LinkGroupDetails[] = [
+  {
+    label: "Actions",
+    items: [
+      { label: "Action button", href: "/components/action-button" },
+      { label: "Button", href: "/components/button" },
+    ],
+  },
+  {
+    label: "Data visualization",
+    items: [{ label: "Table", href: "/components/table" }],
+  },
+  {
+    label: "Layout",
+    items: [
+      { label: "Application layout", href: "/components/application-layout" },
+      { label: "Divider", href: "/components/divider" },
+      { label: "Flex", href: "/components/flex" },
+      { label: "Footer", href: "/components/footer" },
+      { label: "Header", href: "/components/header" },
+      { label: "Side navigation", href: "/components/side-navigation" },
+    ],
+  },
+  {
+    label: "Navigation",
+    items: [
+      { label: "Dropdown menu", href: "/components/dropdown-menu" },
+      { label: "Link", href: "/components/link" },
+      { label: "Quick navigation", href: "/components/quick-navigation" },
+    ],
+  },
+  {
+    label: "Text",
+    items: [
+      { label: "Bulleted list", href: "/components/bulleted-list" },
+      { label: "Heading", href: "/components/heading" },
+      { label: "Paragraph", href: "/components/paragraph" },
+    ],
+  },
 ];
 
 const mainBlocks: MainBlock[] = [
@@ -51,5 +83,14 @@ const mainBlocks: MainBlock[] = [
   },
 ];
 
-export { mainBlocks, getStartedLinks, foundationsLinks, componentsLinks };
+export function getMainBlockFirstLink(block: MainBlock): string {
+  const firstLinkMainBlock = mainBlocks.find((b) => b.title === block.title)?.links[0];
+  const mainBlockLink =
+    firstLinkMainBlock != null && "items" in firstLinkMainBlock
+      ? firstLinkMainBlock.items[0]?.href
+      : firstLinkMainBlock?.href;
+  return mainBlockLink ?? "/";
+}
+
+export { componentsLinks, foundationsLinks, getStartedLinks, mainBlocks };
 export type { LinkDetails, MainBlock };

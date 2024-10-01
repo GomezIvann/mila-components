@@ -56,7 +56,7 @@ const sections = [
       <>
         <Paragraph>
           You can now start building your project using Mila components. Check the{" "}
-          <NextLink href="/components">
+          <NextLink href="/components/action-button">
             <Link>components</Link>
           </NextLink>{" "}
           section to see all the components available.
