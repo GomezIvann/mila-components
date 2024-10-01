@@ -3,6 +3,7 @@ import { color, space, typography } from "../common/core-tokens";
 import LinkProps from "./types";
 import alias from "../common/alias-tokens";
 import Icon from "../common/icon/icon";
+import { forwardRef } from "react";
 
 const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"]; $inheritStyles: LinkProps["inheritStyles"] }>`
   border-radius: ${alias.space.primaryBorderRadius};
@@ -38,29 +39,23 @@ const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"]; $inheritStyles:
   `};
 `;
 
-const Link = ({
-  children,
-  disabled = false,
-  href,
-  icon,
-  inheritStyles,
-  newWindow = false,
-  onClick,
-  ...rest
-}: LinkProps) => (
-  <StyledLink
-    aria-disabled={disabled}
-    href={disabled ? undefined : href}
-    $inheritStyles={inheritStyles}
-    onClick={disabled ? undefined : onClick}
-    target={newWindow ? "_blank" : "_self"}
-    $disabled={disabled}
-    tabIndex={disabled ? -1 : 0}
-    {...rest}
-  >
-    {icon && <Icon icon={icon} height="16px" width="16px" />}
-    <span>{children}</span>
-  </StyledLink>
+const Link = forwardRef<HTMLAnchorElement, LinkProps>(
+  ({ children, disabled = false, href, icon, inheritStyles, newWindow = false, onClick, ...rest }, ref) => (
+    <StyledLink
+      aria-disabled={disabled}
+      href={disabled ? undefined : href}
+      $inheritStyles={inheritStyles}
+      onClick={disabled ? undefined : onClick}
+      target={newWindow ? "_blank" : "_self"}
+      $disabled={disabled}
+      tabIndex={disabled ? -1 : 0}
+      ref={ref}
+      {...rest}
+    >
+      {icon && <Icon icon={icon} height="16px" width="16px" />}
+      <span>{children}</span>
+    </StyledLink>
+  )
 );
 
 export default Link;
