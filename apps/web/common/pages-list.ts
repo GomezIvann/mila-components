@@ -37,7 +37,7 @@ const mainBlocks: MainBlock[] = [
   {
     href: "/get-started",
     links: getStartedLinks,
-    title: "Get Started",
+    title: "Get started",
   },
   {
     href: "/foundations",

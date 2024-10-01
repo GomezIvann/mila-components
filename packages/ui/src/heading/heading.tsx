@@ -3,18 +3,18 @@ import HeadingProps from "./types";
 import { typography } from "../common/core-tokens";
 import alias from "../common/alias-tokens";
 
-const StyledHeading = styled.h1<{ $level: HeadingProps["level"] }>`
+const StyledHeading = styled.h1<{ $level: HeadingProps["level"]; $weight: HeadingProps["weight"] }>`
   margin: 0;
   color: ${alias.color.text};
   font-family: ${typography.family.sans};
 
-  ${({ $level }) => {
+  ${({ $level, $weight }) => {
     switch ($level) {
       case 1:
         return `
           font-size: ${typography.size["4xl"]};
           font-style: normal;
-          font-weight: ${typography.weight.bold};
+          font-weight: ${$weight === "light" ? typography.weight.normal : typography.weight.bold};
           letter-spacing: ${typography.letterSpacing.tight};
           line-height: ${typography.lineHeight.tight};
         `;
@@ -22,7 +22,7 @@ const StyledHeading = styled.h1<{ $level: HeadingProps["level"] }>`
         return `
           font-size: ${typography.size["2xl"]};
           font-style: normal;
-          font-weight: ${typography.weight.semibold};
+          font-weight: ${$weight === "light" ? typography.weight.normal : typography.weight.semibold};
           letter-spacing: ${typography.letterSpacing.normal};
           line-height: ${typography.lineHeight.normal};
         `;
@@ -30,7 +30,7 @@ const StyledHeading = styled.h1<{ $level: HeadingProps["level"] }>`
         return `
           font-size: ${typography.size.xl};
           font-style: normal;
-          font-weight: ${typography.weight.semibold};
+          font-weight: ${$weight === "light" ? typography.weight.normal : typography.weight.semibold};
           letter-spacing: ${typography.letterSpacing.wide};
           line-height: ${typography.lineHeight.tight};
         `;
@@ -38,7 +38,7 @@ const StyledHeading = styled.h1<{ $level: HeadingProps["level"] }>`
         return `
           font-size: ${typography.size.md};
           font-style: normal;
-          font-weight: ${typography.weight.semibold};
+          font-weight: ${$weight === "light" ? typography.weight.normal : typography.weight.semibold};
           letter-spacing: ${typography.letterSpacing.normal};
           line-height: ${typography.lineHeight.normal};
         `;
@@ -46,7 +46,7 @@ const StyledHeading = styled.h1<{ $level: HeadingProps["level"] }>`
         return `
           font-size: ${typography.size.sm};
           font-style: normal;
-          font-weight: ${typography.weight.semibold};
+          font-weight: ${$weight === "light" ? typography.weight.normal : typography.weight.semibold};
           letter-spacing: ${typography.letterSpacing.wide};
           line-height: ${typography.lineHeight.tight};
         `;
@@ -54,8 +54,8 @@ const StyledHeading = styled.h1<{ $level: HeadingProps["level"] }>`
   }}
 `;
 
-const Heading = ({ level = 1, children }: HeadingProps) => (
-  <StyledHeading $level={level} as={`h${level}`}>
+const Heading = ({ children, level = 1, weight = "heavy" }: HeadingProps) => (
+  <StyledHeading $level={level} $weight={weight} as={`h${level}`}>
     {children}
   </StyledHeading>
 );

@@ -24,6 +24,7 @@ const GroupItem = ({ item }: { item: GroupItemType }) => {
   return (
     <>
       <ItemAction
+        as="button"
         aria-controls={groupMenuId}
         aria-expanded={isOpen ? true : false}
         aria-selected={selected && !isOpen}

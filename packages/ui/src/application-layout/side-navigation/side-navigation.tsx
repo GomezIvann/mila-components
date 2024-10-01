@@ -1,5 +1,5 @@
-import { createContext, useEffect, useState } from "react";
-import styled from "styled-components";
+import { createContext, useCallback, useEffect, useState } from "react";
+import styled, { createGlobalStyle } from "styled-components";
 import Divider from "../../divider/divider";
 import SideNavigationProps, { GroupItemType, SectionType, SideNavigationWrapperProps, SingleItemType } from "./types";
 import { color, space } from "../../common/core-tokens";
@@ -62,11 +62,13 @@ const ResponsiveTriggerContainer = styled.div`
   z-index: 2147483647;
 `;
 
-export const SideNavigationContext = createContext<{
-  onNavigate: SideNavigationProps["onNavigate"];
-}>({
-  onNavigate: () => {},
-});
+const Overlay = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: ${color.black};
+  opacity: 0.5;
+`;
 
 const isSectionType = (item?: SectionType | SingleItemType | GroupItemType): item is SectionType =>
   item != null && "items" in item && !("label" in item);
@@ -91,9 +93,19 @@ const SideNavigationWrapper = ({ condition, children, isOpen, setIsOpen }: SideN
     children
   );
 
+export const SideNavigationContext = createContext<SideNavigationProps["onNavigate"]>(() => {});
+
 const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: SideNavigationProps) => {
   const [isOpen, setIsOpen] = useState(false); // For responsive mode
   const [isInResponsiveMode, setIsInResponsiveMode] = useState(false);
+
+  const handleNavigate = useCallback(
+    (href: string) => {
+      onNavigate(href);
+      isInResponsiveMode && setIsOpen(false);
+    },
+    [onNavigate, isInResponsiveMode]
+  );
 
   useEffect(() => {
     if (responsiveBreakpoint) {
@@ -110,6 +122,7 @@ const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: Side
 
   return (
     <SideNavigationWrapper condition={isInResponsiveMode} isOpen={isOpen} setIsOpen={setIsOpen}>
+      {isInResponsiveMode && isOpen && <Overlay onClick={() => setIsOpen(false)} />}
       <StyledSideNavigation
         aria-label={`side-navigation${title?.label ? `-${title.label}` : ""}`}
         $isInResponsiveMode={isInResponsiveMode}
@@ -120,7 +133,7 @@ const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: Side
             {title?.label && <Heading level={2}>{title.label}</Heading>}
           </Title>
         )}
-        <SideNavigationContext.Provider value={{ onNavigate }}>
+        <SideNavigationContext.Provider value={handleNavigate}>
           {isSectionType(items[0]) ? (
             (items as SectionType[]).map((item, index) => (
               <Section aria-label={item?.title}>

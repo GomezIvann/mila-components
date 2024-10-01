@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { color, space, typography } from "../../common/core-tokens";
 import alias from "../../common/alias-tokens";
 
-const ItemAction = styled.button<{
+const ItemAction = styled.a<{
   $selected?: boolean;
   $grouped?: boolean;
 }>`

@@ -3,12 +3,6 @@
   grid-template-columns: 1fr auto;
 }
 
-@media (max-width: 1024px) {
-  .mainContainer {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
 .quickNavigationContainer {
   position: sticky;
   top: calc(64px + 24px);
@@ -26,6 +20,5 @@
 
 .sectionsContainer {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
   gap: 3rem;
 }

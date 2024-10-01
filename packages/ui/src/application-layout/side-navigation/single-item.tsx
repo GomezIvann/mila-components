@@ -7,11 +7,10 @@ import icons from "../../common/icons";
 import Flex from "../../flex/flex";
 
 const SingleItem = ({ item, grouped }: { item: SingleItemType; grouped?: boolean }) => {
-  const { onNavigate } = useContext(SideNavigationContext);
-  
+  const onNavigate = useContext(SideNavigationContext);
+
   return (
     <ItemAction
-      as="a"
       aria-selected={item.selected}
       href={item.external ? item.href : undefined}
       onClick={item.external ? undefined : () => onNavigate(item.href)}
