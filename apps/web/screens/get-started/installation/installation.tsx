@@ -9,11 +9,11 @@ import buildingExample from "./code-examples/building";
 
 const sections = [
   {
-    title: "How to install Mila components",
+    title: "How to install Mila",
     content: (
       <>
         <Paragraph>
-          Mila components are published as an <Code>npm</Code> package. You can install them using your favorite package
+          Mila components is published as an <Code>npm</Code> package. You can install them using your favorite package
           manager.
         </Paragraph>
       </>
