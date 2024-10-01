@@ -11,9 +11,9 @@ const sections = [
       <>
         <Paragraph>
           Mila components is a humble library of reusable components, based on{" "}
-          <NextLink href="https://react.dev/">
-            <Link newWindow>React</Link>
-          </NextLink>{" "}
+          <Link href="https://react.dev/" newWindow>
+            React
+          </Link>{" "}
           framework, developed as a final master thesis project.
         </Paragraph>
         <Paragraph>
@@ -53,7 +53,7 @@ const sections = [
             </Paragraph>
             <Paragraph>
               You can find a list of all available components in the{" "}
-              <NextLink href="/components/action-button">
+              <NextLink href="/components/action-button" passHref legacyBehavior>
                 <Link>Components</Link>
               </NextLink>{" "}
               section.
@@ -67,7 +67,7 @@ const sections = [
           <>
             <Paragraph>
               Mila components is built on top of a set of{" "}
-              <NextLink href="/foundations/color">
+              <NextLink href="/foundations/color" passHref legacyBehavior>
                 <Link>design foundations</Link>
               </NextLink>{" "}
               that guide the development of the components.
@@ -90,10 +90,7 @@ const sections = [
         <Paragraph>Help is always welcome!</Paragraph>
         <Paragraph>
           If you have any questions, suggestions, or feedback, feel free to reach us on our{" "}
-          <NextLink href="https://github.com/GomezIvann/mila-components">
-            <Link>GitHub repository</Link>
-          </NextLink>
-          .
+          <Link href="https://github.com/GomezIvann/mila-components">GitHub repository</Link>.
         </Paragraph>
       </>
     ),

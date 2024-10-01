@@ -46,7 +46,7 @@ const Link = ({
   inheritStyles,
   newWindow = false,
   onClick,
-  ...otherProps
+  ...rest
 }: LinkProps) => (
   <StyledLink
     aria-disabled={disabled}
@@ -56,7 +56,7 @@ const Link = ({
     target={newWindow ? "_blank" : "_self"}
     $disabled={disabled}
     tabIndex={disabled ? -1 : 0}
-    {...otherProps}
+    {...rest}
   >
     {icon && <Icon icon={icon} height="16px" width="16px" />}
     <span>{children}</span>

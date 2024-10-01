@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { IconProp } from "../types";
+import IconProps from "./types";
 
 const StyledIcon = styled.div<{ $width?: string; $height?: string }>`
   display: flex;
@@ -9,13 +9,6 @@ const StyledIcon = styled.div<{ $width?: string; $height?: string }>`
     height: ${({ $height }) => $height};
   }
 `;
-
-type IconProps = {
-  icon: IconProp;
-  width?: string;
-  height?: string;
-  title?: string;
-};
 
 const Icon = ({ icon, width = "auto", height = "auto", title }: IconProps) => (
   <StyledIcon $width={width} $height={height} title={title} aria-label={title}>

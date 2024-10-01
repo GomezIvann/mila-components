@@ -1,8 +1,7 @@
 .headingContainer {
-  margin-left: -2rem;
+  position: relative;
   display: flex;
   align-items: center;
-  scroll-margin-top: 64px;
 }
 
 .headingContainer:hover svg {
@@ -15,17 +14,13 @@
   }
 }
 
-@media (max-width: 45rem) {
-  .headingContainer {
-    scroll-margin-top: 116px;
-  }
-}
-
 .headingAnchor {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px;
-  color: inherit;
+  position: absolute;
+  margin-left: -28px;
+  border-radius: 0.25rem;
+  padding: 0.125rem;
+  display: flex;
+  color: #797979;
   text-decoration: none;
 }
 
@@ -33,12 +28,10 @@
   width: 20px;
   height: 20px;
   opacity: 0;
-  color: #9a9a9a;
 }
 
 .headingAnchor:focus {
-  outline-color: #0095ff;
-  outline-offset: -0.25rem;
+  outline: 2px solid #61b2f3;
 }
 
 .headingAnchor:focus svg {
