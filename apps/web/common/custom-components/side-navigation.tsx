@@ -28,22 +28,11 @@ export default function SiteSideNavigation() {
       items={[
         {
           title,
-          items: links.map((link) =>
-            "items" in link
-              ? {
-                  label: link.label,
-                  items: link.items.map((item) => ({
-                    label: item.label,
-                    href: item.href,
-                    selected: pathname === item.href,
-                  })),
-                }
-              : {
-                  label: link.label,
-                  href: link.href,
-                  selected: pathname === link.href,
-                }
-          ),
+          items: links.map((link) => ({
+            label: link.label,
+            href: link.href,
+            selected: pathname === link.href,
+          })),
         },
       ]}
       onNavigate={handleOnNavigate}

@@ -25,7 +25,7 @@ export default function HomePage() {
           </Button>
           <Button
             onClick={() => {
-              router.push("/foundations/color");
+              router.push("/foundations");
             }}
             variant="outlined"
           >

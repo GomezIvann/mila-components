@@ -56,14 +56,14 @@ const sections = [
       <>
         <Paragraph>
           You can now start building your project using Mila components. Check the{" "}
-          <NextLink href="/components/action-button" passHref legacyBehavior>
+          <NextLink href="/components" passHref legacyBehavior>
             <Link>components</Link>
           </NextLink>{" "}
           section to see all the components available.
         </Paragraph>
         <Paragraph>
           If you want to learn about Mila's design principles, check the{" "}
-          <NextLink href="/foundations/color" passHref legacyBehavior>
+          <NextLink href="/foundations" passHref legacyBehavior>
             <Link>foundations</Link>
           </NextLink>{" "}
           section.

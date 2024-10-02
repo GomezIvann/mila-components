@@ -78,7 +78,7 @@ const sections = [
           <>
             <Paragraph>
               Mila components is built on top of a set of{" "}
-              <NextLink href="/foundations/color" passHref legacyBehavior>
+              <NextLink href="/foundations" passHref legacyBehavior>
                 <Link>design foundations</Link>
               </NextLink>{" "}
               that guide the development of the components.
