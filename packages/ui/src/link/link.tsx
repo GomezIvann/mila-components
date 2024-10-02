@@ -53,7 +53,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(
       {...rest}
     >
       {icon && <Icon icon={icon} height="16px" width="16px" />}
-      <span>{children}</span>
+      {children}
     </StyledLink>
   )
 );

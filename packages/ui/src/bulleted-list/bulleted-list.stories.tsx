@@ -10,7 +10,6 @@ export default {
 export const Stories = () => (
   <>
     <ExampleContainer>
-      <Heading level={3}>Icon list (SVG)</Heading>
       <Heading level={3}>Number list</Heading>
       <BulletedList styleType="number">
         <li>Code</li>

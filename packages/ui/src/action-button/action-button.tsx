@@ -83,7 +83,7 @@ const ActionButton = ({
     {...rest}
   >
     {icon && <Icon icon={icon} height="24px" width="24px" />}
-    {children && <span>{children}</span>}
+    {children}
   </StyledActionButton>
 );
 

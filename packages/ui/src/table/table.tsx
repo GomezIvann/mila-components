@@ -19,9 +19,9 @@ const StyledTable = styled.table`
     padding: ${space[8]};
     border-bottom: 1px solid ${alias.color.primaryBorder};
   }
-
   th {
     font-weight: ${typography.weight.semibold};
+    /* background-color: ${alias.color.selected}; */
   }
 `;
 

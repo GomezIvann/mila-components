@@ -7,7 +7,10 @@ const code = `() => {
       <Paragraph>
         Mila components are a collection of React components that you can use to build your applications.
       </Paragraph>
-      <Button onClick={() => console.log("Mila!")}>Get started</Button>
+      <Flex gap={24}>
+        <Button onClick={() => console.log("Mila!")}>Get started</Button>
+        <Link href="https://github.com/GomezIvann/mila-components">GitHub</Link>
+      </Flex>
     </Flex>
   );
 }`;

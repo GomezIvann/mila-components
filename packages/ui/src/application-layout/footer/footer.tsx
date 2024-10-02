@@ -13,7 +13,6 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   gap: ${space[4]};
   padding: ${space[16]} ${space[24]};
-  background-color: ${color.grey[100]};
   border-top: 1px solid ${alias.color.primaryBorder};
 `;
 

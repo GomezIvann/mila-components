@@ -74,7 +74,7 @@ const StyledButton = styled.button<{
   $variant: string;
 }>`
   box-sizing: border-box;
-  border-radius: ${space[128]};
+  border-radius: ${space[64]};
   width: fit-content;
   height: 40px;
   padding: ${space[8]} ${space[20]};
@@ -128,7 +128,7 @@ const Button = ({
     {...rest}
   >
     {icon && <Icon icon={icon} height="24px" width="24px" />}
-    <span>{children}</span>
+    {children}
   </StyledButton>
 );
 

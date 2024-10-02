@@ -20,7 +20,7 @@ export default function LiveCodeBlock({ defaultEditorIsOpen = true, example }: L
   };
 
   return (
-    <Flex direction="column" gap={8}>
+    <Flex direction="column" gap={12}>
       <Flex direction="column" gap={4}>
         <LiveProvider code={example.code} scope={example.scope} theme={theme}>
           <LivePreview className={styles.preview} />

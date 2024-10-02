@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-type Props = {
+type ExampleContainer = {
   children?: React.ReactNode;
   pseudoState?:
     | "pseudo-active"
@@ -15,12 +15,6 @@ type Props = {
   expanded?: boolean;
 };
 
-const ExampleContainer = ({ children, pseudoState, expanded = false }: Props) => (
-  <StyledExampleContainer className={`${pseudoState}-all`} $expanded={expanded}>
-    {children}
-  </StyledExampleContainer>
-);
-
 const StyledExampleContainer = styled.div<{ $expanded: boolean }>`
   margin: 2rem;
   ${(props) => props.$expanded && "height: 100vh;"}
@@ -28,5 +22,11 @@ const StyledExampleContainer = styled.div<{ $expanded: boolean }>`
   flex-direction: column;
   gap: 1rem;
 `;
+
+const ExampleContainer = ({ children, pseudoState, expanded = false }: ExampleContainer) => (
+  <StyledExampleContainer className={`${pseudoState}-all`} $expanded={expanded}>
+    {children}
+  </StyledExampleContainer>
+);
 
 export default ExampleContainer;

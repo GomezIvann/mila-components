@@ -100,7 +100,11 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
           ) : (
             <StyledActionButton
               as="a"
-              onClick={() => title.href && onNavigate?.(title.href)}
+              href={title.href}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate?.(title.href as string);
+              }}
               tabIndex={0}
               $hasIcon={Boolean(title?.icon)}
               $hasLabel={Boolean(title?.label)}
@@ -132,8 +136,15 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
                   <StyledActionButton
                     as="a"
                     aria-selected={selected}
-                    href={external ? href : undefined}
-                    onClick={external ? undefined : () => onNavigate?.(href)}
+                    href={href}
+                    onClick={
+                      external
+                        ? undefined
+                        : (e) => {
+                            e.preventDefault();
+                            onNavigate?.(href);
+                          }
+                    }
                     tabIndex={0}
                     target={external ? "_blank" : undefined}
                     $hasIcon={external ?? false}

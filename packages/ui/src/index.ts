@@ -15,10 +15,12 @@ import QuickNavigation from "./quick-navigation/quick-navigation";
 import Table from "./table/table";
 import { color, typography, space } from "./common/core-tokens";
 import { breakpoints } from "./common/breakpoints";
+import Badge from "./badge/badge";
 
 export {
   ActionButton,
   ApplicationLayout,
+  Badge,
   BulletedList,
   Button,
   Divider,
