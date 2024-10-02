@@ -8,6 +8,7 @@ export type CodeProps = {
 };
 
 export type LiveCodeBlockProps = {
+  defaultEditorIsOpen?: boolean;
   example: {
     code: string;
     scope?: Record<string, any>;

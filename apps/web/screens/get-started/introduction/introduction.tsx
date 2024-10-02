@@ -23,6 +23,17 @@ const sections = [
         </Paragraph>
       </>
     ),
+    subSections: [
+      {
+        title: "Why Mila?",
+        content: (
+          <Paragraph>
+            <em>Mila</em> is a stray cat who has made her home in a meadow near my house in Asturias. She has been there
+            since I began my master's degree, and I wanted to dedicate this project to her.
+          </Paragraph>
+        ),
+      },
+    ],
   },
   {
     title: "What is this documentation?",

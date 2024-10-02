@@ -5,8 +5,8 @@ import { LiveCodeBlockProps } from "./types";
 import theme from "./live-code-block-theme";
 import { Button, Flex } from "@gomezivann/mila-components";
 
-export default function LiveCodeBlock({ example }: LiveCodeBlockProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function LiveCodeBlock({ defaultEditorIsOpen = true, example }: LiveCodeBlockProps) {
+  const [isEditorOpen, setIsEditorOpen] = useState(defaultEditorIsOpen);
 
   const handleCopy = () => {
     navigator.clipboard
@@ -15,21 +15,21 @@ export default function LiveCodeBlock({ example }: LiveCodeBlockProps) {
         alert("Code copied to the clipboard! 🚀");
       })
       .catch((err) => {
-        console.error("Failed to copy the text to clipboard: ", err);
+        console.error("Failed to copy the text to the clipboard: ", err);
       });
   };
 
   return (
-    <Flex direction="column" gap={16}>
-      <Flex gap={4}>
+    <Flex direction="column" gap={8}>
+      <Flex direction="column" gap={4}>
         <LiveProvider code={example.code} scope={example.scope} theme={theme}>
           <LivePreview className={styles.preview} />
           <LiveError />
-          {isOpen && <LiveEditor />}
+          {isEditorOpen && <LiveEditor />}
         </LiveProvider>
       </Flex>
       <Flex gap={12} justifyContent="flex-end">
-        <Button onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Hide code" : "Show code"}</Button>
+        <Button onClick={() => setIsEditorOpen(!isEditorOpen)}>{isEditorOpen ? "Hide code" : "Show code"}</Button>
         <Button onClick={handleCopy} variant="text">
           Copy code
         </Button>
