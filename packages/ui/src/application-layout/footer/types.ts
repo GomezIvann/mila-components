@@ -14,7 +14,7 @@ type FooterProps = {
   }[];
   title?: {
     icon?: IconProp;
-    label?: string;
+    text?: string;
   };
 };
 

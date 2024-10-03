@@ -15,7 +15,7 @@ type HeaderProps = {
   title?: {
     href?: string;
     icon?: IconProp;
-    label?: string;
+    text?: string;
   };
 };
 

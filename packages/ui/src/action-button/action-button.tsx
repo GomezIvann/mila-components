@@ -12,7 +12,7 @@ export const StyledActionButton = styled.button<{
   $variant: ActionButtonProps["variant"];
 }>`
   box-sizing: border-box;
-  border: ${({ $variant }) => ($variant === "bordered" ? `1px solid ${alias.color.primaryBorder}` : "none")};
+  border: ${({ $variant }) => ($variant === "outlined" ? `1px solid ${alias.color.primaryBorder}` : "none")};
   border-radius: ${alias.space.primaryBorderRadius};
   width: fit-content;
   height: 40px;
@@ -32,7 +32,7 @@ export const StyledActionButton = styled.button<{
   ${({ $iconPosition }) => $iconPosition === "right" && "flex-direction: row-reverse;"}
   align-items: center;
   gap: ${space[8]};
-  background-color: ${({ $variant }) => ($variant === "bordered" ? color.white : color.transparent)};
+  background-color: ${({ $variant }) => ($variant === "outlined" ? color.white : color.transparent)};
   color: ${alias.color.text};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};
@@ -61,17 +61,20 @@ export const StyledActionButton = styled.button<{
 `;
 
 const ActionButton = forwardRef<HTMLButtonElement, ActionButtonProps>(
-  ({
-    children,
-    disabled = false,
-    icon,
-    iconPosition = "left",
-    onClick,
-    title,
-    type = "button",
-    variant = "default",
-    ...rest
-  }, ref) => (
+  (
+    {
+      children,
+      disabled = false,
+      icon,
+      iconPosition = "left",
+      onClick,
+      title,
+      type = "button",
+      variant = "default",
+      ...rest
+    },
+    ref
+  ) => (
     <StyledActionButton
       aria-label={title}
       disabled={disabled}

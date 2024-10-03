@@ -7,6 +7,7 @@
   position: sticky;
   top: calc(64px + 24px);
   max-height: 568px;
+  width: 264px;
   margin-left: 1.5rem;
   overflow-x: hidden;
   overflow-y: auto;

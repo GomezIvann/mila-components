@@ -76,7 +76,7 @@ const Footer = ({ content, copyright = "© 2024 GomezIvann", links, socialIcons,
       {title && (
         <TitleContainer>
           {title.icon && <Icon icon={title.icon} height="40px" />}
-          {title.label && <Heading level={3}>{title.label}</Heading>}
+          {title.text && <Heading level={3}>{title.text}</Heading>}
         </TitleContainer>
       )}
       <CustomContent>{content}</CustomContent>

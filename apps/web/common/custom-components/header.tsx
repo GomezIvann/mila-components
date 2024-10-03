@@ -26,8 +26,8 @@ export default function SiteHeader() {
         href: "/",
         icon: (
           <>
-            <Image src={milaIcon} alt="Mila components icon" />
-            <Image src={milaLogo} alt="Mila components logo" />
+            <Image src={milaIcon} alt="Mila components icon" priority />
+            <Image src={milaLogo} alt="Mila components logo" priority />
           </>
         ),
       }}

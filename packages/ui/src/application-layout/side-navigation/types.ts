@@ -22,7 +22,7 @@ type SideNavigationProps = {
   responsiveBreakpoint?: keyof typeof breakpoints;
   title?: {
     icon?: IconProp;
-    label?: string;
+    text?: string;
   };
 };
 

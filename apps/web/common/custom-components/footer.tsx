@@ -8,7 +8,7 @@ import milaLogo from "../assets/mila-logo.png";
 export default function SiteFooter() {
   return (
     <Footer
-      title={{ icon: <Image src={milaLogo} alt="Mila components logo" /> }}
+      title={{ icon: <Image src={milaLogo} alt="Mila components logo" priority /> }}
       socialIcons={[
         {
           icon: icons.gitHub,

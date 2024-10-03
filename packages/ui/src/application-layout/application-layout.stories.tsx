@@ -103,7 +103,7 @@ const sideNavigationItems = [
 ];
 
 const title = {
-  label: "Mila Components",
+  text: "Mila Components",
   href: "#",
   icon: (
     <svg viewBox="-17.5 -17.5 35 35" xmlns="http://www.w3.org/2000/svg" version="1.1">

@@ -91,12 +91,12 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
 
   return (
     <StyledHeader>
-      <Navigation aria-label={`header-navigation${title?.label ? `-${title.label}` : ""}`}>
+      <Navigation aria-label={`header-navigation${title?.text ? `-${title.text}` : ""}`}>
         {title &&
           (title.href == null ? (
             <TitleContainer>
               {title?.icon && <Icon icon={title.icon} height="40px" />}
-              {title?.label && <Heading level={3}>{title.label}</Heading>}
+              {title?.text && <Heading level={3}>{title.text}</Heading>}
             </TitleContainer>
           ) : (
             <StyledActionButton
@@ -108,12 +108,12 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
               }}
               tabIndex={0}
               $hasIcon={Boolean(title?.icon)}
-              $hasLabel={Boolean(title?.label)}
+              $hasLabel={Boolean(title?.text)}
               $iconPosition="left"
               $variant="default"
             >
               {title?.icon && <Icon icon={title.icon} height="32px" />}
-              {title?.label && <Heading level={3}>{title.label}</Heading>}
+              {title?.text && <Heading level={3}>{title.text}</Heading>}
             </StyledActionButton>
           ))}
         {links &&

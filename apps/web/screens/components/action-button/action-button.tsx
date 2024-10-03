@@ -18,13 +18,20 @@ const sections = [
         </li>
         <li>
           Use the <Code>icon</Code> prop to display an icon next to the action button label. The <Code>icon</Code> prop
-          can be a string, for URLs, or a SVG element.
+          can be either a string, for URLs, or a SVG element.
+        </li>
+        <li>
+          Only SVG icons are styled by the component. If you want to use a different type of icon, you need to style it
+          manually.
         </li>
         <li>
           Use <Code>type</Code> prop carefully. The default value is <Code>button</Code>, but you can change it to{" "}
           <Code>submit</Code> or <Code>reset</Code> if needed. To know more about the differences between these types,{" "}
           check the{" "}
-          <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type" newWindow>MDN documentation</Link>.
+          <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type" newWindow>
+            MDN documentation
+          </Link>
+          .
         </li>
       </BulletedList>
     ),
@@ -116,7 +123,7 @@ const sections = [
           <tr>
             <td>variant</td>
             <td>
-              <Code table>"default" | "bordered"</Code>
+              <Code table>"default" | "outlined"</Code>
             </td>
             <td>Action button variants.</td>
           </tr>
@@ -132,7 +139,9 @@ const sections = [
         content: (
           <BulletedList>
             <li>
-              <Link href="https://www.w3.org/WAI/ARIA/apg/patterns/button/" newWindow>Button pattern</Link>
+              <Link href="https://www.w3.org/WAI/ARIA/apg/patterns/button/" newWindow>
+                Button pattern
+              </Link>
             </li>
           </BulletedList>
         ),

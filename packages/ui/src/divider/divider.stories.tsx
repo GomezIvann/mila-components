@@ -11,8 +11,8 @@ export default {
 
 export const Stories = () => (
   <>
-    <Heading level={3}>Light and dark dividers</Heading>
     <ExampleContainer>
+      <Heading level={3}>Light and dark dividers</Heading>
       <Flex gap={16} direction="column">
         <Paragraph>
           Lorem ipsum dolor sit amet consectetur. Tincidunt sed pharetra mollis duis volutpat urna. Hendrerit aliquet et
@@ -48,8 +48,8 @@ export const Stories = () => (
         </Paragraph>
       </Flex>
     </ExampleContainer>
-    <Heading level={3}>Strong and vertical</Heading>
     <ExampleContainer>
+      <Heading level={3}>Strong and vertical</Heading>
       <Flex gap={16}>
         <Paragraph>
           Lorem ipsum dolor sit amet consectetur. Tincidunt sed pharetra mollis duis volutpat urna. Hendrerit aliquet et

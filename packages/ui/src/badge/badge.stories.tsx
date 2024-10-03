@@ -26,24 +26,24 @@ export const Stories = () => (
       <Badge color="orange">Orange</Badge>
     </ExampleContainer>
     <ExampleContainer>
-      <Heading level={3}>Bordered</Heading>
-      <Badge variant="bordered">Grey</Badge>
-      <Badge color="purple" variant="bordered">
+      <Heading level={3}>Outlined</Heading>
+      <Badge variant="outlined">Grey</Badge>
+      <Badge color="purple" variant="outlined">
         Purple
       </Badge>
-      <Badge color="blue" variant="bordered">
+      <Badge color="blue" variant="outlined">
         Blue
       </Badge>
-      <Badge color="green" variant="bordered">
+      <Badge color="green" variant="outlined">
         Green
       </Badge>
-      <Badge color="red" variant="bordered">
+      <Badge color="red" variant="outlined">
         Red
       </Badge>
-      <Badge color="yellow" variant="bordered">
+      <Badge color="yellow" variant="outlined">
         Yellow
       </Badge>
-      <Badge color="orange" variant="bordered">
+      <Badge color="orange" variant="outlined">
         Orange
       </Badge>
     </ExampleContainer>

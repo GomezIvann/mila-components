@@ -96,7 +96,7 @@ const SideNavigationWrapper = ({ condition, children, isOpen, setIsOpen }: SideN
     <>
       <ResponsiveTriggerContainer>
         <ActionButton
-          variant="bordered"
+          variant="outlined"
           icon={isOpen ? icons.menuOpen : icons.menu}
           onClick={() => setIsOpen((isOpen) => !isOpen)}
         />
@@ -138,13 +138,13 @@ const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: Side
     <SideNavigationWrapper condition={isInResponsiveMode} isOpen={isOpen} setIsOpen={setIsOpen}>
       {isInResponsiveMode && isOpen && <Overlay onClick={() => setIsOpen(false)} />}
       <StyledSideNavigation
-        aria-label={`side-navigation${title?.label ? `-${title.label}` : ""}`}
+        aria-label={`side-navigation${title?.text ? `-${title.text}` : ""}`}
         $isInResponsiveMode={isInResponsiveMode}
       >
         {title && (
           <TitleContainer>
             {title?.icon && <Icon icon={title.icon} height="40px" />}
-            {title?.label && <Heading level={2}>{title.label}</Heading>}
+            {title?.text && <Heading level={2}>{title.text}</Heading>}
           </TitleContainer>
         )}
         <SideNavigationContext.Provider value={handleNavigate}>

@@ -9,7 +9,7 @@ type ActionButtonProps = {
   ref?: React.Ref<HTMLButtonElement>;
   title?: string;
   type?: "button" | "submit" | "reset";
-  variant?: "default" | "bordered";
+  variant?: "default" | "outlined";
 };
 
 export default ActionButtonProps;

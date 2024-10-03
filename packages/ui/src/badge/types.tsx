@@ -5,7 +5,7 @@ type BadgeProps = {
   color?: "grey" | "purple" | "blue" | "green" | "red" | "yellow" | "orange";
   icon?: IconProp;
   title?: string;
-  variant?: "default" | "bordered";
+  variant?: "default" | "outlined";
 };
 
 export default BadgeProps;

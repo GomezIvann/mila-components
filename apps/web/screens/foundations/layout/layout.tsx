@@ -13,7 +13,7 @@ const App = () => {
     <ApplicationLayout
       header={(
         <Header
-          title={{ label: "Mila component library" }}
+          title={{ text: "Mila component library" }}
           links={[
             { label: "Home", href: "/" },
             { label: "About", href: "/about" },

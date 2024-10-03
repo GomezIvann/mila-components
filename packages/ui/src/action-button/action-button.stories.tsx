@@ -20,8 +20,8 @@ export const Stories = () => (
       <ActionButton onClick={() => {}}>Edit</ActionButton>
     </ExampleContainer>
     <ExampleContainer>
-      <Heading level={3}>Bordered</Heading>
-      <ActionButton onClick={() => {}} variant="bordered">
+      <Heading level={3}>Outlined</Heading>
+      <ActionButton onClick={() => {}} variant="outlined">
         Edit
       </ActionButton>
     </ExampleContainer>
