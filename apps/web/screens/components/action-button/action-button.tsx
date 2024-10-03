@@ -24,7 +24,7 @@ const sections = [
           Use <Code>type</Code> prop carefully. The default value is <Code>button</Code>, but you can change it to{" "}
           <Code>submit</Code> or <Code>reset</Code> if needed. To know more about the differences between these types,{" "}
           check the{" "}
-          <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type">MDN documentation</Link>.
+          <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type" newWindow>MDN documentation</Link>.
         </li>
       </BulletedList>
     ),
