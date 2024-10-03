@@ -3,6 +3,9 @@
 import { Header } from "@gomezivann/mila-components";
 import { mainBlocks } from "../pages-list";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "./image";
+import milaIcon from "../assets/mila-icon.svg";
+import milaLogo from "../assets/mila-logo.png";
 
 export default function SiteHeader() {
   const pathname = usePathname();
@@ -20,8 +23,13 @@ export default function SiteHeader() {
       }))}
       responsiveBreakpoint="md"
       title={{
-        label: "Mila components",
         href: "/",
+        icon: (
+          <>
+            <Image src={milaIcon} alt="Mila components icon" />
+            <Image src={milaLogo} alt="Mila components logo" />
+          </>
+        ),
       }}
       onNavigate={handleOnNavigate}
     />

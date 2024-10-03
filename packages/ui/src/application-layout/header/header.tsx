@@ -42,8 +42,9 @@ const Navigation = styled.nav`
 const TitleContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: ${space[4]};
+  gap: ${space[8]};
   white-space: nowrap;
+  color: ${alias.color.text};
 `;
 
 const NavigationList = styled.ul`
@@ -94,7 +95,7 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
         {title &&
           (title.href == null ? (
             <TitleContainer>
-              {title?.icon && <Icon icon={title.icon} height="24px" width="24px" />}
+              {title?.icon && <Icon icon={title.icon} height="40px" />}
               {title?.label && <Heading level={3}>{title.label}</Heading>}
             </TitleContainer>
           ) : (
@@ -111,7 +112,7 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
               $iconPosition="left"
               $variant="default"
             >
-              {title?.icon && <Icon icon={title.icon} height="24px" width="24px" />}
+              {title?.icon && <Icon icon={title.icon} height="32px" />}
               {title?.label && <Heading level={3}>{title.label}</Heading>}
             </StyledActionButton>
           ))}

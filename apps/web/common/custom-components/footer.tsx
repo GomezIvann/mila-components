@@ -2,11 +2,13 @@
 
 import { Footer } from "@gomezivann/mila-components";
 import icons from "./icons";
+import Image from "./image";
+import milaLogo from "../assets/mila-logo.png";
 
 export default function SiteFooter() {
   return (
     <Footer
-      title={{ label: "Mila components" }}
+      title={{ icon: <Image src={milaLogo} alt="Mila components logo" /> }}
       socialIcons={[
         {
           icon: icons.gitHub,

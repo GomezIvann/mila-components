@@ -1,12 +1,21 @@
 import NextImage from "next/image";
 
 type ImageProps = {
-  src: any;
   alt: string;
-  width?: string;
-  height?: string;
+  fill?: boolean;
+  height?: number;
+  src: any;
+  width?: number;
 };
 
-export default function Image({ src, alt, width = "100%", height = "auto" }: ImageProps) {
-  return <NextImage src={src} alt={alt} style={{ width, height }} />;
+export default function Image({ alt, fill = false, height, src, width }: ImageProps) {
+  return (
+    <NextImage
+      src={src}
+      alt={alt}
+      height={height}
+      width={width}
+      style={fill ? { width: "100%", height: "auto" } : undefined}
+    />
+  );
 }

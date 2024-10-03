@@ -28,12 +28,13 @@ const StyledSideNavigation = styled.nav<{ $isInResponsiveMode: boolean }>`
   overflow-y: auto;
 `;
 
-const Title = styled.header`
+const TitleContainer = styled.header`
+  padding-bottom: ${space[20]};
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: ${space[4]};
-  padding-bottom: ${space[20]};
+  gap: ${space[8]};
+  color: ${alias.color.text};
   white-space: nowrap;
 `;
 
@@ -141,10 +142,10 @@ const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: Side
         $isInResponsiveMode={isInResponsiveMode}
       >
         {title && (
-          <Title>
+          <TitleContainer>
             {title?.icon && <Icon icon={title.icon} height="40px" />}
             {title?.label && <Heading level={2}>{title.label}</Heading>}
-          </Title>
+          </TitleContainer>
         )}
         <SideNavigationContext.Provider value={handleNavigate}>
           {isSectionType(items[0]) ? (

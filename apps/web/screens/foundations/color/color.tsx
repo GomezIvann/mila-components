@@ -66,7 +66,7 @@ const sections = [
           each core color. These shades range from light to dark, ensuring sufficient contrast for text, backgrounds,
           and interactive elements.
         </Paragraph>
-        <Image src={colorPalette} alt="Mila color palette" />
+        <Image src={colorPalette} alt="Mila color palette" fill />
         <Paragraph>
           In our palette, each color family (e.g., grey, purple, blue, green, etc.) includes variations from{" "}
           <strong>100</strong> (lightest) to <strong>900</strong> (darkest). This enables designers and developers to
@@ -82,13 +82,11 @@ const sections = [
       <>
         <Paragraph>
           Each color in the palette is associated with a core token, a hexadecimal value, and a visual preview. Tokens
-          such as <Code>color-purple-500</Code> or <Code>color-grey-300</Code> represent reusable variables that simplify maintaining consistency
-          across the interface. By using these tokens, developers can quickly adjust the colors across components,
-          ensuring visual uniformity and easy updates when necessary.
+          such as <Code>color-purple-500</Code> or <Code>color-grey-300</Code> represent reusable variables that
+          simplify maintaining consistency across the interface. By using these tokens, developers can quickly adjust
+          the colors across components, ensuring visual uniformity and easy updates when necessary.
         </Paragraph>
-        <CodeBlock language="tsx">
-          {codeExample}
-        </CodeBlock>
+        <CodeBlock language="tsx">{codeExample}</CodeBlock>
       </>
     ),
     subSections: [

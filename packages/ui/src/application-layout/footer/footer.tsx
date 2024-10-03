@@ -24,10 +24,10 @@ const MainContent = styled.div`
   gap: ${space[16]};
 `;
 
-const Title = styled.div`
+const TitleContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: ${space[4]};
+  gap: ${space[8]};
   color: ${alias.color.text};
 `;
 
@@ -74,10 +74,10 @@ const Footer = ({ content, copyright = "© 2024 GomezIvann", links, socialIcons,
   <StyledFooter>
     <MainContent>
       {title && (
-        <Title>
+        <TitleContainer>
           {title.icon && <Icon icon={title.icon} height="40px" />}
           {title.label && <Heading level={3}>{title.label}</Heading>}
-        </Title>
+        </TitleContainer>
       )}
       <CustomContent>{content}</CustomContent>
       {socialIcons && (
