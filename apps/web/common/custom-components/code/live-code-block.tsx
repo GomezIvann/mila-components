@@ -5,8 +5,8 @@ import { LiveCodeBlockProps } from "./types";
 import theme from "./live-code-block-theme";
 import { Button, Flex } from "@gomezivann/mila-components";
 
-export default function LiveCodeBlock({ defaultEditorIsOpen = true, example }: LiveCodeBlockProps) {
-  const [isEditorOpen, setIsEditorOpen] = useState(defaultEditorIsOpen);
+export default function LiveCodeBlock({ defaultOpenEditor = false, example }: LiveCodeBlockProps) {
+  const [isEditorOpen, setIsEditorOpen] = useState(defaultOpenEditor);
 
   const handleCopy = () => {
     navigator.clipboard

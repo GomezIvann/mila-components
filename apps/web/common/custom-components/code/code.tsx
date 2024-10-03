@@ -10,4 +10,4 @@ export const CodeBlock = ({ children, language }: CodeBlockProps) => (
   </div>
 );
 
-export const Code = ({ children }: CodeProps) => <code className={styles.code}>{children}</code>;
+export const Code = ({ children, table }: CodeProps) => <code className={table ? styles.tableCode : styles.code}>{children}</code>;

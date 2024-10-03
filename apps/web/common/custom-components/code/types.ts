@@ -5,10 +5,11 @@ export type CodeBlockProps = {
 
 export type CodeProps = {
   children: React.ReactNode;
+  table?: boolean;
 };
 
 export type LiveCodeBlockProps = {
-  defaultEditorIsOpen?: boolean;
+  defaultOpenEditor?: boolean;
   example: {
     code: string;
     scope?: Record<string, any>;

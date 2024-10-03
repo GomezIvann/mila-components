@@ -44,7 +44,7 @@ const sections = [
             <Paragraph>
               Now you can start building your project using Mila components. Here's a simple example to get you started:
             </Paragraph>
-            <LiveCodeBlock example={buildingExample} />
+            <LiveCodeBlock defaultOpenEditor example={buildingExample} />
           </>
         ),
       },

@@ -48,10 +48,15 @@ const Section = styled.section`
   }
 `;
 
-const List = styled.ul`
+const StyledNavigationList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  gap: ${space[4]};
+`;
+
+const StyledNavigationItem = styled.li`
   display: grid;
   gap: ${space[4]};
 `;
@@ -74,7 +79,15 @@ const isSectionType = (item?: SectionType | SingleItemType | GroupItemType): ite
   item != null && "items" in item && !("label" in item);
 
 const SideNavigationItem = ({ item }: { item: SingleItemType | GroupItemType }) => (
-  <li>{"items" in item ? <GroupItem item={item} /> : <SingleItem item={item} />}</li>
+  <StyledNavigationItem role="menuitem">
+    {"items" in item ? <GroupItem item={item} /> : <SingleItem item={item} />}
+  </StyledNavigationItem>
+);
+
+export const List = ({ children, id }: { children: React.ReactNode; id?: string }) => (
+  <StyledNavigationList id={id} role="menu">
+    {children}
+  </StyledNavigationList>
 );
 
 const SideNavigationWrapper = ({ condition, children, isOpen, setIsOpen }: SideNavigationWrapperProps) =>

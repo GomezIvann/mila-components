@@ -1,12 +1,34 @@
 "use client";
 
-import { Badge, Divider, Flex, Heading, Paragraph, Table } from "@gomezivann/mila-components";
+import { Badge, BulletedList, Divider, Flex, Heading, Link, Paragraph, Table } from "@gomezivann/mila-components";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { Code } from "@/common/custom-components/code/code";
 import LiveCodeBlock from "@/common/custom-components/code/live-code-block";
 import defaultExample from "./code-examples/default";
 
 const sections = [
+  {
+    title: "Usage",
+    content: (
+      <BulletedList>
+        <li>
+          The action button component is accessible by default. It is important to provide a meaningful{" "}
+          <Code>title</Code> prop to the action button to give value to both screen readers and search engines. The{" "}
+          <Code>title</Code> prop is displayed as a tooltip when hovering over the action button.
+        </li>
+        <li>
+          Use the <Code>icon</Code> prop to display an icon next to the action button label. The <Code>icon</Code> prop
+          can be a string, for URLs, or a SVG element.
+        </li>
+        <li>
+          Use <Code>type</Code> prop carefully. The default value is <Code>button</Code>, but you can change it to{" "}
+          <Code>submit</Code> or <Code>reset</Code> if needed. To know more about the differences between these types,{" "}
+          check the{" "}
+          <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type">MDN documentation</Link>.
+        </li>
+      </BulletedList>
+    ),
+  },
   {
     title: "Example",
     content: <LiveCodeBlock example={defaultExample} />,
@@ -26,28 +48,28 @@ const sections = [
           <tr>
             <td>children</td>
             <td>
-              <Code>string</Code>
+              <Code table>string</Code>
             </td>
             <td>Text to display as the label of the action button.</td>
           </tr>
           <tr>
             <td>disabled</td>
             <td>
-              <Code>boolean</Code>
+              <Code table>boolean</Code>
             </td>
             <td>Disables the action button.</td>
           </tr>
           <tr>
             <td>icon</td>
             <td>
-              <Code>{`string | (React.ReactNode & React.SVGProps<SVGSVGElement>)`}</Code>
+              <Code table>{`string | (React.ReactNode & React.SVGProps<SVGSVGElement>)`}</Code>
             </td>
             <td>Icon to display next to the action button label.</td>
           </tr>
           <tr>
             <td>iconPosition</td>
             <td>
-              <Code>"left" | "right"</Code>
+              <Code table>"left" | "right"</Code>
             </td>
             <td>Position of the icon.</td>
           </tr>
@@ -61,21 +83,23 @@ const sections = [
               </Flex>
             </td>
             <td>
-              <Code>{`() => void`}</Code>
+              <Code table>{`() => void`}</Code>
             </td>
             <td>Function to be invoked by clicking on the action button.</td>
           </tr>
           <tr>
             <td>ref</td>
             <td>
-              <Code>{`React.RefObject<HTMLButtonElement>`}</Code>
+              <Code table>{`React.RefObject<HTMLButtonElement>`}</Code>
             </td>
-            <td>Reference to the internal <Code>button</Code> element.</td>
+            <td>
+              Reference to the internal <Code>button</Code> element.
+            </td>
           </tr>
           <tr>
             <td>title</td>
             <td>
-              <Code>string</Code>
+              <Code table>string</Code>
             </td>
             <td>
               Accessible text of the action button. It gives value to both screen readers and search engines. It is
@@ -85,20 +109,35 @@ const sections = [
           <tr>
             <td>type</td>
             <td>
-              <Code>"button" | "submit" | "reset"</Code>
+              <Code table>"button" | "submit" | "reset"</Code>
             </td>
             <td>HTML button type.</td>
           </tr>
           <tr>
             <td>variant</td>
             <td>
-              <Code>"default" | "bordered"</Code>
+              <Code table>"default" | "bordered"</Code>
             </td>
             <td>Action button variants.</td>
           </tr>
         </tbody>
       </Table>
     ),
+  },
+  {
+    title: "Accessibility",
+    subSections: [
+      {
+        title: "ARIA Authoring Practices Guide (APG)",
+        content: (
+          <BulletedList>
+            <li>
+              <Link href="https://www.w3.org/WAI/ARIA/apg/patterns/button/">Button pattern</Link>
+            </li>
+          </BulletedList>
+        ),
+      },
+    ],
   },
 ];
 

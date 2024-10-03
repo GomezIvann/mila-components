@@ -1,20 +1,11 @@
 import { useState, memo, useId } from "react";
-import styled from "styled-components";
 import Icon from "../../common/icon/icon";
 import { ItemAction } from "./item-styles";
 import { GroupItemType } from "./types";
-import { space } from "../../common/core-tokens";
 import icons from "../../common/icons";
 import SingleItem from "./single-item";
 import Flex from "../../flex/flex";
-
-const ItemsList = styled.ul`
-  margin: ${space[4]} 0;
-  padding: 0;
-  display: grid;
-  gap: ${space[4]};
-  list-style: none;
-`;
+import { List } from "./side-navigation";
 
 const GroupItem = ({ item }: { item: GroupItemType }) => {
   const groupMenuId = `group-menu-${useId()}`;
@@ -40,11 +31,11 @@ const GroupItem = ({ item }: { item: GroupItemType }) => {
         </Flex>
       </ItemAction>
       {isOpen && (
-        <ItemsList id={groupMenuId}>
+        <List id={groupMenuId}>
           {item.items.map((item, index) => (
             <SingleItem item={item} key={`${item.label}-${index}`} grouped />
           ))}
-        </ItemsList>
+        </List>
       )}
     </>
   );
