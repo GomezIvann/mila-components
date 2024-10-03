@@ -132,7 +132,7 @@ const sections = [
         content: (
           <BulletedList>
             <li>
-              <Link href="https://www.w3.org/WAI/ARIA/apg/patterns/button/">Button pattern</Link>
+              <Link href="https://www.w3.org/WAI/ARIA/apg/patterns/button/" newWindow>Button pattern</Link>
             </li>
           </BulletedList>
         ),
