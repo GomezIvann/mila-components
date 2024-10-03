@@ -66,6 +66,13 @@ const sections = [
             <td>Function to be invoked by clicking on the action button.</td>
           </tr>
           <tr>
+            <td>ref</td>
+            <td>
+              <Code>{`React.RefObject<HTMLButtonElement>`}</Code>
+            </td>
+            <td>Reference to the internal <Code>button</Code> element.</td>
+          </tr>
+          <tr>
             <td>title</td>
             <td>
               <Code>string</Code>

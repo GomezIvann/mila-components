@@ -3,6 +3,7 @@ import ActionButtonProps from "./types";
 import Icon from "../common/icon/icon";
 import { color, space, typography } from "../common/core-tokens";
 import alias from "../common/alias-tokens";
+import { forwardRef } from "react";
 
 export const StyledActionButton = styled.button<{
   $hasIcon: boolean;
@@ -59,32 +60,35 @@ export const StyledActionButton = styled.button<{
   }
 `;
 
-const ActionButton = ({
-  children,
-  disabled = false,
-  icon,
-  iconPosition = "left",
-  onClick,
-  title,
-  type = "button",
-  variant = "default",
-  ...rest
-}: ActionButtonProps) => (
-  <StyledActionButton
-    aria-label={title}
-    disabled={disabled}
-    onClick={onClick}
-    title={title}
-    type={type}
-    $hasIcon={Boolean(icon)}
-    $hasLabel={Boolean(children)}
-    $iconPosition={iconPosition}
-    $variant={variant}
-    {...rest}
-  >
-    {icon && <Icon icon={icon} height="24px" width="24px" />}
-    {children}
-  </StyledActionButton>
+const ActionButton = forwardRef<HTMLButtonElement, ActionButtonProps>(
+  ({
+    children,
+    disabled = false,
+    icon,
+    iconPosition = "left",
+    onClick,
+    title,
+    type = "button",
+    variant = "default",
+    ...rest
+  }, ref) => (
+    <StyledActionButton
+      aria-label={title}
+      disabled={disabled}
+      onClick={onClick}
+      ref={ref}
+      title={title}
+      type={type}
+      $hasIcon={Boolean(icon)}
+      $hasLabel={Boolean(children)}
+      $iconPosition={iconPosition}
+      $variant={variant}
+      {...rest}
+    >
+      {icon && <Icon icon={icon} height="24px" width="24px" />}
+      {children}
+    </StyledActionButton>
+  )
 );
 
 export default ActionButton;

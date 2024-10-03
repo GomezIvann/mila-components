@@ -9,18 +9,19 @@ import Flex from "../../flex/flex";
 import Divider from "../../divider/divider";
 
 const StyledFooter = styled.footer`
+  border-top: 1px solid ${alias.color.primaryBorder};
+  padding: ${space[16]} ${space[24]};
   display: flex;
   flex-direction: column;
   gap: ${space[4]};
-  padding: ${space[16]} ${space[24]};
-  border-top: 1px solid ${alias.color.primaryBorder};
+  background-color: ${color.grey[50]};
 `;
 
 const MainContent = styled.div`
+  margin-bottom: ${space[16]};
   display: flex;
   align-items: center;
   gap: ${space[16]};
-  margin-bottom: ${space[16]};
 `;
 
 const Title = styled.div`
@@ -40,10 +41,10 @@ const SocialIconsContainer = styled.div`
 `;
 
 const SocialIconLink = styled.a`
+  border-radius: ${alias.space.primaryBorderRadius};
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: ${alias.space.primaryBorderRadius};
   color: ${alias.color.text};
 
   &:focus {

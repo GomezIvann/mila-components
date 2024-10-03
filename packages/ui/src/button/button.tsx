@@ -3,6 +3,7 @@ import { color, space, typography } from "../common/core-tokens";
 import ButtonProps from "./types";
 import alias from "../common/alias-tokens";
 import Icon from "../common/icon/icon";
+import { forwardRef } from "react";
 
 type SemanticColors = "red" | "blue" | "green" | "yellow" | "grey";
 
@@ -106,30 +107,36 @@ const StyledButton = styled.button<{
   }
 `;
 
-const Button = ({
-  children,
-  disabled = false,
-  icon,
-  iconPosition = "left",
-  onClick,
-  semantic = "default",
-  type = "button",
-  variant = "primary",
-  ...rest
-}: ButtonProps) => (
-  <StyledButton
-    disabled={disabled}
-    onClick={onClick}
-    type={type}
-    $hasIcon={Boolean(icon)}
-    $iconPosition={iconPosition}
-    $semantic={semantic}
-    $variant={variant}
-    {...rest}
-  >
-    {icon && <Icon icon={icon} height="24px" width="24px" />}
-    {children}
-  </StyledButton>
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      disabled = false,
+      icon,
+      iconPosition = "left",
+      onClick,
+      semantic = "default",
+      type = "button",
+      variant = "primary",
+      ...rest
+    },
+    ref
+  ) => (
+    <StyledButton
+      disabled={disabled}
+      onClick={onClick}
+      ref={ref}
+      type={type}
+      $hasIcon={Boolean(icon)}
+      $iconPosition={iconPosition}
+      $semantic={semantic}
+      $variant={variant}
+      {...rest}
+    >
+      {icon && <Icon icon={icon} height="24px" width="24px" />}
+      {children}
+    </StyledButton>
+  )
 );
 
 export default Button;

@@ -1,4 +1,4 @@
-import { useId, useMemo, useState } from "react";
+import { useId, useMemo, useState, useRef, useEffect } from "react";
 import DropdownMenuProps from "./types";
 import { styled } from "styled-components";
 import { color, space, typography } from "../common/core-tokens";
@@ -6,6 +6,7 @@ import ActionButton from "../action-button/action-button";
 import Button from "../button/button";
 import icons from "../common/icons";
 import alias from "../common/alias-tokens";
+import { createPortal } from "react-dom";
 
 const StyledDropdownMenu = styled.div`
   position: relative;
@@ -13,7 +14,8 @@ const StyledDropdownMenu = styled.div`
 
 const Menu = styled.ul`
   position: absolute;
-  top: calc(100% + ${space[4]});
+  top: 0; /* Initial position, changes dynamically */
+  left: 0; /* Initial position, changes dynamically */
   z-index: 2147483647;
   box-sizing: border-box;
   margin: 0;
@@ -61,6 +63,9 @@ const DropdownMenu = ({
 }: DropdownMenuProps) => {
   const id = useId();
   const [isOpen, setIsOpen] = useState(false);
+  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const menuRef = useRef<HTMLUListElement | null>(null); // Ref para el menú
 
   const commonTriggerProps = useMemo(
     () => ({
@@ -70,7 +75,7 @@ const DropdownMenu = ({
       "aria-controls": `dropdown-menu-${id}`,
       icon: icon ?? (hideChevron ? undefined : isOpen ? icons.chevronUp : icons.chevronDown),
       iconPosition,
-      onClick: () => setIsOpen((isOpen) => !isOpen),
+      onClick: () => setIsOpen((prev) => !prev),
     }),
     [hideChevron, icon, iconPosition, id, isOpen]
   );
@@ -79,41 +84,59 @@ const DropdownMenu = ({
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    if (isOpen && triggerRef.current && menuRef.current) {
+      const triggerRect = triggerRef.current.getBoundingClientRect();
+      const menuRect = menuRef.current.getBoundingClientRect();
+
+      const top = triggerRect.bottom + 4; // 4px gap
+      const left = triggerRect.left + triggerRect.width / 2 - menuRect.width / 2; // Center the menu
+
+      setMenuPosition({ top, left });
+    }
+  }, [isOpen]);
+
   return (
     <StyledDropdownMenu onBlur={onBlur}>
       {triggerType === "action" ? (
-        <ActionButton title={label == null ? "Display items" : undefined} {...commonTriggerProps}>
+        <ActionButton title={label == null ? "Display items" : undefined} ref={triggerRef} {...commonTriggerProps}>
           {label}
         </ActionButton>
       ) : (
-        <Button variant={triggerType} {...commonTriggerProps}>
+        <Button variant={triggerType} ref={triggerRef} {...commonTriggerProps}>
           {label as string}
         </Button>
       )}
-      {isOpen && (
-        <Menu
-          aria-labelledby={`dropdown-trigger-${id}`}
-          id={`dropdown-menu-${id}`}
-          onMouseDown={(event) => {
-            // Prevent the menu from stealing the focus from the trigger
-            event.preventDefault();
-          }}
-          role="menu"
-        >
-          {items.map((item) => (
-            <MenuItem
-              key={item.value}
-              onClick={() => {
-                onItemClick(item.value);
-                setIsOpen(false);
+      {isOpen &&
+        createPortal(
+          isOpen ? (
+            <Menu
+              aria-labelledby={`dropdown-trigger-${id}`}
+              id={`dropdown-menu-${id}`}
+              onMouseDown={(event) => {
+                // Prevent focus loss from the trigger
+                event.preventDefault();
               }}
-              role="menuitem"
+              ref={menuRef}
+              role="menu"
+              style={{ top: menuPosition.top, left: menuPosition.left }}
             >
-              {item.label}
-            </MenuItem>
-          ))}
-        </Menu>
-      )}
+              {items.map((item) => (
+                <MenuItem
+                  key={item.value}
+                  onClick={() => {
+                    onItemClick(item.value);
+                    setIsOpen(false);
+                  }}
+                  role="menuitem"
+                >
+                  {item.label}
+                </MenuItem>
+              ))}
+            </Menu>
+          ) : null,
+          document.body
+        )}
     </StyledDropdownMenu>
   );
 };

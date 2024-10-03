@@ -6,6 +6,7 @@ type ActionButtonProps = {
   icon?: IconProp;
   iconPosition?: "left" | "right";
   onClick: () => void;
+  ref?: React.Ref<HTMLButtonElement>;
   title?: string;
   type?: "button" | "submit" | "reset";
   variant?: "default" | "bordered";

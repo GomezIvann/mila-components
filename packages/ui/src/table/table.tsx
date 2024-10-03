@@ -12,16 +12,19 @@ const StyledTable = styled.table`
   font-weight: ${typography.weight.normal};
   letter-spacing: ${typography.letterSpacing.normal};
   line-height: ${typography.lineHeight.normal};
+  table-layout: fixed;
+  overflow: auto;
 
   th,
   td {
     text-align: left;
     padding: ${space[8]};
     border-bottom: 1px solid ${alias.color.primaryBorder};
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   th {
     font-weight: ${typography.weight.semibold};
-    /* background-color: ${alias.color.selected}; */
   }
 `;
 
