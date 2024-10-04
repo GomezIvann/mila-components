@@ -24,10 +24,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run build, tests and publish library
+      - name: Build
+        run: pnpm build
+
+      - name: Publish library
         run: |
           sed -i "s#\"version\": \"0.0.0\"#\"version\": \"${TAG_NAME}\"#" ./packages/ui/package.json
-          pnpm publish-mila-components
+          pnpm publish --workspace=packages/ui --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           TAG_NAME: ${{ github.event.release.tag_name }}
