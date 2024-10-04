@@ -30,7 +30,8 @@ jobs:
       - name: Publish library
         run: |
           sed -i "s#\"version\": \"0.0.0\"#\"version\": \"${TAG_NAME}\"#" ./packages/ui/package.json
-          pnpm publish --workspace=packages/ui --access public
+          cd packages/ui
+          pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           TAG_NAME: ${{ github.event.release.tag_name }}
