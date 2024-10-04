@@ -13,13 +13,13 @@ Mila components is a humble library of reusable components developed as a final 
 You can install the library via pnpm right now:
 
 ```bash
-pnpm i @gomezivann/mila-components
+pnpm i mila-components
 ```
 
 ### Usage
 
 ```jsx
-import { Button, TextInput } from "@gomezivann/mila-components";
+import { Button, TextInput } from "mila-components";
 
 const Example = () => (
   <>

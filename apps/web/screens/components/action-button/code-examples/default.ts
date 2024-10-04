@@ -1,4 +1,4 @@
-import { ActionButton } from "@gomezivann/mila-components";
+import { ActionButton } from "mila-components";
 
 const code = `() => {
   return (

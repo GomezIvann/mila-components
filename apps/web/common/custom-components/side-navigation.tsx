@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { MainBlock, mainBlocks } from "../pages-list";
-import { SideNavigation } from "@gomezivann/mila-components";
+import { SideNavigation } from "mila-components";
 import { useMemo } from "react";
 
 const useSideNavigation = (): MainBlock => {

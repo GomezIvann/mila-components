@@ -1,4 +1,4 @@
-import { color, space, typography } from "@gomezivann/mila-components";
+import { color, space, typography } from "mila-components";
 
 // Based on: https://github.com/FormidableLabs/prism-react-renderer#theming
 const theme = {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Heading, Flex, Button } from "@gomezivann/mila-components";
+import { Heading, Flex, Button } from "mila-components";
 import styles from "./home.module.css";
 import { useRouter } from "next/navigation";
 

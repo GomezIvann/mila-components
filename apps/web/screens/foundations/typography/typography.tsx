@@ -2,9 +2,9 @@
 
 import { CodeBlock, Code } from "@/common/custom-components/code/code";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
-import { BulletedList, Flex, Heading, Paragraph, Table } from "@gomezivann/mila-components";
+import { BulletedList, Flex, Heading, Paragraph, Table } from "mila-components";
 
-const codeExample = `import { typography } from "@gomezivann/mila-components";
+const codeExample = `import { typography } from "mila-components";
 
 const styles = {
   fontFamily: typography.family.sans,

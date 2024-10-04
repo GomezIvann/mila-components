@@ -2,9 +2,9 @@
 
 import { Code, CodeBlock } from "@/common/custom-components/code/code";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
-import { BulletedList, Flex, Heading, Paragraph } from "@gomezivann/mila-components";
+import { BulletedList, Flex, Heading, Paragraph } from "mila-components";
 
-const codeExample = `import { space } from "@gomezivann/mila-components";
+const codeExample = `import { space } from "mila-components";
 const styles = {
   margin: space[16],
   padding: space[24],

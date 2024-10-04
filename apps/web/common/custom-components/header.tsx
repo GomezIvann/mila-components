@@ -1,6 +1,6 @@
 "use client";
 
-import { Header } from "@gomezivann/mila-components";
+import { Header } from "mila-components";
 import { mainBlocks } from "../pages-list";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "./image";

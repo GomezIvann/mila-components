@@ -3,7 +3,7 @@
 import { Code, CodeBlock } from "@/common/custom-components/code/code";
 import LiveCodeBlock from "@/common/custom-components/code/live-code-block";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
-import { Flex, Heading, Link, Paragraph } from "@gomezivann/mila-components";
+import { Flex, Heading, Link, Paragraph } from "mila-components";
 import NextLink from "next/link";
 import buildingExample from "./code-examples/building";
 
@@ -24,7 +24,7 @@ const sections = [
         content: (
           <>
             <Paragraph>Run the following command in your terminal:</Paragraph>
-            <CodeBlock language="bash">{`npm install @gomezivann/mila-components`}</CodeBlock>
+            <CodeBlock language="bash">{`npm install mila-components`}</CodeBlock>
           </>
         ),
       },
@@ -33,7 +33,7 @@ const sections = [
         content: (
           <>
             <Paragraph>Import the components you want to use in your project:</Paragraph>
-            <CodeBlock language="javascript">{`import { Button, Flex, Heading, Paragraph, Link } from "@gomezivann/mila-components";`}</CodeBlock>
+            <CodeBlock language="javascript">{`import { Button, Flex, Heading, Paragraph, Link } from "mila-components";`}</CodeBlock>
           </>
         ),
       },

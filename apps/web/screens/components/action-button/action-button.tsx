@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge, BulletedList, Divider, Flex, Heading, Link, Paragraph, Table } from "@gomezivann/mila-components";
+import { Badge, BulletedList, Divider, Flex, Heading, Link, Paragraph, Table } from "mila-components";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { Code } from "@/common/custom-components/code/code";
 import LiveCodeBlock from "@/common/custom-components/code/live-code-block";

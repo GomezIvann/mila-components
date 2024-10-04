@@ -3,7 +3,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import styles from "./live-code-block.module.css";
 import { LiveCodeBlockProps } from "./types";
 import theme from "./live-code-block-theme";
-import { Button, Flex } from "@gomezivann/mila-components";
+import { Button, Flex } from "mila-components";
 
 export default function LiveCodeBlock({ defaultOpenEditor = false, example }: LiveCodeBlockProps) {
   const [isEditorOpen, setIsEditorOpen] = useState(defaultOpenEditor);
@@ -24,7 +24,7 @@ export default function LiveCodeBlock({ defaultOpenEditor = false, example }: Li
       <Flex direction="column" gap={4}>
         <LiveProvider code={example.code} scope={example.scope} theme={theme}>
           <LivePreview className={styles.preview} />
-          <LiveError />
+          <LiveError className={styles.error} />
           {isEditorOpen && <LiveEditor />}
         </LiveProvider>
       </Flex>

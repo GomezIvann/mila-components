@@ -1,5 +1,5 @@
 import slugify from "slugify";
-import { Heading } from "@gomezivann/mila-components";
+import { Heading } from "mila-components";
 import styles from "./heading.module.css";
 import icons from "../../icons";
 import { SiteHeadingProps } from "../types";

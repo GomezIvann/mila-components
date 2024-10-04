@@ -2,9 +2,9 @@
 
 import { Code, CodeBlock } from "@/common/custom-components/code/code";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
-import { BulletedList, Flex, Heading, Paragraph, Table } from "@gomezivann/mila-components";
+import { BulletedList, Flex, Heading, Paragraph, Table } from "mila-components";
 
-const codeExample = `import { breakpoints } from "@gomezivann/mila-components";
+const codeExample = `import { breakpoints } from "mila-components";
 
 const App = () => {
   const { md } = breakpoints;

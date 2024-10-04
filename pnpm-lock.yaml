@@ -23,7 +23,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@gomezivann/mila-components':
+      'mila-components':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
