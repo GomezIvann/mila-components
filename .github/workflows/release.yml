@@ -1,13 +1,12 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
 
 jobs:
   release:
-    name: Publish mila-components
+    name: Release
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +17,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
 
       - name: Install pnpm
         run: corepack enable && corepack prepare pnpm@8.15.6 --activate
@@ -26,10 +24,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run build, tests and publish
-        run: pnpm publish-mila
+      - name: Run build, tests and publish library
+        run: |
+          sed -i "s#\"version\": \"0.0.0\"#\"version\": \"${TAG_NAME}\"#" ./packages/lib/package.json
+          pnpm publish-mila-components
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          TAG_NAME: ${{ github.event.release.tag_name }}
 
       - name: Verify npm publish
         run: echo "Npm publish completed successfully."

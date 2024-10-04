@@ -6,7 +6,7 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "publish-mila": "turbo run build --filter=mila-components... lint test && npm publish --workspace=mila-components --access public",
+    "publish-mila-components": "turbo run build --filter=mila-components... lint test && npm publish --workspace=mila-components --access public",
     "clean": "turbo run clean && rm -rf node_modules && rm -rf .turbo",
     "storybook": "turbo storybook"
   },
