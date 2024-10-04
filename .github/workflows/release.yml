@@ -27,13 +27,15 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Configure npm authentication
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: Publish library
         run: |
           sed -i "s#\"version\": \"0.0.0\"#\"version\": \"${TAG_NAME}\"#" ./packages/ui/package.json
           cd packages/ui
           pnpm publish --access public --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
           TAG_NAME: ${{ github.event.release.tag_name }}
 
       - name: Verify npm publish
