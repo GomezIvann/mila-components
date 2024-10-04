@@ -74,6 +74,7 @@ const StyledButton = styled.button<{
   $semantic: Required<ButtonProps>["semantic"];
   $variant: string;
 }>`
+  all: unset;
   box-sizing: border-box;
   border-radius: ${space[64]};
   width: fit-content;
@@ -94,9 +95,7 @@ const StyledButton = styled.button<{
   letter-spacing: ${typography.letterSpacing.normal};
   white-space: nowrap;
   cursor: pointer;
-
   ${({ $variant, $semantic }) => getButtonStyles($variant, $semantic)};
-
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

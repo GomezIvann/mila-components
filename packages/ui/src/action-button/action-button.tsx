@@ -11,12 +11,12 @@ export const StyledActionButton = styled.button<{
   $iconPosition: ActionButtonProps["iconPosition"];
   $variant: ActionButtonProps["variant"];
 }>`
+  all: unset;
   box-sizing: border-box;
   border: ${({ $variant }) => ($variant === "outlined" ? `1px solid ${alias.color.primaryBorder}` : "none")};
   border-radius: ${alias.space.primaryBorderRadius};
   width: fit-content;
   height: 40px;
-
   ${({ $hasIcon, $hasLabel, $iconPosition }) => {
     if (!$hasIcon) return `padding: ${space[8]} ${space[16]};`;
     else {
@@ -27,7 +27,6 @@ export const StyledActionButton = styled.button<{
       }
     }
   }}
-
   display: inline-flex;
   ${({ $iconPosition }) => $iconPosition === "right" && "flex-direction: row-reverse;"}
   align-items: center;
