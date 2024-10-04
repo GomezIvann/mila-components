@@ -1,4 +1,4 @@
-import { QuickNavigation } from "@gomezivann/mila-components";
+import { QuickNavigation } from "mila-components";
 import Section from "./section";
 import styles from "./quick-navigation.module.css";
 import { LinkType, SectionType, SiteQuickNavigationProps } from "./types";

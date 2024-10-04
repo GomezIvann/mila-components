@@ -1,5 +1,5 @@
 import SiteHeading from "./heading/heading";
-import { Flex } from "@gomezivann/mila-components";
+import { Flex } from "mila-components";
 import { LevelEnum, SectionType } from "./types";
 
 export default function Section({ content, level = 1, navSubtitle, subSections, title }: SectionType) {

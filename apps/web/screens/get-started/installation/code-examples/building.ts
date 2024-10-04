@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Paragraph, Link } from "@gomezivann/mila-components";
+import { Button, Flex, Heading, Paragraph, Link } from "mila-components";
 
 const code = `() => {
   return (

@@ -1,12 +1,12 @@
 "use client";
 
-import { BulletedList, Flex, Heading, Paragraph } from "@gomezivann/mila-components";
+import { BulletedList, Flex, Heading, Paragraph } from "mila-components";
 import colorPalette from "./images/color-palette.png";
 import Image from "@/common/custom-components/image";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { Code, CodeBlock } from "@/common/custom-components/code/code";
 
-const codeExample = `import { color } from "@gomezivann/mila-components";
+const codeExample = `import { color } from "mila-components";
 
 const styles = {
   backgroundColor: color.grey[200];

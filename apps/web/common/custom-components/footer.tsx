@@ -1,6 +1,6 @@
 "use client";
 
-import { Footer } from "@gomezivann/mila-components";
+import { Footer } from "mila-components";
 import icons from "./icons";
 import Image from "./image";
 import milaLogo from "../assets/mila-logo.png";

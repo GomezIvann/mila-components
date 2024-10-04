@@ -1,6 +1,6 @@
 "use client";
 
-import { ApplicationLayout } from "@gomezivann/mila-components";
+import { ApplicationLayout } from "mila-components";
 import SiteHeader from "./header";
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";

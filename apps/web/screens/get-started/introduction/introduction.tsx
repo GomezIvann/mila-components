@@ -1,7 +1,7 @@
 "use client";
 
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
-import { Flex, Heading, Link, Paragraph } from "@gomezivann/mila-components";
+import { Flex, Heading, Link, Paragraph } from "mila-components";
 import NextLink from "next/link";
 
 const sections = [

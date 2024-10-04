@@ -1,6 +1,11 @@
 {
-  "name": "@gomezivann/mila-components",
+  "name": "mila-components",
   "version": "0.0.0",
+  "author": {
+    "name": "Ivan Gomez",
+    "email": "sondela98@gmail.com",
+    "url": "https://mila-components.vercel.app/"
+  },
   "sideEffects": false,
   "license": "MIT",
   "main": "./dist/index.js",
