@@ -1,9 +1,8 @@
-<!-- <p align="center">
+<p align="center">
   <a href="https://mila-components.vercel.app/">
-    <img src="apps/website/screens/common/images/halstack_logo.svg" alt="Halstack Design System logo" />
+    <img src="apps/web/common/assets/mila-icon.svg" alt="Mila icon" width="80px" />
   </a>
-</p> -->
-
+</p>
 <h1 align="center">Mila components</h1>
 
 Mila components is a humble library of reusable components developed as a final master thesis.
