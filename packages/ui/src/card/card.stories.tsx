@@ -112,7 +112,7 @@ export const Stories = () => (
       </div>
     </ExampleContainer>
     <ExampleContainer pseudoState="pseudo-focus">
-      <Heading level={3}>Interactive focus</Heading>
+      <Heading level={3}>Interactive focused</Heading>
       <div style={{ width: 500 }}>
         <Card
           actions={
@@ -145,7 +145,7 @@ export const Stories = () => (
       </div>
     </ExampleContainer>
     <ExampleContainer pseudoState="pseudo-hover">
-      <Heading level={3}>Interactive hover</Heading>
+      <Heading level={3}>Interactive hovered</Heading>
       <div style={{ width: 500 }}>
         <Card
           actions={
