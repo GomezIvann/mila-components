@@ -33,7 +33,7 @@ jobs:
           cd packages/ui
           pnpm publish --access public --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
           TAG_NAME: ${{ github.event.release.tag_name }}
 
       - name: Verify npm publish
