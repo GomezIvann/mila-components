@@ -26,7 +26,7 @@ jobs:
 
       - name: Run build, tests and publish library
         run: |
-          sed -i "s#\"version\": \"0.0.0\"#\"version\": \"${TAG_NAME}\"#" ./packages/lib/package.json
+          sed -i "s#\"version\": \"0.0.0\"#\"version\": \"${TAG_NAME}\"#" ./packages/ui/package.json
           pnpm publish-mila-components
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
