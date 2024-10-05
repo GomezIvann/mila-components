@@ -12,7 +12,7 @@ type HeaderProps = {
   }[];
   onNavigate?: (href: string) => void;
   responsiveBreakpoint?: keyof typeof breakpoints;
-  title?: {
+  title: {
     href?: string;
     icon?: IconProp;
     text?: string;

@@ -1,5 +1,5 @@
 import { createContext, useCallback, useEffect, useState } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import Divider from "../../divider/divider";
 import SideNavigationProps, { GroupItemType, SectionType, SideNavigationWrapperProps, SingleItemType } from "./types";
 import { color, space } from "../../common/core-tokens";

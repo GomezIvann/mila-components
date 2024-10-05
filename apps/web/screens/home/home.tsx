@@ -38,9 +38,7 @@ export default function HomePage() {
                 ),
               }}
               title="Components"
-              content={
-                <Paragraph>Explore the components library and learn how to use them in your projects.</Paragraph>
-              }
+              content={<Paragraph>Explore the mila components and learn how to use them in your projects.</Paragraph>}
               onClick={() => {
                 router.push("/components");
               }}
