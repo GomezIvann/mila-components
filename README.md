@@ -5,24 +5,25 @@
 </p>
 <h1 align="center">Mila components</h1>
 
-Mila components is a humble library of reusable components developed as a final master thesis.
+Mila components is a humble library of reusable components, based on React framework, developed as a final
+master thesis project.
 
 ## How to use
 
-You can install the library via pnpm right now:
+You can install the library right now via npm:
 
 ```bash
-pnpm i mila-components
+npm i mila-components
 ```
 
 ### Usage
 
 ```jsx
-import { Button, TextInput } from "mila-components";
+import { Button, Heading } from "mila-components";
 
 const Example = () => (
   <>
-    <TextInput label="Enter your name" />
+    <Heading>Mila components</Heading>
     <Button type="submit">Submit</Button>
   </>
 );

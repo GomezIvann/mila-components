@@ -1,36 +1,78 @@
 "use client";
 
-import { Heading, Flex, Button } from "mila-components";
+import { Heading, Flex, Button, Card, Paragraph } from "mila-components";
 import styles from "./home.module.css";
 import { useRouter } from "next/navigation";
+import Image from "@/common/custom-components/image";
+import cardComponentsImage from "@/common/assets/card-components.jpg";
+import cardFoundationsImage from "@/common/assets/card-foundations.jpg";
 
 export default function HomePage() {
   const router = useRouter();
 
   return (
     <div className={styles.container}>
-      <Flex direction="column" gap={40} alignItems="center">
-        <Heading>Welcome to Mila components</Heading>
-        <Heading level={2} weight="light">
-          Mila components is a humble library of reusable components, based on React framework, developed as a final
-          master thesis project.
-        </Heading>
-        <Flex gap={20}>
-          <Button
-            onClick={() => {
-              router.push("/get-started/introduction");
-            }}
-          >
-            Get started
-          </Button>
-          <Button
-            onClick={() => {
-              router.push("/foundations");
-            }}
-            variant="outlined"
-          >
-            Learn
-          </Button>
+      <Flex direction="column" gap={64}>
+        <Flex direction="column" gap={40} alignItems="center">
+          <Heading>Welcome to Mila components</Heading>
+          <Heading level={2} weight="light">
+            Mila components is a humble library of reusable components, based on React framework, developed as a final
+            master thesis project.
+          </Heading>
+          <Flex gap={20}>
+            <Button
+              onClick={() => {
+                router.push("/get-started/introduction");
+              }}
+            >
+              Get started
+            </Button>
+          </Flex>
+        </Flex>
+        <Flex gap={32} wrap="wrap">
+          <Flex grow={1} basis="300px">
+            <Card
+              media={{
+                source: (
+                  <Image src={cardComponentsImage} alt="Components card image" width={300} height={200} fill priority />
+                ),
+              }}
+              title="Components"
+              content={
+                <Paragraph>Explore the components library and learn how to use them in your projects.</Paragraph>
+              }
+              onClick={() => {
+                router.push("/components");
+              }}
+              variant="outlined"
+            />
+          </Flex>
+          <Flex grow={1} basis="300px">
+            <Card
+              media={{
+                source: (
+                  <Image
+                    src={cardFoundationsImage}
+                    alt="Foundations card image"
+                    width={300}
+                    height={200}
+                    fill
+                    priority
+                  />
+                ),
+              }}
+              title="Foundations"
+              content={
+                <Paragraph>
+                  Learn about the design principles and guidelines that were followed to develop this library.
+                </Paragraph>
+              }
+              onClick={() => {
+                router.push("/foundations");
+              }}
+              variant="outlined"
+            />
+          </Flex>
         </Flex>
       </Flex>
     </div>

@@ -7,7 +7,7 @@ import { color, space } from "../common/core-tokens";
 
 const StyledCard = styled.div<{
   $interactive: boolean;
-  $mediaPosition: CardProps["media"]["position"];
+  $mediaPosition: Required<CardProps>["media"]["position"];
   $variant: CardProps["variant"];
 }>`
   ${({ $interactive }) => $interactive && "all: unset;"}
@@ -68,18 +68,14 @@ const Card = ({ actions, content, media, title, variant = "default", onClick }: 
     onClick={onClick}
     tabIndex={onClick ? 0 : undefined}
     $interactive={onClick ? true : false}
-    $mediaPosition={media.position ?? "top"}
+    $mediaPosition={media?.position ?? "top"}
     $variant={variant}
   >
     {media && media.source}
     <StyledContent>
-      {title && (
-        <Heading level={3} weight="light">
-          {title}
-        </Heading>
-      )}
+      {title && <Heading level={3}>{title}</Heading>}
       {content}
-      <Divider />
+      {actions && <Divider />}
       {actions}
     </StyledContent>
   </StyledCard>

@@ -1,9 +1,9 @@
 type CardProps = {
-  actions: React.ReactNode;
-  content: React.ReactNode;
-  media: { position?: "top" | "right" | "bottom" | "left"; source: React.ReactNode };
+  actions?: React.ReactNode;
+  content?: React.ReactNode;
+  media?: { position?: "top" | "right" | "bottom" | "left"; source: React.ReactNode };
   onClick?: () => void;
-  title: string;
+  title?: string;
   variant?: "default" | "outlined";
 };
 
