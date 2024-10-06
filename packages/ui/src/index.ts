@@ -15,6 +15,7 @@ import Paragraph from "./paragraph/paragraph";
 import QuickNavigation from "./quick-navigation/quick-navigation";
 import SideNavigation from "./application-layout/side-navigation/side-navigation";
 import Table from "./table/table";
+import TextInput from "./text-input/text-input";
 import { color, typography, space } from "./common/core-tokens";
 import { breakpoints } from "./common/breakpoints";
 
@@ -36,6 +37,7 @@ export {
   QuickNavigation,
   SideNavigation,
   Table,
+  TextInput,
   color,
   typography,
   space,

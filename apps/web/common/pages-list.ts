@@ -1,4 +1,3 @@
-
 type LinkDetails = {
   label: string;
   href: string;
@@ -26,19 +25,19 @@ const componentsLinks: LinkDetails[] = [
   { label: "Action button", href: "/components/action-button" },
   { label: "Application layout", href: "/components/application-layout" },
   { label: "Badge", href: "/components/badge" },
-  { label: "Bulleted list", href: "/components/bulleted-list" },
-  { label: "Button", href: "/components/button" },
-  { label: "Divider", href: "/components/divider" },
-  { label: "Dropdown menu", href: "/components/dropdown-menu" },
-  { label: "Flex", href: "/components/flex" },
-  { label: "Footer", href: "/components/footer" },
-  { label: "Header", href: "/components/header" },
-  { label: "Heading", href: "/components/heading" },
-  { label: "Link", href: "/components/link" },
-  { label: "Paragraph", href: "/components/paragraph" },
-  { label: "Quick navigation", href: "/components/quick-navigation" },
-  { label: "Side navigation", href: "/components/side-navigation" },
-  { label: "Table", href: "/components/table" },
+  // { label: "Bulleted list", href: "/components/bulleted-list" },
+  // { label: "Button", href: "/components/button" },
+  // { label: "Divider", href: "/components/divider" },
+  // { label: "Dropdown menu", href: "/components/dropdown-menu" },
+  // { label: "Flex", href: "/components/flex" },
+  // { label: "Footer", href: "/components/footer" },
+  // { label: "Header", href: "/components/header" },
+  // { label: "Heading", href: "/components/heading" },
+  // { label: "Link", href: "/components/link" },
+  // { label: "Paragraph", href: "/components/paragraph" },
+  // { label: "Quick navigation", href: "/components/quick-navigation" },
+  // { label: "Side navigation", href: "/components/side-navigation" },
+  // { label: "Table", href: "/components/table" },
 ];
 
 const mainBlocks: MainBlock[] = [

@@ -7,6 +7,7 @@ const alias = {
     interactiveHover: color.grey[100],
     interactiveActive: color.grey[200],
     primaryBorder: color.grey[200],
+    secondaryBorder: color.grey[900],
     // For components with selected state
     selected: color.blue[100],
     selectedText: color.blue[900],

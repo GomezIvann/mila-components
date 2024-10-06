@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import DividerProps, { TransientDividerProps } from "./types";
-import { color } from "../common/core-tokens";
 import alias from "../common/alias-tokens";
 
 const StyledDivider = styled.hr<TransientDividerProps>`
   margin: 0;
   ${({ $lightness, $orientation, $weight }) => `
-    border-color: ${$lightness === "light" ? alias.color.primaryBorder : color.grey[800]};
+    border-color: ${$lightness === "light" ? alias.color.primaryBorder : alias.color.secondaryBorder};
     ${$orientation === "horizontal" ? "width" : "min-height"}: 100%;
     ${$orientation === "horizontal" ? "height" : "width"}: 0px;
     ${

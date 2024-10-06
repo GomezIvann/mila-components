@@ -12,9 +12,10 @@ const sections = [
     content: (
       <BulletedList>
         <li>
-          The action button component is accessible by default. It is important to provide a meaningful{" "}
-          <Code>title</Code> prop to the action button to give value to both screen readers and search engines. The{" "}
-          <Code>title</Code> prop is displayed as a tooltip when hovering over the action button.
+          Use <Code>title</Code> prop when no text label is provided to provide an accessible text to the action button.
+          It is important to provide a meaningful <Code>title</Code> prop to the action button to give value to both
+          screen readers and search engines. The <Code>title</Code> prop is also displayed as a tooltip when hovering
+          over the action button.
         </li>
         <li>
           Use the <Code>icon</Code> prop to display an icon next to the action button label. The <Code>icon</Code> prop
@@ -49,6 +50,7 @@ const sections = [
             <th>Prop name</th>
             <th>Type</th>
             <th>Description</th>
+            <th>Default value</th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +60,7 @@ const sections = [
               <Code table>string</Code>
             </td>
             <td>Text to display as the label of the action button.</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>disabled</td>
@@ -65,6 +68,9 @@ const sections = [
               <Code table>boolean</Code>
             </td>
             <td>Disables the action button.</td>
+            <td>
+              <Code table>false</Code>
+            </td>
           </tr>
           <tr>
             <td>icon</td>
@@ -72,6 +78,7 @@ const sections = [
               <Code table>{`string | (React.ReactNode & React.SVGProps<SVGSVGElement>)`}</Code>
             </td>
             <td>Icon to display next to the action button label.</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>iconPosition</td>
@@ -79,6 +86,9 @@ const sections = [
               <Code table>"left" | "right"</Code>
             </td>
             <td>Position of the icon.</td>
+            <td>
+              <Code table>"left"</Code>
+            </td>
           </tr>
           <tr>
             <td>
@@ -93,6 +103,7 @@ const sections = [
               <Code table>{`() => void`}</Code>
             </td>
             <td>Function to be invoked by clicking on the action button.</td>
+            <td>-</td>
           </tr>
           <tr>
             <td>ref</td>
@@ -102,6 +113,7 @@ const sections = [
             <td>
               Reference to the internal <Code>button</Code> element.
             </td>
+            <td>-</td>
           </tr>
           <tr>
             <td>title</td>
@@ -112,6 +124,7 @@ const sections = [
               Accessible text of the action button. It gives value to both screen readers and search engines. It is
               displayed as a tooltip when hovering over the action button.
             </td>
+            <td>-</td>
           </tr>
           <tr>
             <td>type</td>
@@ -119,6 +132,9 @@ const sections = [
               <Code table>"button" | "submit" | "reset"</Code>
             </td>
             <td>HTML button type.</td>
+            <td>
+              <Code table>"button"</Code>
+            </td>
           </tr>
           <tr>
             <td>variant</td>
@@ -126,6 +142,9 @@ const sections = [
               <Code table>"default" | "outlined"</Code>
             </td>
             <td>Action button variants.</td>
+            <td>
+              <Code table>"default"</Code>
+            </td>
           </tr>
         </tbody>
       </Table>

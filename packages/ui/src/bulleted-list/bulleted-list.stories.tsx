@@ -3,7 +3,7 @@ import Heading from "../heading/heading";
 import ExampleContainer from "../../.storybook/utils/example-container";
 
 export default {
-  title: "Bulleted List",
+  title: "Bulleted list",
   component: BulletedList,
 };
 
