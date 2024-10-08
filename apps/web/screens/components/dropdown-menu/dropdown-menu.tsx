@@ -37,7 +37,7 @@ const sections = [
           manually.
         </li>
         <li>
-          Use <Code>triggerType</Code> prop to change the appearance of the trigger button. It can be either our{" "}
+          Use <Code>triggerVariant</Code> prop to change the appearance of the trigger button. It can be either our{" "}
           <NextLink href="/components/action-button" passHref legacyBehavior>
             <Link>Action button</Link>
           </NextLink>{" "}
@@ -133,7 +133,7 @@ const sections = [
             <td>-</td>
           </tr>
           <tr>
-            <td>triggerType</td>
+            <td>triggerVariant</td>
             <td>
               <Code table>"primary" | "outlined" | "text" | "action"</Code>
             </td>

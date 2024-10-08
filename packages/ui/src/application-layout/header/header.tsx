@@ -124,7 +124,7 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
                 value: href,
               }))}
               label="Menu"
-              triggerType="action"
+              triggerVariant="action"
               onItemClick={(value) => {
                 const external = links?.find(({ href }) => href === value)?.external;
                 external ? window.open(value, "_blank") : onNavigate?.(value);

@@ -16,12 +16,12 @@ type CommonProps = {
 
 type DropdownButtonProps = CommonProps & {
   label: string;
-  triggerType?: ButtonProps["variant"];
+  triggerVariant?: ButtonProps["variant"];
 };
 
 type DropdownActionButtonProps = CommonProps & {
   label?: string;
-  triggerType: "action";
+  triggerVariant: "action";
 };
 
 type DropdownMenuProps = DropdownButtonProps | DropdownActionButtonProps;

@@ -21,7 +21,7 @@ export const Stories = () => (
     </ExampleContainer>
     <ExampleContainer>
       <Heading level={3}>Trigger type</Heading>
-      <Dropdown items={items} onItemClick={(item) => console.log(item)} label="Dropdown" triggerType="action" />
+      <Dropdown items={items} onItemClick={(item) => console.log(item)} label="Dropdown" triggerVariant="action" />
     </ExampleContainer>
   </>
 );

@@ -59,7 +59,7 @@ const DropdownMenu = ({
   items,
   label,
   onItemClick,
-  triggerType = "primary",
+  triggerVariant = "primary",
 }: DropdownMenuProps) => {
   const id = useId();
   const [isOpen, setIsOpen] = useState(false);
@@ -96,12 +96,12 @@ const DropdownMenu = ({
 
   return (
     <StyledDropdownMenu onBlur={onBlur}>
-      {triggerType === "action" ? (
+      {triggerVariant === "action" ? (
         <ActionButton title={label == null ? "Display items" : undefined} ref={triggerRef} {...commonTriggerProps}>
           {label}
         </ActionButton>
       ) : (
-        <Button variant={triggerType} ref={triggerRef} {...commonTriggerProps}>
+        <Button variant={triggerVariant} ref={triggerRef} {...commonTriggerProps}>
           {label as string}
         </Button>
       )}
