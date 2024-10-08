@@ -12,11 +12,14 @@ const sections = [
     content: (
       <BulletedList>
         <li>
-          Use <Code>title</Code> prop when no text label is provided to provide an accessible text to the action button.
-          It is important to provide a meaningful <Code>title</Code> prop to the action button to give value to both
-          screen readers and search engines. The <Code>title</Code> prop is also displayed as a tooltip when hovering
-          over the action button.
+          Use label texts that are clear and concise. The label should describe the action that the button performs when
+          clicked.
         </li>
+        <li>
+          Use the pre-designed semantic types to give meaning to the button. Each of them has a different color and
+          meaning depending on the context.
+        </li>
+        <li>Use the different variants to change the morphology of the button.</li>
         <li>
           Use the <Code>icon</Code> prop to display an icon next to the action button label. The <Code>icon</Code> prop
           can be either a string, for URLs, or a SVG element.
@@ -55,11 +58,18 @@ const sections = [
         </thead>
         <tbody>
           <tr>
-            <td>children</td>
+            <td>
+              <Flex direction="column" gap={2}>
+                <Badge color="yellow" title="This prop is mandatory.">
+                  Required
+                </Badge>
+                children
+              </Flex>
+            </td>
             <td>
               <Code table>string</Code>
             </td>
-            <td>Text to display as the label of the action button.</td>
+            <td>Text to display as the label of the button.</td>
             <td>-</td>
           </tr>
           <tr>
@@ -67,7 +77,7 @@ const sections = [
             <td>
               <Code table>boolean</Code>
             </td>
-            <td>Disables the action button.</td>
+            <td>Disables the button.</td>
             <td>
               <Code table>false</Code>
             </td>
@@ -77,7 +87,7 @@ const sections = [
             <td>
               <Code table>{`string | (React.ReactNode & React.SVGProps<SVGSVGElement>)`}</Code>
             </td>
-            <td>Icon to display next to the action button label.</td>
+            <td>Icon to display next to the button label.</td>
             <td>-</td>
           </tr>
           <tr>
@@ -102,7 +112,7 @@ const sections = [
             <td>
               <Code table>{`() => void`}</Code>
             </td>
-            <td>Function to be invoked by clicking on the action button.</td>
+            <td>Function to be invoked by clicking on the button.</td>
             <td>-</td>
           </tr>
           <tr>
@@ -116,15 +126,14 @@ const sections = [
             <td>-</td>
           </tr>
           <tr>
-            <td>title</td>
+            <td>semantic</td>
             <td>
-              <Code table>string</Code>
+              <Code table>"default" | "danger" | "info" | "success" | "warning"</Code>
             </td>
+            <td>Semantic type of the button.</td>
             <td>
-              Accessible text of the action button. It gives value to both screen readers and search engines. It is
-              displayed as a tooltip when hovering over the action button.
+              <Code table>"default"</Code>
             </td>
-            <td>-</td>
           </tr>
           <tr>
             <td>type</td>
@@ -141,11 +150,11 @@ const sections = [
           <tr>
             <td>variant</td>
             <td>
-              <Code table>"default" | "outlined"</Code>
+              <Code table>"primary" | "outlined" | "text"</Code>
             </td>
-            <td>Action button variants.</td>
+            <td>Variant of the button.</td>
             <td>
-              <Code table>"default"</Code>
+              <Code table>"primary"</Code>
             </td>
           </tr>
         </tbody>
@@ -171,14 +180,14 @@ const sections = [
   },
 ];
 
-export default function ActionButtonPage() {
+export default function ButtonPage() {
   return (
     <Flex direction="column" gap={64}>
       <Flex direction="column" gap={40}>
-        <Heading level={1}>Action button</Heading>
+        <Heading level={1}>Button</Heading>
         <Paragraph>
-          The action buttons enable users to perform an action. They are typically used for task-related options within
-          a workflow and are well-suited for interfaces where buttons are not intended to be highly attention-grabbing.
+          Buttons are used to trigger actions or events. They are used to perform a specific action when clicked or
+          pressed.
         </Paragraph>
         <Divider />
       </Flex>

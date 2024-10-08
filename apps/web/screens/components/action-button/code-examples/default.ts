@@ -8,8 +8,6 @@ const code = `() => {
   );
 }`;
 
-const scope = {
-  ActionButton,
-};
+const scope = { ActionButton };
 
 export default { code, scope };

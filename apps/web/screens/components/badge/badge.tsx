@@ -12,6 +12,10 @@ const sections = [
     content: (
       <BulletedList>
         <li>
+          Use badges to categorize, count, or highlight information. They are used to give a visual cue to the user
+          about the status of an item or to provide additional information.
+        </li>
+        <li>
           Use <Code>title</Code> prop to provide an accessible text to the badge. It is important to provide a
           meaningful value to both screen readers and search engines. It is displayed as a tooltip when hovering over
           the badge and, under the hood, it gives value to the

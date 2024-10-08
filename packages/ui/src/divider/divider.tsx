@@ -23,11 +23,11 @@ const Divider = ({
   weight = "regular",
 }: DividerProps) => (
   <StyledDivider
+    aria-orientation={orientation}
+    aria-hidden={decorative}
     $lightness={lightness}
     $orientation={orientation}
     $weight={weight}
-    aria-orientation={orientation}
-    aria-hidden={decorative}
   />
 );
 
