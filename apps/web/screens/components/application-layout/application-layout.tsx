@@ -16,17 +16,17 @@ const sections = [
           each of these sections by passing the appropriate children.
         </li>
         <li>
-          We encourage you to use this component in conjunction with the{" "}
+          We encourage you to use this component in conjunction with our{" "}
           <NextLink href="/components/header" passHref legacyBehavior>
-            <Link>header</Link>
+            <Link>Header</Link>
           </NextLink>
           ,{" "}
           <NextLink href="/components/side-navigation" passHref legacyBehavior>
-            <Link>side navigation</Link>
+            <Link>Side navigation</Link>
           </NextLink>
-          , and{" "}
+          , or{" "}
           <NextLink href="/components/footer" passHref legacyBehavior>
-            <Link>footer</Link>
+            <Link>Footer</Link>
           </NextLink>{" "}
           components.
         </li>

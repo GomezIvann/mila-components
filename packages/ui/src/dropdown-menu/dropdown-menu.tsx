@@ -65,7 +65,7 @@ const DropdownMenu = ({
   const [isOpen, setIsOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
   const triggerRef = useRef<HTMLButtonElement | null>(null);
-  const menuRef = useRef<HTMLUListElement | null>(null); // Ref para el menú
+  const menuRef = useRef<HTMLUListElement | null>(null);
 
   const commonTriggerProps = useMemo(
     () => ({
@@ -88,10 +88,8 @@ const DropdownMenu = ({
     if (isOpen && triggerRef.current && menuRef.current) {
       const triggerRect = triggerRef.current.getBoundingClientRect();
       const menuRect = menuRef.current.getBoundingClientRect();
-
-      const top = triggerRect.bottom + 4; // 4px gap
-      const left = triggerRect.left + triggerRect.width / 2 - menuRect.width / 2; // Center the menu
-
+      const top = triggerRect.bottom + 4;
+      const left = triggerRect.left + triggerRect.width / 2 - menuRect.width / 2;
       setMenuPosition({ top, left });
     }
   }, [isOpen]);
@@ -113,9 +111,9 @@ const DropdownMenu = ({
             <Menu
               aria-labelledby={`dropdown-trigger-${id}`}
               id={`dropdown-menu-${id}`}
-              onMouseDown={(event) => {
+              onMouseDown={(e) => {
                 // Prevent focus loss from the trigger
-                event.preventDefault();
+                e.preventDefault();
               }}
               ref={menuRef}
               role="menu"
