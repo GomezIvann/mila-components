@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { typography } from "../common/core-tokens";
-import { ReactNode } from "react";
 import alias from "../common/alias-tokens";
 
 const StyledParagraph = styled.p`
@@ -13,6 +12,6 @@ const StyledParagraph = styled.p`
   line-height: ${typography.lineHeight.normal};
 `;
 
-const Paragraph = ({ children }: { children: ReactNode }) => <StyledParagraph>{children}</StyledParagraph>;
+const Paragraph = ({ children }: { children: React.ReactNode }) => <StyledParagraph>{children}</StyledParagraph>;
 
 export default Paragraph;
