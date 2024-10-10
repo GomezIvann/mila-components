@@ -5,9 +5,8 @@ type LinkProps = {
   disabled?: boolean;
   href?: string;
   icon?: IconProp;
-  inheritStyles?: boolean;
   newWindow?: boolean;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 
 export default LinkProps;

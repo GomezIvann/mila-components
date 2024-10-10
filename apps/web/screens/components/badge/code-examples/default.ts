@@ -2,7 +2,7 @@ import { Badge, Flex } from "mila-components";
 
 const code = `() => {
   return (
-    <Flex gap={12}>
+    <Flex gap={12} wrap="wrap">
       <Badge>Neutral</Badge>
       <Badge color="blue">New</Badge>
       <Badge color="green">Success</Badge>

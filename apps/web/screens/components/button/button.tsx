@@ -21,7 +21,7 @@ const sections = [
         </li>
         <li>Use the different variants to change the morphology of the button.</li>
         <li>
-          Use the <Code>icon</Code> prop to display an icon next to the action button label. The <Code>icon</Code> prop
+          Use the <Code>icon</Code> prop to display an icon next to the button label. The <Code>icon</Code> prop
           can be either a string, for URLs, or a SVG element.
         </li>
         <li>

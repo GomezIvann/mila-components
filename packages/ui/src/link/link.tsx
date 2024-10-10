@@ -5,7 +5,7 @@ import alias from "../common/alias-tokens";
 import Icon from "../common/icon/icon";
 import { forwardRef } from "react";
 
-const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"]; $inheritStyles: LinkProps["inheritStyles"] }>`
+const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"] }>`
   border-radius: ${alias.space.primaryBorderRadius};
   padding: 0;
   width: fit-content;
@@ -13,10 +13,10 @@ const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"]; $inheritStyles:
   align-items: center;
   gap: ${space[4]};
   color: ${color.blue[500]};
-  font-family: ${({ $inheritStyles }) => ($inheritStyles ? "inherit" : typography.family.sans)};
-  font-size: ${({ $inheritStyles }) => ($inheritStyles ? "inherit" : typography.size.md)};
-  font-weight: ${({ $inheritStyles }) => ($inheritStyles ? "inherit" : typography.weight.medium)};
-  line-height: ${({ $inheritStyles }) => ($inheritStyles ? "inherit" : typography.lineHeight.normal)};
+  font-family: ${typography.family.sans};
+  font-size: ${typography.size.md};
+  font-weight: ${typography.weight.medium};
+  line-height: ${typography.lineHeight.normal};
   text-decoration: none;
 
   ${({ $disabled }) =>
@@ -40,16 +40,15 @@ const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"]; $inheritStyles:
 `;
 
 const Link = forwardRef<HTMLAnchorElement, LinkProps>(
-  ({ children, disabled = false, href, icon, inheritStyles, newWindow = false, onClick, ...rest }, ref) => (
+  ({ children, disabled = false, href, icon, newWindow = false, onClick, ...rest }, ref) => (
     <StyledLink
       aria-disabled={disabled}
       href={disabled ? undefined : href}
-      $inheritStyles={inheritStyles}
       onClick={disabled ? undefined : onClick}
-      target={newWindow ? "_blank" : "_self"}
-      $disabled={disabled}
-      tabIndex={disabled ? -1 : 0}
       ref={ref}
+      target={newWindow ? "_blank" : "_self"}
+      tabIndex={disabled ? -1 : 0}
+      $disabled={disabled}
       {...rest}
     >
       {icon && <Icon icon={icon} height="16px" width="16px" />}

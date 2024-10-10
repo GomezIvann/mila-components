@@ -64,10 +64,11 @@ const Copyright = styled.small`
 const LinksList = styled.div`
   display: flex;
   gap: ${space[12]};
-  font-family: ${typography.family.sans};
-  font-size: ${typography.size.sm};
-  font-weight: ${typography.weight.medium};
-  line-height: ${typography.lineHeight.normal};
+
+  & > a {
+    font-size: ${typography.size.sm};
+    line-height: ${typography.lineHeight.snug};
+  }
 `;
 
 const Footer = ({ content, copyright = "© 2024 GomezIvann", links, socialIcons, title }: FooterProps) => (
@@ -96,7 +97,7 @@ const Footer = ({ content, copyright = "© 2024 GomezIvann", links, socialIcons,
       {links && (
         <LinksList>
           {links.map((link, index) => (
-            <Link key={index} href={link.href} inheritStyles>
+            <Link key={index} href={link.href}>
               {link.label}
             </Link>
           ))}

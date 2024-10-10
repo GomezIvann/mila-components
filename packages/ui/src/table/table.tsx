@@ -20,7 +20,6 @@ const StyledTable = styled.table`
     text-align: left;
     padding: ${space[8]};
     border-bottom: 1px solid ${alias.color.primaryBorder};
-    word-wrap: break-word;
     overflow-wrap: break-word;
   }
   th {

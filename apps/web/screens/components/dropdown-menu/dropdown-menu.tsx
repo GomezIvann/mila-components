@@ -29,8 +29,8 @@ const sections = [
           is clicked.
         </li>
         <li>
-          Use the <Code>icon</Code> prop to display an icon next to the action button label. The <Code>icon</Code> prop
-          can be either a string, for URLs, or a SVG element.
+          Use the <Code>icon</Code> prop to display an icon next to the dropdown's trigger label. The <Code>icon</Code>{" "}
+          prop can be either a string, for URLs, or a SVG element.
         </li>
         <li>
           Only SVG icons are styled by the component. If you want to use a different type of icon, you need to style it
@@ -44,7 +44,8 @@ const sections = [
           or the{" "}
           <NextLink href="/components/button" passHref legacyBehavior>
             <Link>Button</Link>
-          </NextLink>.
+          </NextLink>
+          .
         </li>
       </BulletedList>
     ),
