@@ -83,7 +83,7 @@ const sections = [
     title: "Accessibility",
     subSections: [
       {
-        title: "ARIA Authoring Practices Guide (APG)",
+        title: "WAI Tutorials",
         content: (
           <BulletedList>
             <li>

@@ -33,7 +33,7 @@ const sections = [
           <Code>submit</Code> or <Code>reset</Code> if needed. To know more about the differences between these types,{" "}
           check the{" "}
           <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#type" newWindow>
-            MDN documentation
+            MDN web documentation
           </Link>
           .
         </li>

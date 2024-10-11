@@ -24,7 +24,7 @@ const sections = [
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#visual_layout_of_table_contents"
             newWindow
           >
-            MDN guidelines
+            MDN web documentation
           </Link>{" "}
           for creating tables.
         </li>

@@ -33,6 +33,10 @@ export const Stories = () => (
       <Heading level={3}>With error</Heading>
       <TextInput label="Label" helpText="Help text" placeholder="Placeholder" error="Error message" />
     </ExampleContainer>
+    <ExampleContainer pseudoState="pseudo-hover">
+      <Heading level={3}>Hovered with error</Heading>
+      <TextInput label="Label" helpText="Help text" placeholder="Placeholder" error="Error message" />
+    </ExampleContainer>
     <ExampleContainer>
       <Heading level={3}>Disabled</Heading>
       <TextInput label="Label" helpText="Help text" placeholder="Placeholder" disabled />

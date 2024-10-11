@@ -6,13 +6,13 @@ type TextInputProps = {
   helpText?: string;
   label?: string;
   name?: string;
-  onChange?: (value: string) => void;
   onBlur?: (value: string) => void;
+  onChange?: (value: string) => void;
   optional?: boolean;
   placeholder?: string;
   readOnly?: boolean;
   ref?: React.Ref<HTMLInputElement>;
-  type?: "text" | "password" | "email" | "number";
+  type?: "email" | "number" | "password" | "tel" | "text" | "url";
   value?: string;
 };
 

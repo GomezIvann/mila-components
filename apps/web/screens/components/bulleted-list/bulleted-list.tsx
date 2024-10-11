@@ -19,7 +19,7 @@ const sections = [
           The values of the prop <Code>styleType</Code> are exactly the same as the CSS property{" "}
           <Code>{"list-style-type"}</Code>. Check the{" "}
           <Link href="https://developer.mozilla.org/es/docs/Web/CSS/list-style-type" newWindow>
-            MDN documentation
+            MDN web documentation
           </Link>{" "}
           for more information.
         </li>

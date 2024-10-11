@@ -81,7 +81,7 @@ const sections = [
             <td>
               <Code table>boolean</Code>
             </td>
-            <td>Whether the link is disabled or not.</td>
+            <td>Whether the link is disabled.</td>
             <td>
               <Code table>false</Code>
             </td>
@@ -107,7 +107,7 @@ const sections = [
             <td>
               <Code table>boolean</Code>
             </td>
-            <td>Whether to open the link in a new window or not.</td>
+            <td>Whether to open the link in a new window.</td>
             <td>
               <Code table>false</Code>
             </td>
