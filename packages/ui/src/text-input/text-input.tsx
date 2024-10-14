@@ -8,11 +8,15 @@ import Flex from "../flex/flex";
 const Label = styled.label<{ $hasHelpText: boolean }>`
   font-family: ${typography.family.sans};
   font-size: ${typography.size.md};
-  font-weight: ${typography.weight.semibold};
+  font-weight: ${typography.weight.normal};
   line-height: ${typography.lineHeight.normal};
   letter-spacing: ${typography.letterSpacing.normal};
   color: ${alias.color.text};
   margin-bottom: ${({ $hasHelpText }) => ($hasHelpText ? space[0] : space[4])};
+
+  > strong {
+    font-weight: ${typography.weight.semibold};
+  }
 `;
 
 const HelpText = styled.span`
@@ -103,7 +107,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       <Flex direction="column">
         {label && (
           <Label htmlFor={id} $hasHelpText={Boolean(helpText)}>
-            {label} {optional && "(optional)"}
+            <strong>{label}</strong> {optional && "(optional)"}
           </Label>
         )}
         {helpText && <HelpText id={`${id}-help`}>{helpText}</HelpText>}
