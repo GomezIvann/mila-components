@@ -55,16 +55,22 @@ const sections = [
             <td>
               Aligns the flex container's lines within the flex container when there is extra space in the cross-axis.
             </td>
+            <td>
+              <Code table>"normal"</Code>
+            </td>
           </tr>
           <tr>
             <td>alignItems</td>
             <td>
               <Code table>
-                "baseline" | "center" | "end" | "flex-start" | "flex-end" | "self-end" | "self-start" | "start" |
-                "stretch"
+                "baseline" | "center" | "end" | "flex-start" | "flex-end" | "normal" | "self-end" | "self-start" |
+                "start" | "stretch"
               </Code>
             </td>
             <td>Aligns the flex container's items when the items do not use all available space on the cross-axis.</td>
+            <td>
+              <Code table>"normal"</Code>
+            </td>
           </tr>
           <tr>
             <td>alignSelf</td>
@@ -72,7 +78,9 @@ const sections = [
               <Code table>"auto" | "baseline" | "center" | "flex-end" | "flex-start" | "stretch"</Code>
             </td>
             <td>Aligns the flex item along the cross axis.</td>
-            <td>-</td>
+            <td>
+              <Code table>"auto"</Code>
+            </td>
           </tr>
           <tr>
             <td>basis</td>
@@ -80,7 +88,9 @@ const sections = [
               <Code table>string</Code>
             </td>
             <td>Specifies the initial main size of the flex item.</td>
-            <td>-</td>
+            <td>
+              <Code table>"auto"</Code>
+            </td>
           </tr>
           <tr>
             <td>
@@ -147,13 +157,13 @@ const sections = [
             <td>justifyContent</td>
             <td>
               <Code table>
-                "center" | "end" | "flex-end" | "flex-start" | "left" | "right" | "space-around" | "space-between" |
-                "space-evenly" | "start"
+                "center" | "end" | "flex-end" | "flex-start" | "left" | "normal" | "right" | "space-around" |
+                "space-between" | "space-evenly" | "start"
               </Code>
             </td>
             <td>Aligns the flex container's items when the items do not use all available space on the main-axis.</td>
             <td>
-              <Code table>"flex-start"</Code>
+              <Code table>"normal"</Code>
             </td>
           </tr>
           <tr>
