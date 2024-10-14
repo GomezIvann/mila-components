@@ -55,7 +55,7 @@ const Link = styled.a`
   }
 `;
 
-const QuickNavigation = ({ title, links }: QuickNavigationProps) => (
+const QuickNavigation = ({ links, title }: QuickNavigationProps) => (
   <StyledQuickNavigation>
     {title && <Heading level={4}>{title}</Heading>}
     <ListFirstColumn>

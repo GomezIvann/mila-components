@@ -18,35 +18,35 @@ const StyledFlex = styled.div<TransientFlexProps>`
     $justifyContent,
     $order,
   }) => `
-    align-content: ${$alignContent};
-    align-items: ${$alignItems};
-    align-self: ${$alignSelf};
-    flex-basis: ${$basis};
-    flex-direction: ${$direction};
-    flex-grow: ${$grow};
-    flex-shrink: ${$shrink};
-    flex-wrap: ${$wrap};
-    justify-content: ${$justifyContent};
-    order: ${$order};
+    ${typeof $alignContent === "string" ? `align-content: ${$alignContent};` : ""}
+    ${typeof $alignItems === "string" ? `align-items: ${$alignItems};` : ""}
+    ${typeof $alignSelf === "string" ? `align-self: ${$alignSelf};` : ""}
+    ${typeof $basis === "string" ? `flex-basis: ${$basis};` : ""}
+    ${typeof $direction === "string" ? `flex-direction: ${$direction};` : ""}
+    ${typeof $grow === "number" ? `flex-grow: ${$grow};` : ""}
+    ${typeof $justifyContent === "string" ? `justify-content: ${$justifyContent};` : ""}
+    ${typeof $order === "number" ? `order: ${$order};` : ""}
+    ${typeof $shrink === "number" ? `flex-shrink: ${$shrink};` : ""}
+    ${typeof $wrap === "string" ? `flex-wrap: ${$wrap};` : ""}
     ${typeof $gap === "number" ? `gap: ${space[$gap]};` : ""}
     ${typeof $gap === "object" ? `column-gap: ${space[$gap.columnGap ?? 0]}; row-gap: ${space[$gap.rowGap ?? 0]};` : ""}
   `}
 `;
 
 const Flex = ({
-  alignContent = "normal",
-  alignItems = "stretch",
-  alignSelf = "auto",
-  basis = "auto",
-  direction = "row",
-  gap = 0,
-  grow = 0,
-  inline = false,
-  justifyContent = "flex-start",
-  order = 0,
-  shrink = 1,
-  wrap = "nowrap",
+  alignContent,
+  alignItems,
+  alignSelf,
+  basis,
   children,
+  direction,
+  gap,
+  grow,
+  inline,
+  justifyContent,
+  order,
+  shrink,
+  wrap,
 }: FlexProps) => (
   <StyledFlex
     as={inline ? "span" : "div"}

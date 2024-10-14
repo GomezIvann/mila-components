@@ -66,7 +66,7 @@ export const Stories = () => (
     <ExampleContainer>
       <Heading level={3}>Default</Heading>
       <QuickNavContainer>
-        <QuickNavigation links={defaultLinks} />
+        <QuickNavigation title="Content" links={defaultLinks} />
       </QuickNavContainer>
     </ExampleContainer>
     <ExampleContainer pseudoState="pseudo-hover">

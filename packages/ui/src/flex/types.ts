@@ -1,48 +1,48 @@
 import { space } from "../common/core-tokens";
 
 export type Spaces = keyof typeof space;
-type Gap = { rowGap: Spaces; columnGap?: Spaces } | { rowGap?: Spaces; columnGap: Spaces } | Spaces;
+type Gap = { columnGap?: Spaces; rowGap: Spaces } | { columnGap: Spaces; rowGap?: Spaces } | Spaces;
 
 type FlexProps = {
   alignContent?:
-    | "normal"
+    | "center"
+    | "end"
     | "flex-start"
     | "flex-end"
-    | "start"
-    | "end"
-    | "center"
-    | "space-between"
+    | "normal"
     | "space-around"
+    | "space-between"
     | "space-evenly"
+    | "start"
     | "stretch";
   alignItems?:
-    | "stretch"
+    | "baseline"
+    | "center"
+    | "end"
     | "flex-start"
     | "flex-end"
-    | "start"
-    | "end"
-    | "self-start"
     | "self-end"
-    | "center"
-    | "baseline";
-  alignSelf?: "auto" | "flex-start" | "flex-end" | "center" | "baseline" | "stretch";
+    | "self-start"
+    | "start"
+    | "stretch";
+  alignSelf?: "auto" | "baseline" | "center" | "flex-end" | "flex-start" | "stretch";
   basis?: string;
   children: React.ReactNode;
-  direction?: "row" | "row-reverse" | "column" | "column-reverse";
+  direction?: "column" | "column-reverse" | "row" | "row-reverse";
   gap?: Gap;
   grow?: number;
   inline?: boolean;
   justifyContent?:
-    | "flex-start"
-    | "flex-end"
-    | "start"
+    | "center"
     | "end"
+    | "flex-end"
+    | "flex-start"
     | "left"
     | "right"
-    | "center"
-    | "space-between"
     | "space-around"
-    | "space-evenly";
+    | "space-between"
+    | "space-evenly"
+    | "start";
   order?: number;
   shrink?: number;
   wrap?: "nowrap" | "wrap" | "wrap-reverse";

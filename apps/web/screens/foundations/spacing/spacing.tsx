@@ -5,6 +5,7 @@ import SiteQuickNavigation from "@/common/custom-components/quick-navigation/qui
 import { BulletedList, Flex, Heading, Paragraph } from "mila-components";
 
 const codeExample = `import { space } from "mila-components";
+
 const styles = {
   margin: space[16],
   padding: space[24],
@@ -130,7 +131,7 @@ const sections = [
                 <li>Space between content on a page (e.g., spacing between the top of the page and the header).</li>
                 <li>Padding for large components (e.g., dialogs).</li>
                 <li>Alignment within larger content sections (e.g., content alignment within a flag or banner).</li>
-                <li>Full-page padding to separate and focus users’ attention on content.</li>
+                <li>Full-page padding to separate and focus users' attention on content.</li>
               </BulletedList>
             ),
           },
@@ -147,7 +148,7 @@ const sections = [
         </Paragraph>
         <BulletedList>
           <li>
-            <strong>Enhanced User Experience and Readability:</strong> Proper spacing makes content easier to read and
+            <strong>Enhanced user experience and readability:</strong> Proper spacing makes content easier to read and
             interact with, reducing eye strain and improving user engagement.
           </li>
           <li>
@@ -159,11 +160,11 @@ const sections = [
             key elements.
           </li>
           <li>
-            <strong>Increased Engagement:</strong> Clean, well-spaced designs are more inviting, leading to increased
+            <strong>Increased engagement:</strong> Clean, well-spaced designs are more inviting, leading to increased
             interaction and user satisfaction.
           </li>
           <li>
-            <strong>Reduced Clutter:</strong> Proper spacing prevents elements from feeling crowded, making the design
+            <strong>Reduced clutter:</strong> Proper spacing prevents elements from feeling crowded, making the design
             more professional and focused.
           </li>
           <li>
@@ -171,7 +172,7 @@ const sections = [
             projects.
           </li>
           <li>
-            <strong>Improved Developer Collaboration:</strong> Clear spacing guidelines make implementation smoother and
+            <strong>Improved developer collaboration:</strong> Clear spacing guidelines make implementation smoother and
             reduce potential miscommunication during development.
           </li>
         </BulletedList>

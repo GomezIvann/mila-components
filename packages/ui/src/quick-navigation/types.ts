@@ -1,11 +1,11 @@
 type QuickNavigationProps = {
-  title?: string;
   links: {
     label: string;
     links?: {
       label: string;
     }[];
   }[];
+  title?: string;
 };
 
 export default QuickNavigationProps;

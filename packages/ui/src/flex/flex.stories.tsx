@@ -32,7 +32,7 @@ export const Stories = () => (
     </Container>
     <Heading level={4}>Wrap with align content space between, row and column gaps, and as a span</Heading>
     <Container height="250px">
-      <Flex wrap="wrap" alignContent="space-between" as="span" gap={{ rowGap: 8, columnGap: 24 }}>
+      <Flex wrap="wrap" alignContent="space-between" gap={{ rowGap: 8, columnGap: 24 }} inline>
         <Placeholder />
         <Placeholder />
         <Placeholder />

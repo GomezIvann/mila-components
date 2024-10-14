@@ -18,7 +18,7 @@ const getSubSectionsLinks = (sections: SectionType[]) => {
   return linksList;
 };
 
-export default function SiteQuickNavigation({ sections, startHeadingLevel = 1, title }: SiteQuickNavigationProps) {
+export default function SiteQuickNavigation({ sections, startHeadingLevel = 1, title = "On this page" }: SiteQuickNavigationProps) {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.sectionsContainer}>
