@@ -108,6 +108,18 @@ const sections = [
           </BulletedList>
         ),
       },
+      {
+        title: "WAI Tutorials",
+        content: (
+          <BulletedList>
+            <li>
+              <Link href="https://www.w3.org/WAI/tutorials/page-structure/regions/#page-footer" newWindow>
+                Page regions: Footer
+              </Link>
+            </li>
+          </BulletedList>
+        ),
+      },
     ],
   },
 ];

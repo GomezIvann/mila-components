@@ -8,14 +8,7 @@ import milaLogo from "../assets/mila-logo.png";
 export default function SiteFooter() {
   return (
     <Footer
-      title={{ icon: <Image src={milaLogo} alt="Mila components logo" priority /> }}
-      socialIcons={[
-        {
-          icon: icons.gitHub,
-          href: "https://github.com/GomezIvann/mila-components",
-          title: "GitHub",
-        },
-      ]}
+      copyright="© 2024 GomezIvann"
       links={[
         {
           label: "GitHub",
@@ -26,6 +19,14 @@ export default function SiteFooter() {
           href: "https://www.linkedin.com/in/ivan-gomez-pinta-a13720180/",
         },
       ]}
+      socialIcons={[
+        {
+          icon: icons.gitHub,
+          href: "https://github.com/GomezIvann/mila-components",
+          title: "GitHub",
+        },
+      ]}
+      title={{ icon: <Image src={milaLogo} alt="Mila components logo" priority /> }}
     />
   );
 }

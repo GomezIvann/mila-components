@@ -71,7 +71,7 @@ const LinksList = styled.div`
   }
 `;
 
-const Footer = ({ content, copyright = "© 2024 GomezIvann", links, socialIcons, title }: FooterProps) => (
+const Footer = ({ content, copyright, links, socialIcons, title }: FooterProps) => (
   <StyledFooter>
     <MainContent>
       {title && (
