@@ -9,7 +9,6 @@ type SingleItemType = {
   selected?: boolean;
 };
 type GroupItemType = {
-  collapsable?: boolean;
   icon?: IconProp;
   items: SingleItemType[];
   label: string;
@@ -34,5 +33,4 @@ type SideNavigationWrapperProps = {
 };
 
 export default SideNavigationProps;
-
 export type { GroupItemType, SectionType, SideNavigationWrapperProps, SingleItemType };

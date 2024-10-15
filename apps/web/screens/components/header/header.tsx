@@ -20,13 +20,13 @@ const sections = [
           and the rest of the layout components to create consistent layouts across your application.
         </li>
         <li>
-          Use the <Code>content</Code> prop to pass custom content to be rendered inside the footer. This can be used to
-          add additional information or links. Take into account that the footer should not be too big, so keep the
+          Use the <Code>content</Code> prop to pass custom content to be rendered inside the header. This can be used to
+          add additional information or links. Take into account that the header should not be too big, so keep the
           content concise.
         </li>
         <li>
-          Use <Code>onNavigate</Code> to handle consistently the navigation of all the links in the header, including
-          the title, if it is a link.
+          Use <Code>onNavigate</Code> prop to handle consistently the navigation of all the links in the header,
+          including the title, if it is a link.
         </li>
         <li>
           If a link is marked as <Code>external</Code>, it will include an especial icon (
@@ -52,13 +52,13 @@ const sections = [
           dropdown menu.
         </li>
         <li>
-          Use the <Code>title</Code> prop to pass the main title of the footer. This can be either a text or an icon. If
-          an <Code>href</Code> is provided, the title will be rendered as a link. Use this functionality to link to the
-          landing page of your application.
+          If an <Code>href</Code> is provided, the title will be rendered as a link. Use this functionality to link to
+          the landing page of your application.
         </li>
         <li>
-          The <Code>icon</Code> prop can be either a string, for URLs, or a SVG element. Only SVG icons are styled by
-          the component. If you want to use a different type of icon, you need to style it manually.
+          The prop <Code>icon</Code> of both the title and groups or links can be either a string, for
+          URLs, or a SVG element. Only SVG icons are styled by the component. If you want to use a different type of
+          icon, you need to style it manually.
         </li>
       </BulletedList>
     ),
@@ -120,19 +120,24 @@ const sections = [
             <td>
               <Code table>{"(href: string) => void"}</Code>
             </td>
-            <td>A function that will be executed when a link is clicked.</td>
+            <td>Function that will be executed when a link is clicked.</td>
             <td>-</td>
           </tr>
           <tr>
             <td>responsiveBreakpoint</td>
             <td>
-              <Code table>"xs" | "sm" | "md" | "lg" | "xl" | "xxl"</Code>
-              <br />
-              This values correspond to the breakpoints defined in the{" "}
-              <NextLink href="/foundations/layout" passHref legacyBehavior>
-                <Link>layout foundations</Link>
-              </NextLink>
-              .
+              <dl>
+                <dt>
+                  <Code table>"xs" | "sm" | "md" | "lg" | "xl" | "xxl"</Code>
+                </dt>
+                <dd>
+                  This values correspond to the breakpoints defined in the{" "}
+                  <NextLink href="/foundations/layout" passHref legacyBehavior>
+                    <Link>layout foundations</Link>
+                  </NextLink>
+                  .
+                </dd>
+              </dl>
             </td>
             <td>The breakpoint at which the header will switch to a responsive mode.</td>
             <td>-</td>
@@ -144,7 +149,7 @@ const sections = [
                 {"{ href?: string; icon?: string | (React.ReactNode & React.SVGProps<SVGSVGElement>); text?: string; }"}
               </Code>
             </td>
-            <td>The title of the header.</td>
+            <td>Title of the header.</td>
             <td>-</td>
           </tr>
         </tbody>

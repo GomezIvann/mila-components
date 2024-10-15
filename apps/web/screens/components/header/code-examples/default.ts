@@ -25,6 +25,9 @@ const code = `() => {
       ]}
       responsiveBreakpoint="xl"
       title={{ text: "Mila", href: "#" }}
+      onNavigate={(href) => { 
+        alert(href);
+      }}
     />
   );
 }`;

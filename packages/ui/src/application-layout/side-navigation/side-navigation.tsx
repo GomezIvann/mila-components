@@ -124,10 +124,8 @@ const SideNavigation = ({ items, onNavigate, responsiveBreakpoint, title }: Side
   useEffect(() => {
     if (responsiveBreakpoint) {
       const handleResize = () =>
-        window.matchMedia(`(max-width: ${breakpoints[responsiveBreakpoint]})`).matches
-          ? setIsInResponsiveMode(true)
-          : setIsInResponsiveMode(false);
-      setIsInResponsiveMode(window.matchMedia(`(max-width: ${breakpoints[responsiveBreakpoint]})`).matches);
+        setIsInResponsiveMode(window.matchMedia(`(max-width: ${breakpoints[responsiveBreakpoint]})`).matches);
+
       handleResize();
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);

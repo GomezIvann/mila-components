@@ -25,10 +25,7 @@ const sections = [
           content concise.
         </li>
         <li>
-          Use the <Code>title</Code> prop to pass the main title of the footer. This can be a text or an icon.
-        </li>
-        <li>
-          The <Code>icon</Code> prop can be either a string, for URLs, or a SVG element. Only SVG icons are styled by
+          The <Code>icon</Code> of the title can be either a string, for URLs, or a SVG element. Only SVG icons are styled by
           the component. If you want to use a different type of icon, you need to style it manually.
         </li>
       </BulletedList>
@@ -92,7 +89,7 @@ const sections = [
                 {"{ icon?: string | (React.ReactNode & React.SVGProps<SVGSVGElement>); text?: string; }"}
               </Code>
             </td>
-            <td>The main title of the footer.</td>
+            <td>Title of the footer.</td>
             <td>-</td>
           </tr>
         </tbody>
