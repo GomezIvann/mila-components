@@ -27,6 +27,7 @@ const componentsLinks: LinkDetails[] = [
   { label: "Badge", href: "/components/badge" },
   { label: "Bulleted list", href: "/components/bulleted-list" },
   { label: "Button", href: "/components/button" },
+  { label: "Card", href: "/components/card" },
   { label: "Divider", href: "/components/divider" },
   { label: "Dropdown menu", href: "/components/dropdown-menu" },
   { label: "Flex", href: "/components/flex" },
