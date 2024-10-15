@@ -17,7 +17,6 @@ const code = `() => {
         <Flex gap={8}>
           <ActionButton onClick={() => {}}>Pricing</ActionButton>
           <ActionButton onClick={() => {}}>Contact</ActionButton>
-          <ActionButton onClick={() => {}}>Resources</ActionButton>
         </Flex>
       }
       copyright="© 2024 Mila"

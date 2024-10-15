@@ -21,6 +21,7 @@ const MainContent = styled.div`
   margin-bottom: ${space[16]};
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: ${space[16]};
 `;
 
@@ -56,9 +57,9 @@ const SocialIconLink = styled.a`
 `;
 
 const Copyright = styled.small`
+  color: ${alias.color.text};
   font-family: ${typography.family.sans};
   font-size: ${typography.size.sm};
-  color: ${alias.color.text};
 `;
 
 const LinksList = styled.div`
@@ -92,7 +93,7 @@ const Footer = ({ content, copyright, links, socialIcons, title }: FooterProps) 
       )}
     </MainContent>
     <Divider />
-    <Flex alignItems="center" justifyContent="space-between">
+    <Flex alignItems="center" justifyContent="space-between" wrap="wrap">
       {copyright && <Copyright>{copyright}</Copyright>}
       {links && (
         <LinksList>

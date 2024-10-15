@@ -113,8 +113,8 @@ const sections = [
         content: (
           <BulletedList>
             <li>
-              <Link href="https://www.w3.org/WAI/tutorials/page-structure/regions/#page-footer" newWindow>
-                Page regions: Footer
+              <Link href="https://www.w3.org/WAI/tutorials/page-structure/regions/" newWindow>
+                Page regions
               </Link>
             </li>
           </BulletedList>

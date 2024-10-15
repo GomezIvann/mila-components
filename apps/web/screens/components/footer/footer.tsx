@@ -13,10 +13,6 @@ const sections = [
     content: (
       <BulletedList>
         <li>
-          The footer is typically found at the end of a page or section and is used to present copyright and legal
-          information or links to related content, as well as some branding.
-        </li>
-        <li>
           Use the footer component in combination with the{" "}
           <NextLink href="/components/application-layout" passHref legacyBehavior>
             <Link>Application layout</Link>
@@ -74,7 +70,7 @@ const sections = [
           <tr>
             <td>links</td>
             <td>
-              <Code table>{"{ label: string; href: string; }[]"}</Code>
+              <Code table>{"{ href: string; label: string; }[]"}</Code>
             </td>
             <td>The links to be displayed at the bottom footer.</td>
             <td>-</td>
@@ -111,8 +107,8 @@ const sections = [
         content: (
           <BulletedList>
             <li>
-              <Link href="https://www.w3.org/WAI/tutorials/page-structure/regions/" newWindow>
-                Page regions
+              <Link href="https://www.w3.org/WAI/tutorials/page-structure/regions/#page-footer" newWindow>
+                Page regions: Footer
               </Link>
             </li>
           </BulletedList>

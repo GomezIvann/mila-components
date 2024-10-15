@@ -10,7 +10,7 @@ import { breakpoints } from "../../common/breakpoints";
 import icons from "../../common/icons";
 import { StyledActionButton } from "../../action-button/action-button";
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.header<{ $responsiveBreakpoint?: HeaderProps["responsiveBreakpoint"] }>`
   position: relative;
   box-sizing: border-box;
   height: 64px;
@@ -18,7 +18,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: ${space[32]};
+  gap: ${space[40]};
   background-color: ${color.transparent};
   overflow: hidden;
 
@@ -31,6 +31,9 @@ const StyledHeader = styled.header`
     height: 1px;
     background-color: ${alias.color.primaryBorder};
   }
+
+  ${({ $responsiveBreakpoint }) =>
+    $responsiveBreakpoint && `@media (max-width: ${breakpoints[$responsiveBreakpoint]}) { gap: ${space[8]}; }`}
 `;
 
 const Navigation = styled.nav`
@@ -43,8 +46,8 @@ const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   gap: ${space[8]};
-  white-space: nowrap;
   color: ${alias.color.text};
+  white-space: nowrap;
 `;
 
 const NavigationList = styled.ul`
@@ -72,10 +75,6 @@ const NavigationListItem = styled.li<{ $selected?: boolean }>`
     }`}
 `;
 
-const Content = styled.div`
-  margin-left: ${space[32]};
-`;
-
 const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: HeaderProps) => {
   const [isInResponsiveMode, setIsInResponsiveMode] = useState(false);
 
@@ -90,7 +89,7 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
   }, [responsiveBreakpoint]);
 
   return (
-    <StyledHeader>
+    <StyledHeader $responsiveBreakpoint={responsiveBreakpoint}>
       <Navigation aria-label={`header-navigation${title?.text ? `-${title.text}` : ""}`}>
         {title &&
           (title.href == null ? (
@@ -116,52 +115,52 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
               {title?.text && <Heading level={3}>{title.text}</Heading>}
             </StyledActionButton>
           ))}
-        {links &&
-          (isInResponsiveMode ? (
-            <DropdownMenu
-              items={links?.map(({ href, label }) => ({
-                label,
-                value: href,
-              }))}
-              label="Menu"
-              triggerVariant="action"
-              onItemClick={(value) => {
-                const external = links?.find(({ href }) => href === value)?.external;
-                external ? window.open(value, "_blank") : onNavigate?.(value);
-              }}
-            />
-          ) : (
-            <NavigationList>
-              {links?.map(({ external, href, label, selected }, index) => (
-                <NavigationListItem key={index} $selected={selected}>
-                  <StyledActionButton
-                    as="a"
-                    aria-selected={selected}
-                    href={href}
-                    onClick={
-                      external
-                        ? undefined
-                        : (e) => {
-                            e.preventDefault();
-                            onNavigate?.(href);
-                          }
-                    }
-                    tabIndex={0}
-                    target={external ? "_blank" : undefined}
-                    $hasIcon={external ?? false}
-                    $hasLabel={Boolean(label)}
-                    $iconPosition="right"
-                    $variant="default"
-                  >
-                    {external && <Icon icon={icons.externalLink} height="24px" width="24px" />}
-                    {label}
-                  </StyledActionButton>
-                </NavigationListItem>
-              ))}
-            </NavigationList>
-          ))}
+        {links && !isInResponsiveMode && (
+          <NavigationList>
+            {links?.map(({ external, href, label, selected }, index) => (
+              <NavigationListItem key={index} $selected={selected}>
+                <StyledActionButton
+                  as="a"
+                  aria-selected={selected}
+                  href={href}
+                  onClick={
+                    external
+                      ? undefined
+                      : (e) => {
+                          e.preventDefault();
+                          onNavigate?.(href);
+                        }
+                  }
+                  tabIndex={0}
+                  target={external ? "_blank" : undefined}
+                  $hasIcon={external ?? false}
+                  $hasLabel={Boolean(label)}
+                  $iconPosition="right"
+                  $variant="default"
+                >
+                  {external && <Icon icon={icons.externalLink} height="24px" width="24px" />}
+                  {label}
+                </StyledActionButton>
+              </NavigationListItem>
+            ))}
+          </NavigationList>
+        )}
       </Navigation>
-      {content && <Content>{content}</Content>}
+      {links && isInResponsiveMode && (
+        <DropdownMenu
+          items={links?.map(({ href, label }) => ({
+            label,
+            value: href,
+          }))}
+          label="Menu"
+          triggerVariant="action"
+          onItemClick={(value) => {
+            const external = links?.find(({ href }) => href === value)?.external;
+            external ? window.open(value, "_blank") : onNavigate?.(value);
+          }}
+        />
+      )}
+      {content}
     </StyledHeader>
   );
 };

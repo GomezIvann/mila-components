@@ -4,8 +4,8 @@ type FooterProps = {
   content?: React.ReactNode;
   copyright?: string;
   links?: {
-    label: string;
     href: string;
+    label: string;
   }[];
   socialIcons?: {
     icon: IconProp;
