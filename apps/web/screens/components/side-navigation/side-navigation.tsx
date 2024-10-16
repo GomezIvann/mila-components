@@ -1,6 +1,6 @@
 "use client";
 
-import { BulletedList, Divider, Flex, Heading, Link, Paragraph, Table } from "mila-components";
+import { Badge, BulletedList, Divider, Flex, Heading, Link, Paragraph, Table } from "mila-components";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { Code } from "@/common/custom-components/code/code";
 import LiveCodeBlock from "@/common/custom-components/code/live-code-block";
@@ -22,7 +22,8 @@ const sections = [
         <li>Use sections to group links or link groups that share a common domain or context.</li>
         <li>Use groups to visually organize and collapse links, improving the distribution of information.</li>
         <li>
-          Use <Code>onNavigate</Code> prop to handle consistently the navigation of all the links in the side navigation.
+          Use <Code>onNavigate</Code> prop to handle consistently the navigation of all the links in the side
+          navigation.
         </li>
         <li>
           If a link is marked as <Code>external</Code>, it will include an especial icon (
@@ -73,7 +74,14 @@ const sections = [
         </thead>
         <tbody>
           <tr>
-            <td>items</td>
+            <td>
+              <Flex direction="column" gap={2}>
+                <Badge color="yellow" title="This prop is mandatory.">
+                  Required
+                </Badge>
+                items
+              </Flex>
+            </td>
             <td>
               <Code table>{"(SingleItemType | GroupItemType)[] | SectionType[]"}</Code>
               <dl>
@@ -117,7 +125,14 @@ const sections = [
           </tr>
 
           <tr>
-            <td>onNavigate</td>
+            <td>
+              <Flex direction="column" gap={2}>
+                <Badge color="yellow" title="This prop is mandatory.">
+                  Required
+                </Badge>
+                onNavigate
+              </Flex>
+            </td>
             <td>
               <Code table>{"(href: string) => void"}</Code>
             </td>

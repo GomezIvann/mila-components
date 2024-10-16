@@ -92,7 +92,7 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
     <StyledHeader $responsiveBreakpoint={responsiveBreakpoint}>
       <Navigation aria-label={`header-navigation${title?.text ? `-${title.text}` : ""}`}>
         {title &&
-          (title.href == null ? (
+          ("href" in title ? (
             <TitleContainer>
               {title?.icon && <Icon icon={title.icon} height="40px" />}
               {title?.text && <Heading level={3}>{title.text}</Heading>}
