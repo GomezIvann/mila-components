@@ -93,11 +93,6 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
       <Navigation aria-label={`header-navigation${title?.text ? `-${title.text}` : ""}`}>
         {title &&
           ("href" in title ? (
-            <TitleContainer>
-              {title?.icon && <Icon icon={title.icon} height="40px" />}
-              {title?.text && <Heading level={3}>{title.text}</Heading>}
-            </TitleContainer>
-          ) : (
             <StyledActionButton
               as="a"
               href={title.href}
@@ -111,9 +106,14 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
               $iconPosition="left"
               $variant="default"
             >
-              {title?.icon && <Icon icon={title.icon} height="32px" />}
+              {title?.icon && <Icon height="32px" icon={title.icon} />}
               {title?.text && <Heading level={3}>{title.text}</Heading>}
             </StyledActionButton>
+          ) : (
+            <TitleContainer>
+              {title?.icon && <Icon height="40px" icon={title.icon} />}
+              {title?.text && <Heading level={3}>{title.text}</Heading>}
+            </TitleContainer>
           ))}
         {links && !isInResponsiveMode && (
           <NavigationList>
