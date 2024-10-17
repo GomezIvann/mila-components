@@ -1,5 +1,14 @@
 import styles from "./code.module.css";
-import { CodeBlockProps, CodeProps } from "./types";
+
+type CodeBlockProps = {
+  children: React.ReactNode;
+  language?: string;
+};
+
+type CodeProps = {
+  children: React.ReactNode;
+  table?: boolean;
+};
 
 export const CodeBlock = ({ children, language }: CodeBlockProps) => (
   <div className={styles.codeBlock}>
