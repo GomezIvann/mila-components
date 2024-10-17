@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import styles from "./live-code-block.module.css";
-import { LiveCodeBlockProps } from "./types";
 import theme from "./live-code-block-theme";
 import { Button, Flex } from "mila-components";
+
+type LiveCodeBlockProps = {
+  defaultOpenEditor?: boolean;
+  example: {
+    code: string;
+    scope?: Record<string, any>;
+  };
+};
 
 export default function LiveCodeBlock({ defaultOpenEditor = false, example }: LiveCodeBlockProps) {
   const [isEditorOpen, setIsEditorOpen] = useState(defaultOpenEditor);

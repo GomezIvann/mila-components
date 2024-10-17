@@ -3,7 +3,7 @@
 import { Badge, BulletedList, Divider, Flex, Heading, Link, Paragraph, Table } from "mila-components";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { Code } from "@/common/custom-components/code/code";
-import LiveCodeBlock from "@/common/custom-components/code/live-code-block";
+import LiveCodeBlock from "@/common/custom-components/live-code-block/live-code-block";
 import defaultExample from "./code-examples/default";
 
 const sections = [

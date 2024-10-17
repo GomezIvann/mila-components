@@ -1,7 +1,7 @@
 "use client";
 
 import { Code, CodeBlock } from "@/common/custom-components/code/code";
-import LiveCodeBlock from "@/common/custom-components/code/live-code-block";
+import LiveCodeBlock from "@/common/custom-components/live-code-block/live-code-block";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { Flex, Heading, Link, Paragraph } from "mila-components";
 import NextLink from "next/link";
