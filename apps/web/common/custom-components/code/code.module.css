@@ -13,20 +13,14 @@
 }
 
 .codeBlock > pre {
+  position: relative;
   margin: 0;
   border: 1px solid #dedede;
   border-radius: 0 0.25rem 0.25rem 0.25rem;
   padding: 1rem 1rem 1rem 1.5rem;
-  height: 32px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  overflow-x: auto;
   background-color: #fbfbfb;
-}
-
-.codeBlock > pre:hover {
-  cursor: pointer;
 }
 
 .codeBlock > pre > code {
@@ -35,6 +29,13 @@
   white-space: pre-wrap;
   word-wrap: break-word;
   color: #0b315d;
+}
+
+.copyAction {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
 }
 
 .code,

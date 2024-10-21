@@ -34,12 +34,19 @@ export const CodeBlock = ({ children, language }: CodeBlockProps) => {
   };
 
   return (
-    <div className={styles.codeBlock} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <div className={styles.codeBlock}>
       {language && <span>{language}</span>}
-      <pre onClick={copyCode}>
+      <pre onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <code>{children}</code>
         {copyActionIsVisible && (
-          <ActionButton icon={copied ? icons.copied : icons.copy} onClick={() => {}} title="Copy code" size="small" />
+          <span className={styles.copyAction}>
+            <ActionButton
+              icon={copied ? icons.copied : icons.copy}
+              onClick={copyCode}
+              title={copied ? "Copied!" : "Copy code"}
+              size="small"
+            />
+          </span>
         )}
       </pre>
     </div>
