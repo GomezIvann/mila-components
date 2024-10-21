@@ -16,7 +16,7 @@ The monorepo is structured as follows (some folders and files are omitted for ex
 📂 apps
     📂 web                  # Next.js application for the documentation site
 📂 packages
-    📂 lib                  # Contains the halstack-react component library
+    📂 lib                  # Contains the mila-components react component library
 📄 package.json             # Root package.json file, defining scripts and dependencies for the entire monorepo
 📄 pnpm-lock.yaml           # Lockfile that ensures consistent installations across environments for all dependencies
 📄 pnpm-workspace.yaml      # Defines the workspace configuration for pnpm, specifying the structure and package locations
