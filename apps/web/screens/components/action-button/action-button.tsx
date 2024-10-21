@@ -116,6 +116,16 @@ const sections = [
             <td>-</td>
           </tr>
           <tr>
+            <td>size</td>
+            <td>
+              <Code table>"small" | "medium"</Code>
+            </td>
+            <td>Size of the action button.</td>
+            <td>
+              <Code table>"medium"</Code>
+            </td>
+          </tr>
+          <tr>
             <td>title</td>
             <td>
               <Code table>string</Code>
