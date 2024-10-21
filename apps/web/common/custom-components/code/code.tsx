@@ -36,10 +36,10 @@ export const CodeBlock = ({ children, language }: CodeBlockProps) => {
   return (
     <div className={styles.codeBlock} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {language && <span>{language}</span>}
-      <pre>
+      <pre onClick={copyCode}>
         <code>{children}</code>
         {copyActionIsVisible && (
-          <ActionButton icon={copied ? icons.copied : icons.copy} onClick={copyCode} title="Copy code" size="small" />
+          <ActionButton icon={copied ? icons.copied : icons.copy} onClick={() => {}} title="Copy code" size="small" />
         )}
       </pre>
     </div>

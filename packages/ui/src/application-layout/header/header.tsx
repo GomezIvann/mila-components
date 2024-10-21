@@ -104,6 +104,7 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
               $hasIcon={Boolean(title?.icon)}
               $hasLabel={Boolean(title?.text)}
               $iconPosition="left"
+              $size="medium"
               $variant="default"
             >
               {title?.icon && <Icon height="32px" icon={title.icon} />}
@@ -136,6 +137,7 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
                   $hasIcon={external ?? false}
                   $hasLabel={Boolean(label)}
                   $iconPosition="right"
+                  $size="medium"
                   $variant="default"
                 >
                   {external && <Icon icon={icons.externalLink} height="24px" width="24px" />}
