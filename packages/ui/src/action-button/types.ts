@@ -10,6 +10,7 @@ type ActionButtonProps = {
   title?: string;
   type?: "button" | "submit" | "reset";
   variant?: "default" | "outlined";
+  size?: "small" | "medium";
 };
 
 export default ActionButtonProps;

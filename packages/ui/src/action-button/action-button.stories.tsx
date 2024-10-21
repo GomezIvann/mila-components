@@ -26,6 +26,12 @@ export const Stories = () => (
       </ActionButton>
     </ExampleContainer>
     <ExampleContainer>
+      <Heading level={3}>Small</Heading>
+      <ActionButton onClick={() => {}} size="small">
+        Small
+      </ActionButton>
+    </ExampleContainer>
+    <ExampleContainer>
       <Heading level={3}>Icon only</Heading>
       <ActionButton icon={pencilIcon} onClick={() => {}} title="Edit" />
     </ExampleContainer>
@@ -38,6 +44,22 @@ export const Stories = () => (
     <ExampleContainer>
       <Heading level={3}>Icon (after) and label</Heading>
       <ActionButton icon={pencilIcon} iconPosition="right" onClick={() => {}}>
+        Edit
+      </ActionButton>
+    </ExampleContainer>
+    <ExampleContainer>
+      <Heading level={3}>Small - Icon only</Heading>
+      <ActionButton icon={pencilIcon} onClick={() => {}} title="Edit" size="small" />
+    </ExampleContainer>
+    <ExampleContainer>
+      <Heading level={3}>Small -Icon (before) and label</Heading>
+      <ActionButton icon={pencilIcon} onClick={() => {}} size="small">
+        Edit
+      </ActionButton>
+    </ExampleContainer>
+    <ExampleContainer>
+      <Heading level={3}>Small - Icon (after) and label</Heading>
+      <ActionButton icon={pencilIcon} iconPosition="right" onClick={() => {}} size="small">
         Edit
       </ActionButton>
     </ExampleContainer>

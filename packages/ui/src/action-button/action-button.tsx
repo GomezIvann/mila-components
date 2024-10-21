@@ -9,6 +9,7 @@ export const StyledActionButton = styled.button<{
   $hasIcon: boolean;
   $hasLabel: boolean;
   $iconPosition: ActionButtonProps["iconPosition"];
+  $size: ActionButtonProps["size"];
   $variant: ActionButtonProps["variant"];
 }>`
   all: unset;
@@ -16,14 +17,16 @@ export const StyledActionButton = styled.button<{
   border: ${({ $variant }) => ($variant === "outlined" ? `1px solid ${alias.color.primaryBorder}` : "none")};
   border-radius: ${alias.space.primaryBorderRadius};
   width: fit-content;
-  height: 40px;
-  ${({ $hasIcon, $hasLabel, $iconPosition }) => {
-    if (!$hasIcon) return `padding: ${space[8]} ${space[16]};`;
+  height: ${({ $size }) => ($size === "small" ? space[32] : space[40])};
+  ${({ $hasIcon, $hasLabel, $iconPosition, $size }) => {
+    if (!$hasIcon) return `padding: ${space[8]} ${space[$size === "small" ? 12 : 16]};`;
     else {
       if (!$hasLabel) return `padding: ${space[8]};`;
       else {
-        if ($iconPosition === "right") return `padding: ${space[8]} ${space[12]} ${space[8]} ${space[16]};`;
-        else return `padding: ${space[8]} ${space[16]} ${space[8]} ${space[12]};`;
+        if ($iconPosition === "right")
+          return `padding: ${space[8]} ${space[$size === "small" ? 8 : 12]} ${space[8]} ${space[$size === "small" ? 12 : 16]};`;
+        else
+          return `padding: ${space[8]} ${space[$size === "small" ? 12 : 16]} ${space[8]} ${space[$size === "small" ? 8 : 12]};`;
       }
     }
   }}
@@ -34,9 +37,9 @@ export const StyledActionButton = styled.button<{
   background-color: ${({ $variant }) => ($variant === "outlined" ? color.white : color.transparent)};
   color: ${alias.color.text};
   font-family: ${typography.family.sans};
-  font-size: ${typography.size.md};
+  font-size: ${({ $size }) => ($size === "small" ? typography.size.sm : typography.size.md)};
   font-weight: ${typography.weight.semibold};
-  line-height: ${typography.lineHeight.normal};
+  line-height: ${({ $size }) => ($size === "small" ? typography.lineHeight.snug : typography.lineHeight.normal)};
   letter-spacing: ${typography.letterSpacing.normal};
   text-decoration: none;
   white-space: nowrap;
@@ -68,6 +71,7 @@ const ActionButton = forwardRef<HTMLButtonElement, ActionButtonProps>(
       iconPosition = "left",
       onClick,
       title,
+      size = "medium",
       type = "button",
       variant = "default",
       ...rest
@@ -84,10 +88,13 @@ const ActionButton = forwardRef<HTMLButtonElement, ActionButtonProps>(
       $hasIcon={Boolean(icon)}
       $hasLabel={Boolean(children)}
       $iconPosition={iconPosition}
+      $size={size}
       $variant={variant}
       {...rest}
     >
-      {icon && <Icon icon={icon} height="24px" width="24px" />}
+      {icon && (
+        <Icon icon={icon} height={size === "small" ? "16px" : "24px"} width={size === "small" ? "16px" : "24px"} />
+      )}
       {children}
     </StyledActionButton>
   )

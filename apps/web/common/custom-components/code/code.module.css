@@ -12,16 +12,24 @@
   color: #fff;
 }
 
-.codeBlock pre {
+.codeBlock > pre {
   margin: 0;
   border: 1px solid #dedede;
   border-radius: 0 0.25rem 0.25rem 0.25rem;
-  padding: 1.5rem;
+  padding: 1rem 1rem 1rem 1.5rem;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   overflow-x: auto;
   background-color: #fbfbfb;
 }
 
-.codeBlock code {
+.codeBlock > pre:hover {
+  cursor: pointer;
+}
+
+.codeBlock > pre > code {
   font-family: Menlo, monospace;
   font-size: 0.875rem;
   white-space: pre-wrap;
