@@ -13,7 +13,7 @@ const sections = [
     content: (
       <>
         <Paragraph>
-          Mila components is published as an <Code>npm</Code> package. You can install them using your favorite package
+          Mila components is published as an <Code>npm</Code> package. You can install it using your favorite package
           manager.
         </Paragraph>
       </>

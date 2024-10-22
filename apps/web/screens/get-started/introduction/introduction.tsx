@@ -18,7 +18,7 @@ const sections = [
         </Paragraph>
         <Paragraph>
           The main goal of this project is to provide a set of components that can be easily reused in any project, with
-          a focus on accessibility and usability, while also providing a consistent design, so our users can focus on
+          a focus on accessibility and usability, while also providing a consistent design, so the users can focus on
           building their projects.
         </Paragraph>
       </>
@@ -41,7 +41,7 @@ const sections = [
       <>
         <Paragraph>
           This documentation site is your go-to place for understanding Mila components. Here you can find information
-          about the components, how to use them, examples, how they where built, our core foundations and much more.
+          about the components, how to use them, examples, how they where built, the core foundations and much more.
         </Paragraph>
         <Paragraph>
           It is fully built using Mila components, so you can see how the components look and behave in a real-world
@@ -85,8 +85,8 @@ const sections = [
             </Paragraph>
             <Paragraph>
               These design principles include color contrast, typography, spacing, and accessibility which are applied
-              consistently across all components. Our aim is to also provide this design choices to our users so they
-              can build their projects with a consistent design. This can be achieve thanks to our core tokens that are
+              consistently across all components. The aim is to also provide this design choices to the users so they
+              can build their projects with a consistent design. This can be achieve thanks to the core tokens that are
               available to be used in your projects.
             </Paragraph>
           </>

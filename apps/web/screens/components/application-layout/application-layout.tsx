@@ -33,7 +33,7 @@ const sections = [
           example, if your application doesn't have a side navigation menu, don't pass it to the component.
         </li>
         <li>
-          We encourage you to use the application layout in conjunction with the{" "}
+          It is strongly recommended to use the application layout in conjunction with the{" "}
           <NextLink href="/components/header" passHref legacyBehavior>
             <Link>header</Link>
           </NextLink>

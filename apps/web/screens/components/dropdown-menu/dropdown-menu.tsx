@@ -37,11 +37,11 @@ const sections = [
           manually.
         </li>
         <li>
-          Use <Code>triggerVariant</Code> prop to change the appearance of the trigger button. It can be either our{" "}
+          Use <Code>triggerVariant</Code> prop to change the appearance of the trigger button. It can be either an{" "}
           <NextLink href="/components/action-button" passHref legacyBehavior>
             <Link>Action button</Link>
           </NextLink>{" "}
-          or the{" "}
+          or the regular{" "}
           <NextLink href="/components/button" passHref legacyBehavior>
             <Link>Button</Link>
           </NextLink>

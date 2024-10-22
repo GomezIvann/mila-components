@@ -10,7 +10,7 @@ const styles = {
   fontFamily: typography.family.sans,
   fontSize: typography.size["4xl"],
   fontWeight: typography.weight.bold,
-  letter-spacing: typography.letterSpacing.tight,
+  letterSpacing: typography.letterSpacing.tight,
   lineHeight: typography.lineHeight.tight,
 };
 
@@ -32,8 +32,8 @@ const sections = [
         <Paragraph>
           The typography system in Mila is designed to balance legibility, accessibility, and aesthetic appeal. With
           Inter as the core font, the typography maintains a clean, modern look while providing clear visual hierarchy
-          and ease of use. By adhering to these principles, we ensure that all text elements in the design system are
-          easy to read, navigate, and scale across different platforms and devices.
+          and ease of use. By adhering to these principles, mila-components ensures that all text elements are easy to
+          read, navigate, and scale across different platforms and devices.
         </Paragraph>
       </>
     ),
@@ -43,7 +43,7 @@ const sections = [
     content: (
       <>
         <Paragraph>
-          Our chosen font family is Inter, a modern sans-serif typeface designed for optimal readability on screens. It
+          The chosen font family is Inter, a modern sans-serif typeface designed for optimal readability on screens. It
           offers a clean, simple, and versatile aesthetic that complements both functional and visual components of the
           library.
         </Paragraph>
@@ -55,7 +55,7 @@ const sections = [
         </Paragraph>
         <Paragraph>
           This typeface is used across all headings, body text, and UI elements, ensuring a cohesive and professional
-          appearance throughout the entire design system.
+          appearance throughout the entire library.
         </Paragraph>
       </>
     ),
@@ -66,8 +66,8 @@ const sections = [
       <>
         <Paragraph>
           A well-defined typographic hierarchy guides users through content in a logical and intuitive way. By using
-          different font sizes, weights, and spacings, we create a clear structure that emphasizes important information
-          while maintaining readability.
+          different font sizes, weights, and spacings, you can create a clear structure that emphasizes important
+          information while maintaining readability.
         </Paragraph>
         <Paragraph>
           <strong>Heading 1 (h1):</strong> Used for main titles and key sections.
@@ -127,7 +127,7 @@ const sections = [
     content: (
       <>
         <Paragraph>
-          To maintain a consistent typographic rhythm, we use a modular scale based on the root font-size of{" "}
+          To maintain a consistent typographic rhythm, the library uses a modular scale based on the root font-size of{" "}
           <Code>16px</Code> / <Code>1rem</Code>. This scale allows us to define font sizes proportionally, ensuring
           visual harmony across the design. The scale follows a 1.25x ratio for heading sizes:
         </Paragraph>
@@ -184,7 +184,7 @@ const sections = [
     content: (
       <>
         <Paragraph>
-          To create contrast and establish hierarchy, we leverage different font weights from the Inter family. The use
+          To create contrast and establish hierarchy, I leverage different font weights from the Inter family. The use
           of bold or semi-bold text helps emphasize important information, while regular weight ensures optimal
           readability for longer text blocks.
         </Paragraph>
@@ -211,7 +211,7 @@ const sections = [
       <>
         <Paragraph>
           The appropriate use of <strong>line-height</strong> and <strong>letter-spacing</strong> enhances the
-          readability of text across various screen sizes. For body text, we use a line-height of <Code>1.5em</Code>,
+          readability of text across various screen sizes. For body text, the line-height set to <Code>1.5em</Code>,
           which provides enough breathing room between lines to improve legibility. For headings, a slightly tighter
           line-height of <Code>1.25em</Code> ensures a clean and compact presentation while still maintaining clarity.
         </Paragraph>
@@ -272,10 +272,11 @@ const sections = [
     title: "Accessibility and readability",
     content: (
       <Paragraph>
-        The typography system in Mila is designed to ensure accessibility and readability for all users. We ensure that
-        the minimum font size is <Code>16px</Code> / <Code>1rem</Code> across all text, providing clear and legible
-        content on both large and small screens. Additionally, we aim to maintain a high contrast ratio between text and
-        background colors, following WCAG guidelines to make the text accessible for users with visual impairments.
+        The typography system in Mila is designed to ensure accessibility and readability for all users. This is
+        achieved by setting the minimum font size to <Code>16px</Code> / <Code>1rem</Code> across all text, providing
+        clear and legible content on both large and small screens. Additionally, the aim is to maintain a high contrast
+        ratio between text and background colors, following WCAG guidelines to make the text accessible for users with
+        visual impairments.
       </Paragraph>
     ),
   },

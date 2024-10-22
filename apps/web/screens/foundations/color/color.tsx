@@ -9,7 +9,7 @@ import { Code, CodeBlock } from "@/common/custom-components/code/code";
 const codeExample = `import { color } from "mila-components";
 
 const styles = {
-  backgroundColor: color.grey[200];
+  backgroundColor: color.grey[200],
 };
 
 const App = () => (
@@ -62,16 +62,15 @@ const sections = [
     content: (
       <>
         <Paragraph>
-          We've created a versatile color palette that follows this principle, consisting of a spectrum of shades for
-          each core color. These shades range from light to dark, ensuring sufficient contrast for text, backgrounds,
-          and interactive elements.
+          The color palette follows this principle, consisting of a spectrum of shades for each core color. These shades
+          range from light to dark, ensuring sufficient contrast for text, backgrounds, and interactive elements.
         </Paragraph>
         <Image src={colorPalette} alt="Mila color palette" fill />
         <Paragraph>
-          In our palette, each color family (e.g., grey, purple, blue, green, etc.) includes variations from{" "}
-          <strong>100</strong> (lightest) to <strong>900</strong> (darkest). This enables designers and developers to
-          easily apply the right level of contrast depending on the use case, whether it’s for foreground elements like
-          text or background elements like containers.
+          Each color family (e.g., grey, purple, blue, green, etc.) includes variations from <strong>100</strong>{" "}
+          (lightest) to <strong>900</strong> (darkest). This enables designers and developers to easily apply the right
+          level of contrast depending on the use case, whether it’s for foreground elements like text or background
+          elements like containers.
         </Paragraph>
       </>
     ),

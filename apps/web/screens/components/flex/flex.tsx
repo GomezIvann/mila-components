@@ -124,7 +124,7 @@ const sections = [
                 {`{ columnGap?: Spaces; rowGap: Spaces } | { columnGap: Spaces; rowGap?: Spaces } | Spaces`}
               </Code>
               <br />
-              being <Code table>Spaces</Code> one of our{" "}
+              being <Code table>Spaces</Code> one of the{" "}
               <NextLink href="/foundations/spacing" passHref legacyBehavior>
                 <Link>Spacing core tokens</Link>
               </NextLink>

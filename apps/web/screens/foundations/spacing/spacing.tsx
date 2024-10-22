@@ -22,7 +22,7 @@ const sections = [
     title: "Introduction",
     content: (
       <Paragraph>
-        To ensure consistent alignment across elements, we use a spacing scale based on <Code>8px</Code> and{" "}
+        To ensure consistent alignment across elements, the spacing scale is based on <Code>8px</Code> and{" "}
         <Code>4px</Code> units. These values are easily multiplied, offering flexible and consistent spacing steps that
         are distinct enough to accommodate a variety of layouts.
       </Paragraph>
@@ -57,12 +57,12 @@ const sections = [
     title: "Usage",
     content: (
       <>
-      <Paragraph>
-        Each spacing value in the proposed scale is associated with a core token that can be used to maintain consistency
-        across components and layouts. These tokens are named based on the <Code>space</Code> prefix followed by the
-        value in <Code>px</Code> units.
-      </Paragraph>
-      <CodeBlock language="tsx">{codeExample}</CodeBlock>
+        <Paragraph>
+          Each spacing value in the proposed scale is associated with a core token that can be used to maintain
+          consistency across components and layouts. These tokens are named based on the <Code>space</Code> prefix
+          followed by the value in <Code>px</Code> units.
+        </Paragraph>
+        <CodeBlock language="tsx">{codeExample}</CodeBlock>
       </>
     ),
     subSections: [

@@ -7,22 +7,22 @@ import { BulletedList, Flex, Heading, Paragraph, Table } from "mila-components";
 const codeExample = `import { breakpoints } from "mila-components";
 
 const App = () => {
-  const { md } = breakpoints;
-
   return (
     <ApplicationLayout
       header={(
         <Header
-          title={{ text: "Mila component library" }}
           links={[
             { label: "Home", href: "/" },
             { label: "About", href: "/about" },
             { label: "Contact", href: "/contact" },
           ]}
-          responsiveBreakpoint={md}
+          responsiveBreakpoint="md"
+          title={{ text: "Mila component library" }}
         />
       )}
-    />
+    >
+      <MainContent />
+    </ApplicationLayout>
   );
 }`;
 
@@ -36,8 +36,8 @@ const sections = [
         component library provides a set of layout components that can be used to build responsive web applications with
         a consistent look and feel. These components include containers, grids, and spacing utilities that help to
         organize the content on the page and create a visual hierarchy that guides users through the application. In
-        this section, we will explore the key layout components provided by the Mila component library and how they can
-        be used to create effective web applications.
+        this section will explore the key layout components provided by the Mila component library and how they can be
+        used to create effective web applications.
       </Paragraph>
     ),
   },
