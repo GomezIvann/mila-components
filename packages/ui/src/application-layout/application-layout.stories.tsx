@@ -60,7 +60,7 @@ const xIcon = (
 );
 
 const headerLinks = [
-  { label: "Home", href: "#", icon: homeIcon, selected: true },
+  { label: "Home", href: "#", selected: true },
   { label: "About", href: "#" },
   { label: "Contact", href: "#" },
   { label: "GitHub", href: "#", external: true },

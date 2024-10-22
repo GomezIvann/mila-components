@@ -64,7 +64,7 @@ const code = `() => {
       onNavigate={(href) => { 
         alert(href);
       }}
-      title={{ text: "Mila components", href: "#" }}
+      title={{ text: "Mila components" }}
     />
   );
 }`;
