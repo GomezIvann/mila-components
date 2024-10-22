@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Image from "@/common/custom-components/image";
 import cardComponentsImage from "@/common/assets/card-components.jpg";
 import cardFoundationsImage from "@/common/assets/card-foundations.jpg";
+import icons from "@/common/custom-components/icons";
 
 export default function HomePage() {
   const router = useRouter();
@@ -16,8 +17,8 @@ export default function HomePage() {
         <Flex direction="column" gap={40} alignItems="center">
           <Heading>Welcome to Mila components</Heading>
           <Heading level={2} weight="light">
-            Mila components is a humble library of reusable components, based on React framework, developed as a final
-            master thesis project.
+            Mila components is a humble library of reusable components, based on React, developed as a final master
+            thesis project.
           </Heading>
           <Flex gap={20}>
             <Button
@@ -26,6 +27,15 @@ export default function HomePage() {
               }}
             >
               Get started
+            </Button>
+            <Button
+              icon={icons.gitHub}
+              onClick={() => {
+                window.open("https://github.com/GomezIvann/mila-components", "_blank");
+              }}
+              variant="text"
+            >
+              GitHub
             </Button>
           </Flex>
         </Flex>

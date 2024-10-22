@@ -3,7 +3,20 @@
 import { Badge, BulletedList, Divider, Flex, Heading, Link, Paragraph, Table } from "mila-components";
 import NextLink from "next/link";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
-import { Code } from "@/common/custom-components/code/code";
+import { Code, CodeBlock } from "@/common/custom-components/code/code";
+
+const applicationLayoutExample = `() => {
+  return (
+    <ApplicationLayout
+      header={<Header />}
+      sideNavigation={<SideNavigation />}
+      footer={<Footer />}
+    >
+      <MainContent />
+    </ApplicationLayout>
+  );
+}
+`;
 
 const sections = [
   {
@@ -12,31 +25,43 @@ const sections = [
       <BulletedList>
         <li>Use this component to create a consistent layout across your application.</li>
         <li>
-          The application layout component is composed of a header, a side navigation, and a footer. You can customize
-          each of these sections by passing the appropriate children.
+          The application layout component is just an skeleton. Use it in combination with a header, side navigation,
+          footer and main content components to create a complete layout.
         </li>
         <li>
-          We encourage you to use this component in conjunction with our{" "}
+          Depending on the complexity of your application, pass only the parts you need to the application layout. For
+          example, if your application doesn't have a side navigation menu, don't pass it to the component.
+        </li>
+        <li>
+          We encourage you to use the application layout in conjunction with the{" "}
           <NextLink href="/components/header" passHref legacyBehavior>
-            <Link>Header</Link>
+            <Link>header</Link>
           </NextLink>
           ,{" "}
           <NextLink href="/components/side-navigation" passHref legacyBehavior>
-            <Link>Side navigation</Link>
+            <Link>side navigation</Link>
           </NextLink>
           , or{" "}
           <NextLink href="/components/footer" passHref legacyBehavior>
-            <Link>Footer</Link>
+            <Link>footer</Link>
           </NextLink>{" "}
           components.
         </li>
       </BulletedList>
     ),
   },
-  // {
-  //   title: "Example",
-  //   content: <LiveCodeBlock example={defaultExample} />,
-  // },
+  {
+    title: "Example",
+    content: (
+      <>
+        <Paragraph>
+          The application layout can't be placed inside a live code canvas due to styling impossibilities. But, here's
+          an example of how you can use it in your project:
+        </Paragraph>
+        <CodeBlock language="tsx">{applicationLayoutExample}</CodeBlock>
+      </>
+    ),
+  },
   {
     title: "API",
     content: (

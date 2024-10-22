@@ -9,11 +9,11 @@ const code = `() => (
       Mila components are a collection of React components 
       that you can use to build your applications.
     </Paragraph>
-    <Flex gap={24}>
-      <Button onClick={() => console.log("Mila!")}>
+    <Flex alignItems="center" gap={24}>
+      <Button onClick={() => alert("Mila!")}>
         Get started
       </Button>
-      <Link href="https://github.com/GomezIvann/mila-components">
+      <Link href="https://github.com/GomezIvann/mila-components" newWindow>
         GitHub
       </Link>
     </Flex>

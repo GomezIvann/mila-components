@@ -13,8 +13,8 @@ const sections = [
           Mila components is a humble library of reusable components, based on{" "}
           <Link href="https://react.dev/" newWindow>
             React
-          </Link>{" "}
-          framework, developed as a final master thesis project.
+          </Link>
+          , developed as a final master thesis project.
         </Paragraph>
         <Paragraph>
           The main goal of this project is to provide a set of components that can be easily reused in any project, with
@@ -48,7 +48,7 @@ const sections = [
           scenario.
         </Paragraph>
         <Paragraph>
-          We hope you find this documentation useful and that it helps you to build your projects with ease and
+          I hope you find this documentation useful and that it helps you to build your projects with ease and
           confidence.
         </Paragraph>
       </>
@@ -65,7 +65,7 @@ const sections = [
             <Paragraph>
               You can find a list of all available components in the{" "}
               <NextLink href="/components/action-button" passHref legacyBehavior>
-                <Link>Components</Link>
+                <Link>components</Link>
               </NextLink>{" "}
               section.
             </Paragraph>
@@ -100,8 +100,9 @@ const sections = [
       <>
         <Paragraph>Help is always welcome!</Paragraph>
         <Paragraph>
-          If you have any questions, suggestions, or feedback, feel free to reach us on our{" "}
-          <Link href="https://github.com/GomezIvann/mila-components">GitHub repository</Link>.
+          If you have any questions, suggestions, or feedback, feel free to reach me on the GitHub repository via{" "}
+          <Link href="https://github.com/GomezIvann/mila-components/issues/news">issue</Link> or{" "}
+          <Link href="https://github.com/GomezIvann/mila-components/discussions/new/choose">discussion</Link>.
         </Paragraph>
       </>
     ),

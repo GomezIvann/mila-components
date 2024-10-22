@@ -15,7 +15,7 @@ const sections = [
         <li>
           Use the footer component in combination with the{" "}
           <NextLink href="/components/application-layout" passHref legacyBehavior>
-            <Link>Application layout</Link>
+            <Link>application layout</Link>
           </NextLink>{" "}
           and the rest of the layout components to create consistent layouts across your application.
         </li>

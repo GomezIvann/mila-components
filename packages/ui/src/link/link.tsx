@@ -7,7 +7,7 @@ import { forwardRef } from "react";
 
 const StyledLink = styled.a<{ $disabled?: LinkProps["disabled"] }>`
   border-radius: ${alias.space.primaryBorderRadius};
-  padding: 0;
+  height: fit-content;
   width: fit-content;
   display: inline-flex;
   align-items: center;
