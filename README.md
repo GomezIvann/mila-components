@@ -19,12 +19,15 @@ npm i mila-components
 ### Usage
 
 ```jsx
-import { Button, Heading } from "mila-components";
+import { Button, Heading, TextInput } from "mila-components";
 
 const Example = () => (
   <>
     <Heading>Mila components</Heading>
-    <Button type="submit">Submit</Button>
+    <TextInput label="Enter your name" placeholder="John Doe" />
+    <Button type="submit" onClick={() => alert("Submitted!")}>
+      Submit
+    </Button>
   </>
 );
 ```
