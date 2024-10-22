@@ -115,7 +115,7 @@ const sections = [
     content: (
       <>
         <Paragraph>
-          By using the <strong>LCH model</strong> and offering a wide range of color intensities, the system supports
+          By using the <strong>LCH model</strong> and offering a wide range of color intensities, the system supports{" "}
           <strong>color accessibility</strong> guidelines, ensuring that components meet the minimum contrast
           requirements (WCAG) for readability and usability. This makes the palette suitable for both standard and
           high-contrast themes.

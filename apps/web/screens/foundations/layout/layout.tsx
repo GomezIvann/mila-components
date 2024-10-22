@@ -4,9 +4,7 @@ import { Code, CodeBlock } from "@/common/custom-components/code/code";
 import SiteQuickNavigation from "@/common/custom-components/quick-navigation/quick-navigation";
 import { BulletedList, Flex, Heading, Paragraph, Table } from "mila-components";
 
-const codeExample = `import { breakpoints } from "mila-components";
-
-const App = () => {
+const codeExample = `const App = () => {
   return (
     <ApplicationLayout
       header={(
@@ -54,18 +52,18 @@ const sections = [
         </Paragraph>
         <BulletedList>
           <li>
-            <strong>Application layout:</strong> The main structure of the web application. The{" "}
-            <Code>ApplicationLayout</Code> component provides a consistent layout for the header, side navigation, and
-            content sections of the application.
+            <strong>Application layout:</strong> The main structure of the web application. The application layout
+            component provides a consistent layout for the header, side navigation, footer and content sections of the
+            application.
           </li>
           <li>
-            <strong>Header:</strong> The top section of the application layout, which typically contains the logo,
-            navigation links, and user profile pictures, if applicable.
+            <strong>Header:</strong> The top section of the layout, which typically contains the logo, navigation links,
+            and user profile pictures, if applicable.
           </li>
           <li>
-            <strong>Side navigation:</strong> The left-hand section of the application layout, which provides access to
-            different sections of the application. It represents the primary navigation for the application and can be
-            collapsed or expanded in responsive layouts.
+            <strong>Side navigation:</strong> The left-hand section of the layout, which provides access to different
+            sections of the application. It represents the primary navigation and can be collapsed or expanded in
+            responsive layouts.
           </li>
           <li>
             <strong>Footer:</strong> The bottom section of the application layout, which contains links to legal
@@ -154,8 +152,8 @@ const sections = [
             </Paragraph>
             <BulletedList>
               <li>
-                <strong>Flex:</strong> The <Code>Flex</Code> component allows you to build{" "}
-                <strong>Flexible Box Module</strong> based layouts.
+                <strong>Flex:</strong> The flex component allows you to build <strong>Flexible Box Module</strong> based
+                layouts.
               </li>
             </BulletedList>
           </>

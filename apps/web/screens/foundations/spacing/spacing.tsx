@@ -33,8 +33,8 @@ const sections = [
     content: (
       <>
         <Paragraph>
-          <strong>Margins</strong> and <strong>padding</strong> are key to separating elements and creating visual
-          breathing room. They manage the negative space between UI components, enhancing clarity and structure.
+          Margins and padding are key to separating elements and creating visual breathing room. They manage the
+          negative space between UI components, enhancing clarity and structure.
         </Paragraph>
         <BulletedList>
           <li>

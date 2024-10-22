@@ -43,7 +43,7 @@ const sections = [
     content: (
       <>
         <Paragraph>
-          The chosen font family is Inter, a modern sans-serif typeface designed for optimal readability on screens. It
+          The chosen font family is <Code>Inter</Code>, a modern sans-serif typeface designed for optimal readability on screens. It
           offers a clean, simple, and versatile aesthetic that complements both functional and visual components of the
           library.
         </Paragraph>
@@ -239,16 +239,16 @@ const sections = [
             </Paragraph>
             <BulletedList>
               <li>
-                <strong>Heading:</strong> Use the <Code>Heading</Code> component for all headings and titles. It
-                automatically applies the correct font size, weight, and spacing based on the level prop.
+                <strong>Bulleted list:</strong> Use the bulleted list component to create lists with bullet points. It
+                maintains consistent spacing and alignment for list items.
               </li>
               <li>
-                <strong>Paragraph:</strong> For body text and descriptions, use the <Code>Paragraph</Code> component. It
-                ensures consistent font size, line height, and spacing for readable content.
+                <strong>Heading:</strong> Use the heading component for all headings and titles. It automatically
+                applies the correct font size, weight, and spacing based on the level prop.
               </li>
               <li>
-                <strong>Bulleted list:</strong> Use the <Code>BulletedList</Code> component to create lists with bullet
-                points. It maintains consistent spacing and alignment for list items.
+                <strong>Paragraph:</strong> For body text and descriptions, use the paragraph component. It ensures
+                consistent font size, line height, and spacing for readable content.
               </li>
             </BulletedList>
           </>
