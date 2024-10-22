@@ -96,9 +96,10 @@ const SideNavigationWrapper = ({ condition, children, isOpen, setIsOpen }: SideN
     <>
       <ResponsiveTriggerContainer>
         <ActionButton
-          variant="outlined"
           icon={isOpen ? icons.menuOpen : icons.menu}
           onClick={() => setIsOpen((isOpen) => !isOpen)}
+          title={`${isOpen ? "Hide" : "Show"} side navigation menu`}
+          variant="outlined"
         />
       </ResponsiveTriggerContainer>
       {isOpen && children}
