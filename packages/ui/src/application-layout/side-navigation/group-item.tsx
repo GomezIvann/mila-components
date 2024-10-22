@@ -18,7 +18,7 @@ const GroupItem = ({ item }: { item: GroupItemType }) => {
         as="button"
         aria-controls={groupMenuId}
         aria-expanded={isOpen ? true : false}
-        aria-selected={selected && !isOpen}
+        aria-pressed={selected && !isOpen}
         onClick={() => {
           setIsOpen((isOpen) => !isOpen);
         }}

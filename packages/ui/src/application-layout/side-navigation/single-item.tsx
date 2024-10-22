@@ -11,7 +11,7 @@ const SingleItem = ({ item, grouped }: { item: SingleItemType; grouped?: boolean
 
   return (
     <ItemAction
-      aria-selected={item.selected}
+      aria-current={item.selected ? "page" : undefined}
       href={item.href}
       onClick={
         item.external

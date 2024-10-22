@@ -122,7 +122,7 @@ const Header = ({ content, links, onNavigate, responsiveBreakpoint, title }: Hea
               <NavigationListItem key={index} $selected={selected}>
                 <StyledActionButton
                   as="a"
-                  aria-selected={selected}
+                  aria-current={selected ? "page" : undefined}
                   href={href}
                   onClick={
                     external
