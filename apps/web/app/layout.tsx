@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SiteApplicationLayout from "../common/custom-components/application-layout";
@@ -15,6 +16,7 @@ export default function RootLayout({
         <SiteApplicationLayout>
           <div className="main">{children}</div>
         </SiteApplicationLayout>
+        <Analytics />
       </body>
     </html>
   );
