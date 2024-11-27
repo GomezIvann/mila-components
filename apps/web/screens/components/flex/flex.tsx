@@ -123,12 +123,18 @@ const sections = [
               <Code table>
                 {`{ columnGap?: Spaces; rowGap: Spaces } | { columnGap: Spaces; rowGap?: Spaces } | Spaces`}
               </Code>
-              <br />
-              being <Code table>Spaces</Code> one of the{" "}
-              <NextLink href="/foundations/spacing" passHref legacyBehavior>
-                <Link>Spacing core tokens</Link>
-              </NextLink>
-              .
+              <dl>
+                <dt>
+                  <Code table>Spaces</Code>
+                </dt>
+                <dd>
+                  This type corresponds to the breakpoints defined in the{" "}
+                  <NextLink href="/foundations/spacing" passHref legacyBehavior>
+                    <Link>Spacing core tokens</Link>
+                  </NextLink>
+                  .
+                </dd>
+              </dl>
             </td>
             <td>Defines the gap between the flex container's items.</td>
             <td>-</td>
